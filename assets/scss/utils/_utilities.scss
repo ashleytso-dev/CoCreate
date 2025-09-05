@@ -1,0 +1,47 @@
+// Utilities 設定檔
+// 參考 Bootstrap 官方文件：https://getbootstrap.com/docs/5.3/utilities/api/
+
+$utilities: map-merge(
+    $utilities,
+    (
+        "font-size": map-merge(
+        map-get($utilities, "font-size"),
+        ( responsive: true ),
+        ),
+    )
+);
+
+/* 讓 .fs-* 可以用我們的命名（base/small/tiny）
+   （Bootstrap 會與內建數字 fs-1..fs-6 併存；不衝突） */
+$utilities: map-merge(
+    $utilities,
+    (
+        "font-size": (
+            property: font-size,
+            class: fs,
+            values: $font-sizes
+        )
+    )
+);
+
+/* 用 utilities 生成你要的圓角 .rounded-16 / -36 / -40 / -80 / -240 */
+$utilities: map-merge(
+    $utilities,
+    (
+        "rounded": (
+            property: border-radius,
+            class: rounded,
+            values: (
+                null: $radius-16,  /* .rounded */
+                0: 0,              /* .rounded-0 */
+                16: $radius-16,    /* .rounded-16   → 16px */
+                36: $radius-36,    /* .rounded-36   → 36px */
+                40: $radius-40,    /* .rounded-40   → 40px */
+                80: $radius-80,    /* .rounded-80   → 80px */
+                240: $radius-240,  /* .rounded-240  → 240px */
+                circle: 50%,       /* .rounded-circle */
+                pill: $border-radius-pill /* .rounded-pill */
+            )
+        )
+    )
+);

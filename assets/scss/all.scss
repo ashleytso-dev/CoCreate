@@ -1,0 +1,32 @@
+// 載入 Bootstrap 的 SCSS 檔案
+@import "../../node_modules/bootstrap/scss/functions";
+
+// 原始 Bootstrap 變數
+@import './utils/variables';
+@import "../../node_modules/bootstrap";
+
+@import './utils/utilities';
+@import "bootstrap/scss/utilities/api";
+
+// 全域設定
+@import './base/base';
+
+// 載入頁首頁尾
+@import './layout/header';
+@import './layout/footer';
+
+// 載入元件樣式
+@import './components/button';
+@import './components/card';
+@import './components/forms';
+
+// 頁面個別樣式
+@import './pages/index.scss';
+@import './pages/find-partners';
+@import './pages/partner-detail';
+@import './pages/about';
+@import './pages/wall';
+@import './pages/login';
+@import './pages/register';
+@import './pages/forgot-password';
+@import './pages/member-center';
