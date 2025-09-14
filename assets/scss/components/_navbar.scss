@@ -7,13 +7,23 @@ $header-bg: $primary-green-200;
 }
 
 .brand-logo {
-  width: 28px;
-  height: 28px;
+  width: 80px;
+  height: auto;
   object-fit: contain;
 }
-.brand-text { color: $neutral-950; }
-.brand-en { letter-spacing: 0.2px; }
-.brand-zh { letter-spacing: 0.3px; }
+.navbar-brand {
+  gap: 1rem;  
+}
+
+/* 手機/平板略縮，避免 header 過高 */
+@import "bootstrap/scss/mixins/breakpoints";
+
+@include media-breakpoint-down(lg) {
+  .brand-logo { width: 64px; }
+}
+@include media-breakpoint-down(md) {
+  .brand-logo { width: 56px; }
+}
 
 .navbar {
   background-color: transparent;

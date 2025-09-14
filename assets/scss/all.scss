@@ -6,7 +6,7 @@
 @import "../../node_modules/bootstrap";
 
 @import './utils/utilities';
-@import "bootstrap/scss/utilities/api";
+// @import "bootstrap/scss/utilities/api"; 重複呼叫
 
 // 全域設定
 @import './base/base';
@@ -19,9 +19,10 @@
 @import './components/button';
 @import './components/card';
 @import './components/forms';
+@import './components/navbar';
 
 // 頁面個別樣式
-@import './pages/index.scss';
+@import './pages/index';
 @import './pages/find-partners';
 @import './pages/partner-detail';
 @import './pages/about';
