@@ -1,0 +1,48 @@
+/* assets/scss/components/_navbar.scss */
+
+$header-bg: $primary-green-200;
+
+.site-header {
+  background-color: $header-bg;
+}
+
+.brand-logo {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+.brand-text { color: $neutral-950; }
+.brand-en { letter-spacing: 0.2px; }
+.brand-zh { letter-spacing: 0.3px; }
+
+.navbar {
+  background-color: transparent;
+}
+.navbar .nav-link {
+  color: $neutral-950;
+  &:hover, &:focus {
+    color: $neutral-950;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+}
+
+.login-link { color: $neutral-950; &:hover { color: $neutral-800; } }
+
+/* 搜尋按鈕 */
+.btn.btn-outline-dark { --bs-btn-hover-bg: transparent; }
+
+/* 漢堡按鈕樣式 */
+.navbar-toggler {
+  border-color: rgba(0,0,0,.15);
+  &:focus { box-shadow: none; }
+}
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0,0,0,0.7)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* 簡易 active 樣式（若要） */
+.navbar .nav-link.active {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
