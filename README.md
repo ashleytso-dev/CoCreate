@@ -84,9 +84,9 @@ project/
 
 /* 專案基礎與元件 */
 @import './base/globals';
-@import './base/typography';
 @import './components/button';
 @import './components/card';
+@import './components/forms';
 
 /* 頁面專屬（需要時再加） */
 @import './pages/member-center';
@@ -106,15 +106,14 @@ $neutral-200: #E5E5E5;
 $neutral-100: #F0F0F0;
 $neutral-50:  #FFFFFF;
 
-$green-700: #1B4912;
-$green-500: #5B8C30;
-$green-200: #EFF2DC;
-$yellow:    #FAD349;
-$orange:    #F2A61C;
+$primary-green-700: #1B4912;
+$primary-green-500: #5B8C30;
+$primary-green-200: #EFF2DC;
+$primary-yellow: #FAD349;
+$primary-orange: #F2A61C;
 ```
-> **記得把要用作 utility 的顏色掛到 `$theme-colors`**（見 §5）。
 
-### 4.2 文字（tokens/_typography.tokens.scss）
+### 4.2 文字
 ```scss
 $font-family-sans-serif: 'Noto Sans TC', 'Poppins', -apple-system, BlinkMacSystemFont,
   'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Microsoft JhengHei', 'Noto Sans', sans-serif;
@@ -189,23 +188,23 @@ $display-font-sizes: (
 );
 ```
 
-### 5.2 主題顏色（讓 `text-*` / `bg-*` / `border-*` / `btn-*` 可用）
+### 5.2 主題顏色（可使用 `text-*` / `bg-*` / `border-*` / `btn-*` ）
 ```scss
 /* 把 tokens 掛入 $theme-colors，會自動生成 text-*/bg-*/border-*/btn-* */
 $theme-colors: map-merge(
   $theme-colors,
   (
-    "green-500": $green-500,
-    "green-700": $green-700,
-    "yellow":    $yellow,
-    "orange":    $orange,
+    "primary-green-500": $primary-green-500,
+    "primary-green-700": $primary-green-700,
+    "primary-yellow":    $primary-yellow,
+    "primary-orange":    $primary-orange,
     "neutral-600": $neutral-600,
     "neutral-950": $neutral-950
   )
 );
 ```
 
-> 例：`<span class="text-green-500">綠色字</span>`、`<div class="bg-orange">橘色底</div>`、`<button class="btn btn-green-500">綠色按鈕</button>`。
+> 例：`<span class="text-primary-green-500">綠色字</span>`、`<div class="bg-primary-orange">橘色底</div>`、`<button class="btn btn-primary-green-500">綠色按鈕</button>`。
 
 ### 5.3 圓角（Radius）
 ```scss
@@ -243,7 +242,7 @@ $utilities: map-merge(
 );
 ```
 
-### 5.4 文字大小 Utilities（可用 `.fs-base/.fs-small/.fs-tiny`）
+### 5.4 文字大小 Utilities（可使用 `.fs-base/.fs-small/.fs-tiny`）
 ```scss
 $utilities: map-merge(
   $utilities,
@@ -267,10 +266,10 @@ $utilities: map-merge(
 
 - **命名空間**：每頁 `<main class="page-<檔名>">`，對應 `assets/scss/pages/_<檔名>.scss`。  
 - **間距**：優先用 utilities：`mb-24` / `px-16` / `gap-12`。  
-- **字色**：`text-green-500` / `text-orange`（前提：已加入 `$theme-colors`）。  
+- **字色**：`text-primary-green-500` / `textprimary--orange`。  
 - **按鈕字色被覆蓋？** 使用 CSS 變數覆寫：  
   ```html
-  <button class="btn btn-green-500" style="--bs-btn-color: rgba(var(--bs-orange-rgb),1);">
+  <button class="btn btn-primary-green-500" style="--bs-btn-color: rgba(var(--bs-orange-rgb),1);">
     綠底橘字
   </button>
   ```
@@ -280,4 +279,4 @@ $utilities: map-merge(
 ## 7) 元件模板與展示
 
 - 元件樣式集中於 `assets/scss/components/*`（例如 `_card.scss`, `_button.scss`）。  
-- 另做 `pages/components.html` 當元件展示頁（複製範例）。  
+- 另外以 `pages/components.html` 當元件展示頁（複製元件範例使用）。  
