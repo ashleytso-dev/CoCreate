@@ -6,7 +6,10 @@
 @import "../../node_modules/bootstrap";
 
 @import './utils/utilities';
-// @import "bootstrap/scss/utilities/api"; 重複呼叫
+
+// 再呼叫一次 utilities/api 來生成你新增的 utilities
+@import "../../node_modules/bootstrap/scss/utilities/api";
+
 
 // 全域設定
 @import './base/base';
