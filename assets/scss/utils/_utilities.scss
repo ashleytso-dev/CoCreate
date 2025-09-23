@@ -34,6 +34,10 @@ $utilities: map-merge(
             values: (
                 null: $radius-16,  /* .rounded */
                 0: 0,              /* .rounded-0 */
+                4: $radius-4,      /* .rounded-4    → 4px */
+                6: $radius-6,      /* .rounded-6    → 6px */
+                8: $radius-8,      /* .rounded-8    → 8px */
+                12: $radius-12,    /* .rounded-12   → 12px */
                 16: $radius-16,    /* .rounded-16   → 16px */
                 36: $radius-36,    /* .rounded-36   → 36px */
                 40: $radius-40,    /* .rounded-40   → 40px */
@@ -45,3 +49,14 @@ $utilities: map-merge(
         )
     )
 );
+
+$utilities-colors: map-merge($utilities-colors, (
+    "neutral-50":  $neutral-50,
+    "neutral-100": $neutral-100,
+    "neutral-200": $neutral-200,
+    "neutral-400": $neutral-400,
+    "neutral-500": $neutral-500,
+    "neutral-600": $neutral-600,
+    "neutral-800": $neutral-800,
+    "neutral-950": $neutral-950
+));
