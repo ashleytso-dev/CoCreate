@@ -1,16 +1,244 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>partner-detail</title>
-	</head>
-	<body>
-		<%- include('./layout/header'); -%>
-		<h1>夥伴詳細頁</h1>
-		<%- include('./layout/footer'); -%>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>夥伴詳細頁</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  </head>
+  <body class="bg-primary-green-200">
+    <%- include('./layout/header'); -%>
 
-		<script type="module" src="../main.js"></script>
-	</body>
-	</html>
+    <main class="page-partner-detail py-24 py-lg-40">
+      <div class="container">
+        <div class="row g-24">
+          <!-- 左側：個人卡片 -->
+          <aside class="col-12 col-lg-3">
+            <div class="card border-primary-green-500 bg-white rounded-16">
+              <div class="card-body p-16 p-lg-24 text-center">
+                <img class="rounded-circle mb-16" src="../assets/images/girl-1.jpg" alt="頭像" width="80" height="80">
+                <h6 class="fs-6 fw-bold text-neutral-800 mb-8">林小樹</h6>
+                <p class="fs-base text-primary-green-700 mb-8">日語教學老師</p>
+                <p class="badge fs-small text-bg-primary-green-200 rounded-4 text-neutral-600 py-8 px-12 mb-16">線上</p>
+
+                <div class="d-flex justify-content-center align-items-center gap-12 mb-16">
+                  <i class="bi bi-globe2 fs-5 text-neutral-600"></i>
+                  <i class="bi bi-image fs-5 text-neutral-600"></i>
+                  <i class="bi bi-instagram fs-5 text-neutral-600"></i>
+                </div>
+
+                <a class="btn btn-primary-green-500 text-white rounded-80 w-100 mb-16">訊息聊聊</a>
+
+                <hr class="my-16">
+
+                <h6 class="fw-bold text-neutral-800 mb-8 text-start">關於我</h6>
+                <p class="text-neutral-700 small text-start mb-16">
+                  來自日本的語言教學專家，在台灣生活 7 年。專門教授商業日語與日常會話，希望能透過技能交換學習更多台灣的在地文化和技能。
+                </p>
+
+                <h6 class="fw-bold text-neutral-800 mb-8 text-start">興趣愛好</h6>
+                <div class="d-flex flex-wrap gap-8">
+                  <span class="badge text-bg-neutral-50 border border-primary-green-500 text-primary-green-500 fs-small fw-normal tag">#料理</span>
+                  <span class="badge text-bg-neutral-50 border border-primary-green-500 text-primary-green-500 fs-small fw-normal tag">#茶道</span>
+                  <span class="badge text-bg-neutral-50 border border-primary-green-500 text-primary-green-500 fs-small fw-normal tag">#書法</span>
+                  <span class="badge text-bg-neutral-50 border border-primary-green-500 text-primary-green-500 fs-small fw-normal tag">#旅遊</span>
+                </div>
+
+              </div>
+            </div>
+          </aside>
+
+          <!-- 右側：主內容（整塊白卡） -->
+          <section class="col-12 col-lg-9">
+            <div class="card border-0 shadow-sm rounded-16 overflow-hidden mb-24 mb-lg-40">
+              <!-- 頂部橫幅圖 -->
+              <div class="ratio ratio-21x9">
+                <img src="../assets/images/aboyinjapn.jpg" alt="封面圖" class="w-100 h-100 object-fit-cover">
+              </div>
+
+              <div class="card-body p-16 p-lg-24">
+                <!-- 標題與更新時間 -->
+                <div class="d-flex align-items-start mb-12 mb-lg-16">
+                  <h2 class="h4 h3-lg fw-bold mb-0 me-auto">生活日本語會話</h2>
+                  <small class="text-neutral-600">更新於：2025/09/17</small>
+                </div>
+
+                <!-- 類別標籤 -->
+                <div class="mb-16 mb-lg-0 g-4 border-bottom border-neutral-400 pb-16 pb-lg-0 lg-border-bottom-0 d-flex flex-wrap gap-8">
+                  <span class="badge text-bg-neutral-50 border border-primary-green-500 text-primary-green-500 fs-small fw-normal tag">#日語</span>
+                  <span class="badge text-bg-neutral-50 border border-primary-green-500 text-primary-green-500 fs-small fw-normal tag">#生活會話</span>
+                  <span class="badge text-bg-neutral-50 border border-primary-green-500 text-primary-green-500 fs-small fw-normal tag">#文化交流</span>
+                </div>
+
+                <!-- 內容兩欄：技能介紹 + 交換條件） -->
+                <div class="row g-16 g-lg-24 mb-16 mb-lg-24">
+                  <div class="col-12 col-lg-8">
+                    <h6 class="fw-bold text-neutral-800 mb-8">技能介紹</h6>
+                    <p class="text-neutral-700 mb-0">
+                      可協助生活會話、點餐購物、旅遊問路等日常交流方式，帶你認識在地文化與交流禮儀，也可分享日本生活資訊、學習資源與自學方法。
+                    </p>
+                  </div>
+                  <div class="col-12 col-lg-4">
+                    <div class="p-12 p-lg-16 rounded-12 border bg-neutral-50">
+                      <h6 class="fw-bold text-neutral-800 mb-8">交換條件</h6>
+                      <ul class="mb-0 small text-neutral-700">
+                        <li>需求：語言交換 / 其他技能</li>
+                        <li>頻率：每週 1 次</li>
+                        <li>地點：線上為主</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 申請交換表單（綠框包起來） -->
+                <section class="rounded-16 border border-primary-green-500 p-16 p-lg-24">
+                  <h6 class="fw-bold text-neutral-800 mb-12">申請技能交換</h6>
+
+                  <div class="mb-12">
+                    <label class="form-label mb-8">你可以提供的技能</label>
+                    <input type="text" class="form-control" placeholder="例如：前端協作、平面設計、英文會話…">
+                  </div>
+
+                  <div class="mb-12">
+                    <label class="form-label mb-8">交換訊息</label>
+                    <textarea class="form-control" rows="5" placeholder="介紹一下你的背景與時間安排，為什麼想要交換～"></textarea>
+                  </div>
+
+                  <div class="row g-12 mb-16">
+                    <div class="col-12 col-lg-6">
+                      <label class="form-label mb-8">偏好時段</label>
+                      <select class="form-select">
+                        <option>週末</option>
+                        <option>平日晚間</option>
+                        <option>平日白天</option>
+                      </select>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                      <label class="form-label mb-8">交換方式</label>
+                      <select class="form-select">
+                        <option selected>線上</option>
+                        <option>面對面</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="text-center">
+                    <button class="btn btn-primary-green-500 text-white rounded-80 px-32">
+                      送出交換申請
+                    </button>
+                    <p class="small text-neutral-600 mt-8 mb-0">
+                      送出申請後，林小樹將收到通知並可以回覆你的申請
+                    </p>
+                  </div>
+                </section>
+              </div>
+            </div>
+
+            <!-- 其他技能 -->
+            <section class="mb-24 mb-lg-32">
+              <h6 class="fw-bold text-neutral-800 mb-12">其他技能</h6>
+              <!-- 白色大卡片 -->
+              <div class="card border-0 shadow-sm rounded-16 bg-white p-16 p-lg-24">
+                <div class="row g-12 g-lg-16">
+                  <!-- 小卡片 1 -->
+                  <div class="col-12 col-lg-4">
+                    <div class="bg-primary-green-200 border border-primary-green-500 rounded-12 p-16 h-100">
+                      <div class="small text-neutral-600 mb-4">共 3 次交換</div>
+                      <div class="fw-bold">日文寫作技巧</div>
+                    </div>
+                  </div>
+                  <!-- 小卡片 2 -->
+                  <div class="col-12 col-lg-4">
+                    <div class="bg-primary-green-200 border border-primary-green-500 rounded-12 p-16 h-100">
+                      <div class="small text-neutral-600 mb-4">共 3 次交換</div>
+                      <div class="fw-bold">日文發音矯正</div>
+                    </div>
+                  </div>
+                  <!-- 小卡片 3 -->
+                  <div class="col-12 col-lg-4">
+                    <div class="bg-primary-green-200 border border-primary-green-500 rounded-12 p-16 h-100">
+                      <div class="small text-neutral-600 mb-4">共 3 次交換</div>
+                      <div class="fw-bold">旅遊會話速成</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+
+            <!-- 夥伴評價（白卡） -->
+            <div class="card inner-card rounded-16">
+              <div class="card-body">
+                <div class="d-flex align-items-center justify-content-between mb-12">
+                  <h6 class="fw-bold mb-0">夥伴評價</h6>
+                  <div class="text-neutral-600 fs-small">⭐ 4.9（3 則評價）</div>
+                </div>
+
+                <!-- 單筆評論 1 -->
+                <article class="d-flex gap-12 mb-16 pb-16 border-bottom">
+                  <img src="../assets/images/girl-1.jpg" alt="小魚" width="40" height="40" class="rounded-circle flex-shrink-0">
+                  <div class="flex-grow-1">
+                    <div class="d-flex align-items-center justify-content-between">
+                      <div class="fw-semibold">小魚</div>
+                      <div class="text-neutral-600 fs-tiny">2024-12-29</div>
+                    </div>
+                    <p class="mb-8 text-neutral-600 fs-small">
+                      第一次和小樹練習日語會話，一開始真的有點緊張，但他講解很清楚，還會配合我的程度調整，收穫很多！
+                    </p>
+                    <div class="d-flex align-items-center gap-12 fs-tiny text-neutral-600">
+                      <span><i class="bi bi-hand-thumbs-up"></i> 有幫助 (12)</span>
+                      <span><i class="bi bi-chat"></i> 回覆 (3)</span>
+                    </div>
+                  </div>
+                </article>
+
+                <!-- 單筆評論 2 -->
+                <article class="d-flex gap-12 mb-16 pb-16 border-bottom">
+                  <img src="../assets/images/boy-2.jpg" alt="阿熊" width="40" height="40" class="rounded-circle flex-shrink-0">
+                  <div class="flex-grow-1">
+                    <div class="d-flex align-items-center justify-content-between">
+                      <div class="fw-semibold">阿熊</div>
+                      <div class="text-neutral-600 fs-tiny">2023-12-14</div>
+                    </div>
+                    <p class="mb-8 text-neutral-600 fs-small">
+                      解說清楚，會針對卡關的地方提供練習方向與方法，實用度高。
+                    </p>
+                    <div class="d-flex align-items-center gap-12 fs-tiny text-neutral-600">
+                      <span><i class="bi bi-hand-thumbs-up"></i> 有幫助 (8)</span>
+                      <span><i class="bi bi-chat"></i> 回覆 (0)</span>
+                    </div>
+                  </div>
+                </article>
+
+                <!-- 單筆評論 3 -->
+                <article class="d-flex gap-12">
+                  <img src="../assets/images/girl-4.png" alt="Chloe" width="40" height="40" class="rounded-circle flex-shrink-0">
+                  <div class="flex-grow-1">
+                    <div class="d-flex align-items-center justify-content-between">
+                      <div class="fw-semibold">Chloe</div>
+                      <div class="text-neutral-600 fs-tiny">2023-11-08</div>
+                    </div>
+                    <p class="mb-8 text-neutral-600 fs-small">
+                      互動性高，教材實用，對初學者友善，謝謝！
+                    </p>
+                    <div class="d-flex align-items-center gap-12 fs-tiny text-neutral-600">
+                      <span><i class="bi bi-hand-thumbs-up"></i> 有幫助 (5)</span>
+                      <span><i class="bi bi-chat"></i> 回覆 (1)</span>
+                    </div>
+                  </div>
+                </article>
+
+              </div>
+            </div>
+
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <%- include('./layout/footer'); -%>
+    <script type="module" src="../main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

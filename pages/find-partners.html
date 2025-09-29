@@ -8,7 +8,464 @@
   </head>
   <body>
     <%- include('./layout/header'); -%>
-    <h1>找尋夥伴</h1>
+
+    <div class="partnerSection1 pt-80 pb-80">
+      <div class="search">
+        <div class="pb-36">
+          <h4 class="pb-16">快速搜尋</h4>
+          <div class="input-group">
+            <input type="text" style="font-size: 20px;" class="form-control border-primary-green-500 border-end-0" placeholder="輸入您想查詢的用戶、技能..." aria-label="快速搜尋" aria-describedby="button-addon2">
+            <button class="btn btn-outline-primary-green-500 border-start-0 border-primary-green-500 searchButton" type="button" id="button-addon2"><a href="#"><img width="36px" src="/assets/images/search.svg" alt="搜尋"></a></button>
+          </div>
+        </div>
+        <div>
+          <h6 class="pb-16 d-none d-lg-block">進階篩選</h6>
+          <div class="advanced d-none d-lg-block">
+            <div class="d-flex row pt-36 pb-36">
+              <p class="col-oneEighth">地區</p>
+              <div class="d-flex col-sevenEighth flex-wrap">
+                <div class="form-check col-oneSeventh col-mobile-oneFifth d-flex align-items-center gap-12">
+                  <input class="form-check-input" type="checkbox" value="" id="台北">
+                  <label class="form-check-label" for="台北">台北</label>
+                </div>
+                <div class="form-check col-oneSeventh col-mobile-oneFifth d-flex align-items-center gap-12">
+                  <input class="form-check-input" type="checkbox" value="" id="新北">
+                  <label class="form-check-label" for="新北">新北</label>
+                </div>
+                <div class="form-check col-oneSeventh col-mobile-oneFifth d-flex align-items-center gap-12">
+                  <input class="form-check-input" type="checkbox" value="" id="桃園">
+                  <label class="form-check-label" for="桃園">桃園</label>
+                </div>
+                <div class="form-check col-oneSeventh col-mobile-oneFifth d-flex align-items-center gap-12">
+                  <input class="form-check-input" type="checkbox" value="" id="新竹">
+                  <label class="form-check-label" for="新竹">新竹</label>
+                </div>
+                <div class="form-check col-oneSeventh col-mobile-oneFifth d-flex align-items-center gap-12">
+                  <input class="form-check-input" type="checkbox" value="" id="苗栗">
+                  <label class="form-check-label" for="苗栗">苗栗</label>
+                </div>
+                <div class="form-check col-oneSeventh col-mobile-oneFifth d-flex align-items-center gap-12">
+                  <input class="form-check-input" type="checkbox" value="" id="台中">
+                  <label class="form-check-label" for="台中">台中</label>
+                </div>
+                <div class="form-check col-oneSeventh col-mobile-oneFifth d-flex align-items-center gap-12">
+                  <input class="form-check-input" type="checkbox" value="" id="彰化">
+                  <label class="form-check-label" for="彰化">彰化</label>
+                </div>
+                <div class="form-check col-oneSeventh col-mobile-oneFifth d-flex align-items-center gap-12">
+                  <input class="form-check-input" type="checkbox" value="" id="嘉義">
+                  <label class="form-check-label" for="嘉義">嘉義</label>
+                </div>
+                <div class="form-check col-oneSeventh col-mobile-oneFifth d-flex align-items-center gap-12">
+                  <input class="form-check-input" type="checkbox" value="" id="台南">
+                  <label class="form-check-label" for="台南">台南</label>
+                </div>
+                <div class="form-check col-oneSeventh col-mobile-oneFifth d-flex align-items-center gap-12">
+                  <input class="form-check-input" type="checkbox" value="" id="高雄">
+                  <label class="form-check-label" for="高雄">高雄</label>
+                </div>
+               <div class="form-check col-oneSeventh col-mobile-oneFifth d-flex align-items-center gap-12">
+                  <input class="form-check-input" type="checkbox" value="" id="屏東">
+                  <label class="form-check-label" for="屏東">屏東</label>
+                </div>
+                <div class="form-check col-oneSeventh col-mobile-oneFifth d-flex align-items-center gap-12">
+                  <input class="form-check-input" type="checkbox" value="" id="台東">
+                  <label class="form-check-label" for="台東">台東</label>
+                </div>
+                <div class="form-check col-oneSeventh col-mobile-oneFifth d-flex align-items-center gap-12">
+                  <input class="form-check-input" type="checkbox" value="" id="花蓮">
+                  <label class="form-check-label" for="花蓮">花蓮</label>
+                </div>
+                <div class="form-check col-oneSeventh col-mobile-oneFifth d-flex align-items-center gap-12">
+                  <input class="form-check-input" type="checkbox" value="" id="宜蘭">
+                  <label class="form-check-label" for="宜蘭">宜蘭</label>
+                </div>
+                <div class="form-check col-oneSeventh col-mobile-oneFifth d-flex align-items-center gap-12">
+                  <input class="form-check-input" type="checkbox" value="" id="南投">
+                  <label class="form-check-label" for="南投">南投</label>
+                </div>
+                <div class="form-check col-oneSeventh col-mobile-oneFifth d-flex align-items-center gap-12">
+                  <input class="form-check-input" type="checkbox" value="" id="基隆">
+                  <label class="form-check-label" for="基隆">基隆</label>
+                </div>
+                <div class="form-check col-oneSeventh col-mobile-oneFifth d-flex align-items-center gap-12">
+                  <input class="form-check-input" type="checkbox" value="" id="線上">
+                  <label class="form-check-label" for="線上">線上</label>
+                </div>
+              </div>
+            </div>
+            <div class="d-flex pt-36 pb-36">
+              <p class="col-oneEighth">類別</p>
+              <div class="d-flex flex-wrap col-sevenEighth">
+                <div class="form-check col-oneSeventh col-mobile-oneFifth d-flex align-items-center gap-12">
+                  <input class="form-check-input" type="checkbox" value="" id="程式語言">
+                  <label class="form-check-label" for="程式語言">程式語言</label>
+                </div>
+                <div class="form-check col-oneSeventh col-mobile-oneFifth d-flex align-items-center gap-12">
+                  <input class="form-check-input" type="checkbox" value="" id="語言學習">
+                  <label class="form-check-label" for="語言學習">語言學習</label>
+                </div>
+                <div class="form-check col-oneSeventh col-mobile-oneFifth d-flex align-items-center gap-12">
+                  <input class="form-check-input" type="checkbox" value="" id="設計創意">
+                  <label class="form-check-label" for="設計創意">設計創意</label>
+                </div>
+                <div class="form-check col-oneSeventh col-mobile-oneFifth d-flex align-items-center gap-12">
+                  <input class="form-check-input" type="checkbox" value="" id="命理占卜">
+                  <label class="form-check-label" for="命理占卜">命理占卜</label>
+                </div>
+                <div class="form-check col-oneSeventh col-mobile-oneFifth d-flex align-items-center gap-12">
+                  <input class="form-check-input" type="checkbox" value="" id="考試檢定">
+                  <label class="form-check-label" for="考試檢定">考試檢定</label>
+                </div>
+                <div class="form-check col-oneSeventh col-mobile-oneFifth d-flex align-items-center gap-12">
+                  <input class="form-check-input" type="checkbox" value="" id="舞蹈藝術">
+                  <label class="form-check-label" for="舞蹈藝術">舞蹈藝術</label>
+                </div>
+                <div class="form-check col-oneSeventh col-mobile-oneFifth d-flex align-items-center gap-12">
+                  <input class="form-check-input" type="checkbox" value="" id="攝影紀錄">
+                  <label class="form-check-label" for="攝影紀錄">攝影紀錄</label>
+                </div>
+                <div class="form-check col-oneSeventh col-mobile-oneFifth d-flex align-items-center gap-12">
+                  <input class="form-check-input" type="checkbox" value="" id="運動健身">
+                  <label class="form-check-label" for="運動健身">運動健身</label>
+                </div>
+                <div class="form-check col-oneSeventh col-mobile-oneFifth d-flex align-items-center gap-12">
+                  <input class="form-check-input" type="checkbox" value="" id="烹飪美食">
+                  <label class="form-check-label" for="烹飪美食">烹飪美食</label>
+                </div>
+                <div class="form-check col-oneSeventh col-mobile-oneFifth d-flex align-items-center gap-12">
+                  <input class="form-check-input" type="checkbox" value="" id="商業技能">
+                  <label class="form-check-label" for="商業技能">商業技能</label>
+                </div>
+                <div class="form-check col-oneSeventh col-mobile-oneFifth d-flex align-items-center gap-12">
+                  <input class="form-check-input" type="checkbox" value="" id="歌唱音樂">
+                  <label class="form-check-label" for="歌唱音樂">歌唱音樂</label>
+                </div>
+                <div class="form-check col-oneSeventh col-mobile-oneFifth d-flex align-items-center gap-12">
+                  <input class="form-check-input" type="checkbox" value="" id="手工藝">
+                  <label class="form-check-label" for="手工藝">手工藝</label>
+                </div>
+                <div class="form-check col-oneSeventh col-mobile-oneFifth d-flex align-items-center gap-12">
+                  <input class="form-check-input" type="checkbox" value="" id="讀書會">
+                  <label class="form-check-label" for="讀書會">讀書會</label>
+                </div>
+                <div class="form-check col-oneSeventh col-mobile-oneFifth d-flex align-items-center gap-12">
+                  <input class="form-check-input" type="checkbox" value="" id="其它">
+                  <label class="form-check-label" for="其它">其它</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="advanced-mobile p-16 d-lg-none">
+          <h6>進階篩選</h6>
+          <p>地區</p>
+          <select class="areaSelect" name="地區" id="地區">
+            <option value="請選擇">請選擇</option>
+            <option value="台北">台北</option>
+            <option value="新北">新北</option>
+            <option value="桃園">桃園</option>
+            <option value="新竹">新竹</option>
+            <option value="苗栗">苗栗</option>
+            <option value="台中">台中</option>
+            <option value="彰化">彰化</option>
+            <option value="嘉義">嘉義</option>
+            <option value="台南">台南</option>
+            <option value="高雄">高雄</option>
+            <option value="屏東">屏東</option>
+            <option value="台東">台東</option>
+            <option value="花蓮">花蓮</option>
+            <option value="宜蘭">宜蘭</option>
+            <option value="南投">南投</option>
+            <option value="基隆">基隆</option>
+            <option value="線上">線上</option>
+          </select>
+          <p class="mt-8">類別</p>
+          <select style="height: 40px;" class="classSelect" name="類別" id="類別">
+            <option value="請選擇">請選擇</option>
+            <option value="程式語言">程式語言</option>
+            <option value="語言學習">語言學習</option>
+            <option value="設計創意">設計創意</option>
+            <option value="命理占卜">命理占卜</option>
+            <option value="考試檢定">考試檢定</option>
+            <option value="舞蹈藝術">舞蹈藝術</option>
+            <option value="攝影紀錄">攝影紀錄</option>
+            <option value="運動健身">運動健身</option>
+            <option value="烹飪美食">烹飪美食</option>
+            <option value="商業技能">商業技能</option>
+            <option value="歌唱音樂">歌唱音樂</option>
+            <option value="手工藝">手工藝</option>
+            <option value="讀書會">讀書會</option>
+            <option value="其它">其它</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="partnerSection2 pt-120 pb-120">
+      <div class="skillType skillType-mobile">
+        <div class="mb-120">
+          <h4 class="mb-36">分類顯示</h4>
+          <ul class="d-flex flex-wrap gap-16 showing ml--30">
+            <li><button type="button" class="btn btn-outline-success">全部</button></li>
+            <li><button type="button" class="btn btn-outline-success">程式語言</button></li>
+            <li><button type="button" class="btn btn-outline-success">語言學習</button></li>
+            <li><button type="button" class="btn btn-outline-success">設計創意</button></li>
+            <li><button type="button" class="btn btn-outline-success">命理占卜</button></li>
+            <li><button type="button" class="btn btn-outline-success">考試檢定</button></li>
+            <li><button type="button" class="btn btn-outline-success">舞蹈藝術</button></li>
+            <li><button type="button" class="btn btn-outline-success">攝影紀錄</button></li>
+            <li><button type="button" class="btn btn-outline-success">社群行銷</button></li>
+            <li><button type="button" class="btn btn-outline-success">運動健身</button></li>
+            <li><button type="button" class="btn btn-outline-success">烹飪美食</button></li>
+            <li><button type="button" class="btn btn-outline-success">商業技能</button></li>
+            <li><button type="button" class="btn btn-outline-success">歌唱音樂</button></li>
+            <li><button type="button" class="btn btn-outline-success">手工藝</button></li>
+            <li><button type="button" class="btn btn-outline-success">花草園藝</button></li>
+            <li><button type="button" class="btn btn-outline-success">其它</button></li>
+          </ul>
+        </div>
+        <div>
+          <div class="d-flex justify-content-between mb-36 align-items-center">
+            <h4>夥伴列表</h4>
+            <div class="d-flex gap-16">
+              <p class="text-primary-green-700 mt-8 d-none d-lg-block">排列方式</p>
+              <select class="arrangement" style="width: 240px;" name="排列方式" id="排列方式">
+                <option value="最熱門">最熱門</option>
+                <option value="最新發布">最新發布</option>
+                <option value="評價最高">評價最高</option>
+                <option value="評價最多">評價最多</option>
+                <option value="交換最多">交換最多</option>
+              </select>
+            </div>  
+          </div>
+          <div class="partnerInfo">
+            <ul class="row d-flex gap-12">
+              <li class="cardWidth card p-36 mb-36">
+                <div class="d-flex gap-16 mb-24">
+                  <img width="56px" height="56px" src="/assets/images/girl-3.jpg" alt="頭像">
+                  <div>
+                    <a class="user" href="#">Ruby Chen</a>
+                    <p>舞蹈藝術</p>
+                  </div>
+                </div>
+                <div class="selfIntro card-body">
+                  <p>專長：爵士舞、K-pop</p>
+                  <p>地區：新北、台北</p>
+                  <p>簡介：即使沒有基礎，也能從頭學起！</p>
+                </div>
+                <div class="hashtag gap-8 mt-24 mb-24">
+                  <a href="#">#舞蹈</a>
+                  <a href="#">#爵士</a>
+                  <a href="#">#K-pop</a>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <p class="wannaChange">想交換的技能：日文</p>
+                  <p class="d-flex gap-8 align-items-center rate">4.7<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FAD349" class="bi bi-star-fill" viewBox="0 0 16 16"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/></svg></p>
+                </div>
+                <button type="button" class="btn">我想瞭解</button>
+              </li>
+              <li class="cardWidth card p-36 mb-36">
+                <div class="d-flex gap-16 mb-24">
+                  <img width="56px" height="56px" src="/assets/images/boy-2.jpg" alt="頭像">
+                  <div>
+                    <a class="user" href="#">阿光</a>
+                    <p>命理占ト</p>
+                  </div>
+                </div>
+                <div class="selfIntro card-body">
+                  <p>專長：塔羅</p>
+                  <p>地區：線上</p>
+                  <p>簡介：詳細分析牌意與陣列，精準解讀塔羅牌傳遞的訊息</p>
+                </div>
+                <div class="hashtag gap-8 mt-24 mb-24">
+                  <a href="#">#塔羅</a>
+                  <a href="#">#占卜</a>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <p class="wannaChange">想交換的技能：縫紉</p>
+                  <p class="d-flex gap-8 align-items-center rate">4.6<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FAD349" class="bi bi-star-fill" viewBox="0 0 16 16"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/></svg></p>
+                </div>
+                <button type="button" class="btn">我想瞭解</button>
+              </li>
+              <li class="card cardWidth p-36 mb-36">
+                <div class="d-flex gap-16 mb-24">
+                  <img width="56px" height="56px" src="/assets/images/girl-1.jpg" alt="頭像">
+                  <div>
+                    <a class="user" href="#">林小樹</a>
+                    <p>語言學習</p>
+                  </div>
+                </div>
+                <div class="selfIntro card-body">
+                  <p>專長：日文</p>
+                  <p>地區：線上</p>
+                  <p>簡介：從打招呼、購物、點餐到日常寒暄，學習最實用的日語...</p>
+                </div>
+                <div class="hashtag gap-8 mt-24 mb-24">
+                  <a href="#">#日語</a>
+                  <a href="#">#會話</a>
+                  <a href="#">#日常用語</a>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <p class="wannaChange">想交換的技能：網頁設計</p>
+                  <p class="d-flex gap-8 align-items-center rate">4.6<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FAD349" class="bi bi-star-fill" viewBox="0 0 16 16"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/></svg></p>
+                </div>
+                <button type="button" class="btn">我想瞭解</button>
+              </li>
+              <li class="card cardWidth p-36 mb-36">
+                <div class="d-flex gap-16 mb-24">
+                  <img width="56px" height="56px" src="/assets/images/girl-3.jpg" alt="頭像">
+                  <div>
+                    <a class="user" href="#">Benson</a>
+                    <p>攝影紀錄</p>
+                  </div>
+                </div>
+                <div class="selfIntro card-body">
+                  <p>專長：動態攝影、構圖技術</p>
+                  <p>地區：台中</p>
+                  <p>簡介：在意細節，總覺得自己的作品抓不到最完美的角度嗎?...</p>
+                </div>
+                <div class="hashtag gap-8 mt-24 mb-24">
+                  <a href="#">#攝影</a>
+                  <a href="#">#構圖</a>
+                  <a href="#">#濾鏡</a>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <p class="wannaChange">想交換的技能：皮件</p>
+                  <p class="d-flex gap-8 align-items-center rate">4.6<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FAD349" class="bi bi-star-fill" viewBox="0 0 16 16"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/></svg></p>
+                </div>
+                <button type="button" class="btn">我想瞭解</button>
+              </li>
+              <li class="card cardWidth p-36 mb-36">
+                <div class="d-flex gap-16 mb-24">
+                  <img width="56px" height="56px" src="/assets/images/girl-2.jpg" alt="頭像">
+                  <div>
+                    <a class="user" href="#">EN</a>
+                    <p>歌唱音樂</p>
+                  </div>
+                </div>
+                <div class="selfIntro card-body">
+                  <p>專長：流行音樂</p>
+                  <p>地區：高雄、線上</p>
+                  <p>簡介：唱周杰倫的歌不再變成糾結倫-</p>
+                </div>
+                <div class="hashtag gap-8 mt-24 mb-24">
+                  <a href="#">#流行音樂</a>
+                  <a href="#">#歌唱技巧</a>
+                  <a href="#">#中文歌曲</a>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <p class="wannaChange">想交換的技能：攝影</p>
+                  <p class="d-flex gap-8 align-items-center rate">4.5<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FAD349" class="bi bi-star-fill" viewBox="0 0 16 16"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/></svg></p>
+                </div>
+                <button type="button" class="btn">我想瞭解</button>
+              </li>
+              <li class="card cardWidth p-36 mb-36">
+                <div class="d-flex gap-16 mb-24">
+                  <img width="56px" height="56px" src="/assets/images/boy-2.jpg" alt="頭像">
+                  <div>
+                    <a class="user" href="#">Ricky</a>
+                    <p>運動健身</p>
+                  </div>
+                </div>
+                <div class="selfIntro card-body">
+                  <p>專長：健力專項</p>
+                  <p>地區：台南</p>
+                  <p>簡介：針對想參與賽事的同學，提供細節指導</p>
+                </div>
+                <div class="hashtag gap-8 mt-24 mb-24">
+                  <a href="#">#健身重訓</a>
+                  <a href="#">#體能雕塑</a>
+                  <a href="#">#模特健體</a>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <p class="wannaChange">想交換的技能：雜耍</p>
+                  <p class="d-flex gap-8 align-items-center rate">4.5<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FAD349" class="bi bi-star-fill" viewBox="0 0 16 16"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/></svg></p>
+                </div>
+                <button type="button" class="btn">我想瞭解</button>
+              </li>
+              <li class="card cardWidth p-36 mb-36">
+                <div class="d-flex gap-16 mb-24">
+                  <img width="56px" height="56px" src="/assets/images/girl-3.jpg" alt="頭像">
+                  <div>
+                    <a class="user" href="#">Ruby Chen</a>
+                    <p>舞蹈藝術</p>
+                  </div>
+                </div>
+                <div class="selfIntro card-body">
+                  <p>專長：爵士舞、K-pop</p>
+                  <p>地區：新北、台北</p>
+                  <p>簡介：即使沒有基礎，也能從頭學起！</p>
+                </div>
+                <div class="hashtag gap-8 mt-24 mb-24">
+                  <a href="#">#舞蹈</a>
+                  <a href="#">#爵士</a>
+                  <a href="#">#K-pop</a>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <p class="wannaChange">想交換的技能：日文</p>
+                  <p class="d-flex gap-8 align-items-center rate">4.7<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FAD349" class="bi bi-star-fill" viewBox="0 0 16 16"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/></svg></p>
+                </div>
+                <button type="button" class="btn">我想瞭解</button>
+              </li>
+              <li class="card cardWidth p-36 mb-36">
+                <div class="d-flex gap-16 mb-24">
+                  <img width="56px" height="56px" src="/assets/images/girl-3.jpg" alt="頭像">
+                  <div>
+                    <a class="user" href="#">蜜柑</a>
+                    <p>烹飪美食</p>
+                  </div>
+                </div>
+                <div class="selfIntro card-body">
+                  <p>專長：中式料理</p>
+                  <p>地區：嘉義</p>
+                  <p>簡介：教你煮出好吃的中式料理，讓家人們期待一起吃晚餐！</p>
+                </div>
+                <div class="hashtag gap-8 mt-24 mb-24">
+                  <a href="#">#料理</a>
+                  <a href="#">#家常菜</a>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <p class="wannaChange">想交換的技能：唱歌</p>
+                  <p class="d-flex gap-8 align-items-center rate">4.5<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FAD349" class="bi bi-star-fill" viewBox="0 0 16 16"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/></svg></p>
+                </div>
+                <button type="button" class="btn">我想瞭解</button>
+              </li>
+              <li class="card cardWidth p-36 mb-36">
+                <div class="d-flex gap-16 mb-24">
+                  <img width="56px" height="56px" src="/assets/images/girl-1.jpg" alt="頭像">
+                  <div>
+                    <a class="user" href="#">Sunny</a>
+                    <p>運動健身</p>
+                  </div>
+                </div>
+                <div class="selfIntro card-body">
+                  <p>專長：基礎瑜珈</p>
+                  <p>地區：澎湖、線上</p>
+                  <p>簡介：引導初學者進入瑜珈世界強調，正確姿勢與身體覺察。</p>
+                </div>
+                <div class="hashtag gap-8 mt-24 mb-24">
+                  <a href="#">#瑜珈</a>
+                  <a href="#">#動作調整</a>
+                  <a href="#">#放鬆伸展</a>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <p class="wannaChange">想交換的技能：手工藝</p>
+                  <p class="d-flex gap-8 align-items-center rate">4.5<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FAD349" class="bi bi-star-fill" viewBox="0 0 16 16"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/></svg></p>
+                </div>
+                <button type="button" class="btn">我想瞭解</button>
+              </li>
+            </ul> 
+          </div>
+          <ul class="pageSelect d-flex gap-16 justify-content-center ml--30">
+            <li><a class="d-block p-12" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/></svg></a></li>
+            <li><a class="d-block p-12" href="#">1</a></li>
+            <li><a class="d-block p-12" href="#">2</a></li>
+            <li><a class="d-block p-12" href="#">3</a></li>
+            <li><a class="d-block p-12" href="#">4</a></li>
+            <li><a class="d-block p-12" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/></svg></a></li>
+          </ul>
+        </div>
+    </div>
     <%- include('./layout/footer'); -%>
 
     <script type="module" src="../main.js"></script>
