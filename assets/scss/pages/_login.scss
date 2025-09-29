@@ -5,5 +5,21 @@
 // 專屬樣式寫這裡，避免污染其他頁
 
 .page-login {
-  // TODO: 切版樣式
+  .login-card {
+    @media (min-width: 768px) {
+      min-height: clamp(540px, 72vh, 680px);
+    }
+  }
+
+  .login-card .card-body {
+    padding: clamp(32px, 7vw, 80px);
+  }
 }
+
+/* 更圓的輸入框與 icon 尺寸微調 */
+.input-group .form-control { border-radius: 999px; }
+.input-group-text { border-top-left-radius: 999px; border-bottom-left-radius: 999px; }
+#togglePwd { border-top-left-radius: 0 !important; border-bottom-left-radius: 0 !important; }
+
+.feather-sm { width: 18px; height: 18px; }
+.input-group .feather { width: 18px; height: 18px; stroke: #1F5E2A; }

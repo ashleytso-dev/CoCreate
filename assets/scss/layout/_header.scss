@@ -1,5 +1,60 @@
-// 頁首樣式
-.header{
-  background: #69F0AE;
-  font-size: 64px;
+/* assets/scss/layout/_header.scss */
+
+$header-bg: $primary-green-200;
+
+.site-header {
+  background-color: $header-bg;
+
+  /* 左側品牌區 */
+  .brand-logo {
+    width: 80px;
+    height: auto;
+    object-fit: contain;
+    display: block;
+  }
+
+  .navbar-brand { gap: 1rem; }
+
+  /* 導覽列 */
+  .navbar { background-color: transparent; }
+
+  .nav-link {
+    color: $neutral-950;
+    &:hover,
+    &:focus {
+      color: $neutral-950;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    &.active {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+  }
+
+  .login-link {
+    color: $neutral-950;
+    &:hover { color: $neutral-800; }
+  }
+
+  /* 搜尋按鈕（保留你原本的行為） */
+  .btn.btn-outline-dark { --bs-btn-hover-bg: transparent; }
+
+  /* 漢堡按鈕樣式 */
+  .navbar-toggler {
+    border-color: rgba(0,0,0,.15);
+    &:focus { box-shadow: none; }
+  }
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0,0,0,0.7)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  }
+}
+
+/* 斷點：縮小 logo，避免 header 過高 */
+@import "bootstrap/scss/mixins/breakpoints";
+@include media-breakpoint-down(lg) {
+  .site-header .brand-logo { width: 64px; }
+}
+@include media-breakpoint-down(md) {
+  .site-header .brand-logo { width: 56px; }
 }
