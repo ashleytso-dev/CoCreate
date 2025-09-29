@@ -1,49 +1,5 @@
-.site-footer {
-  background-color: transparent;
-}
-
-.footer-logo {
-  width: 40px;       
-  height: auto;
-  object-fit: contain;
-}
-
-/* 右側連結與社群按鈕樣式 */
-.footer-link {
-  color: $neutral-950;
-  text-decoration: none;
-  &:hover, &:focus {
-    text-decoration: underline;
-    text-underline-offset: 3px;
-  }
-}
-
-/*.footer-links {
-  /* 右欄看起來是單欄垂直排列，維持間距 
-}*/
-
-.social-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border: 1px solid $neutral-200;
-  border-radius: 50%;
-  color: $neutral-950;
-  text-decoration: none;
-
-  &:hover, &:focus {
-    background-color: $neutral-100;
-    border-color: $neutral-200;
-  }
-
-  i { font-size: 18px; line-height: 1; }
-}
-
-/* RWD 微調：在小尺寸時讓左右區塊更緊湊 */
-@import "bootstrap/scss/mixins/breakpoints";
-
-@include media-breakpoint-down(md) {
-  .footer-logo { width: 36px; }
+// 頁尾樣式
+.footer{
+  background: #69F0AE;
+  font-size: 64px;
 }
