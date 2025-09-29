@@ -123,7 +123,7 @@
 					</div>
 					<!-- 右邊欄位 -->
 					<div class="col-12 col-lg-9">
-						<div class="card bg-white">
+						<div class="card bg-white border-0">
 							<div class="card-body p-16 pt-lg-36 pb-lg-48 px-lg-48">
 								<div class="tab-content" id="v-pills-tabContent">
 									<!-- 總覽 -->									
@@ -218,7 +218,26 @@
 													</div>
 													<div class="w-100 mb-16">
 														<p class="mb-8">技能分類<span class="warning">*</span></p>									
-														<button class="form-select text-neutral-600 text-start rounded-8 py-3" type="button" data-bs-toggle="dropdown" aria-expanded="false">選擇分類</button>
+														<div class="dropdown">
+															<button class="form-select text-neutral-600 text-start rounded-8 py-3" type="button" data-bs-toggle="dropdown" aria-expanded="false">選擇分類</button>
+															<ul class="dropdown-menu">
+																<li><a class="dropdown-item" href="#">程式語言</a></li>
+																<li><a class="dropdown-item" href="#">語言學習</a></li>
+																<li><a class="dropdown-item" href="#">設計創意</a></li>
+																<li><a class="dropdown-item" href="#">命理占卜</a></li>
+																<li><a class="dropdown-item" href="#">考試檢定</a></li>
+																<li><a class="dropdown-item" href="#">舞蹈藝術</a></li>
+																<li><a class="dropdown-item" href="#">攝影紀錄</a></li>
+																<li><a class="dropdown-item" href="#">社群行銷</a></li>
+																<li><a class="dropdown-item" href="#">運動健身</a></li>
+																<li><a class="dropdown-item" href="#">烹飪美食</a></li>
+																<li><a class="dropdown-item" href="#">商業技能</a></li>
+																<li><a class="dropdown-item" href="#">歌唱音樂</a></li>
+																<li><a class="dropdown-item" href="#">手工藝</a></li>
+																<li><a class="dropdown-item" href="#">花草園藝</a></li>
+																<li><a class="dropdown-item" href="#">其它</a></li>
+															</ul>
+														</div>
 													</div>
 												</div>
 												<div>											
@@ -233,7 +252,14 @@
 												</div>
 												<div class="mb-16 mb-lg-32">
 													<p class="mb-8">交換方式<span class="warning">*</span></p>
-													<button class="form-select text-neutral-600 text-start rounded-8 py-3" type="button" data-bs-toggle="dropdown" aria-expanded="false">線上</button>												
+													<div class="dropdowm">
+														<button class="form-select text-neutral-600 text-start rounded-8 py-3" type="button" data-bs-toggle="dropdown" aria-expanded="false">選擇方式</button>												
+														<ul class="dropdown-menu">
+															<li><a class="dropdown-item" href="#">線上</a></li>
+															<li><a class="dropdown-item" href="#">實體</a></li>
+															<li><a class="dropdown-item" href="#">混合</a></li>
+														</ul>
+													</div>
 												</div>
 												<div class="mb-16 mb-lg-32">
 													<p class="mb-8">技能標籤</p>
@@ -568,18 +594,17 @@
 												<div class="border border-primary-green-500 rounded-16 rounded-top-0 rounded-end-16 p-24">
 													<div class="border-bottom mb-24">
 														<h6 class="text-neutral-800 fs-6 fw-bold mb-32">基本設定</h6>
-														<div class="d-flex justify-content-between mb-16">
-															<div class="width-lg-50-percent me-48">
+														<div class="input-width-50-percent mb-16">
+															<div class="">
 																<p class="mb-8">電子信箱<span class="warning">*</span></p>
-																<input type="text" class="form-control rounded-8" id="new-skill" placeholder="user@example.com">
+																<input type="text" class="form-control rounded-8 test" id="new-skill" placeholder="user@example.com" disabled>
 															</div>
 														</div>
 														<p class="fs-tiny text-neutral-500">變更信箱需要重新驗證</p>
 														<button type="button" class="btn btn-primary-green-500 text-white fs-base py-8 px-24 rounded-80 mb-24">編輯信箱</button>
 													</div>
 													<h6 class="text-neutral-800 fs-6 fw-bold mb-32">變更密碼</h6>											
-													
-													<div class="width-lg-50-percent mb-24">
+													<div class="input-width-50-percent mb-24">
 														<p class="mb-8">目前密碼<span class="warning">*</span></p>
 														<div class="input-group mb-3">
 															<input type="password" id="password" class="form-control rounded-8 rounded-end-0" placeholder="輸入密碼">
@@ -588,25 +613,24 @@
 															</button>
 														</div>
 													</div>																									
-													<div class="width-lg-50-percent mb-24">
+													<div class="input-width-50-percent mb-24">
 														<p class="mb-8">新密碼<span class="warning">*</span></p>
 														<div class="input-group mb-3">
 															<input type="password" id="password" class="form-control rounded-8 rounded-end-0" placeholder="輸入密碼">
 															<button class="btn btn-outline-secondary" type="button" id="togglePassword">
 																<i data-feather="eye"></i>
 															</button>
-														</div>																									
+														</div>																								
 													</div>
-													<div class="width-lg-50-percent mb-24">
+													<div class="input-width-50-percent mb-24">
 														<p class="mb-8">確認密碼<span class="warning">*</span></p>
 														<div class="input-group mb-3">
 															<input type="password" id="password" class="form-control rounded-8  rounded-end-0" placeholder="輸入密碼">
 															<button class="btn btn-outline-secondary" type="button" id="togglePassword">
 																<i data-feather="eye"></i>
 															</button>
-														</div>																									
+														</div>																								
 													</div>
-													
 													<div>
 														<p class="fs-tiny text-neutral-500 mb-0">密碼要求：</p>
 														<ul class="fs-tiny text-neutral-500 mb-24">
@@ -639,7 +663,7 @@
 		feather.replace({ width: 18, height: 18 });
 		</script>
 		<!-- bundle JS -->
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+		<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> -->
 		<script type="module">
 		import { Collapse } from 'bootstrap';
 

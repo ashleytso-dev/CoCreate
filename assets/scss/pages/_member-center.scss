@@ -158,7 +158,11 @@ align-items: flex-end;
 
 /* lg 以上移除下邊框 */
 @media (min-width: 992px) {
-  .lg-border-bottom-0 { border-bottom: 0 !important; }
+  .lg-border-bottom-0 { border-bottom: 0 !important; 
+  }
+  .input-width-50-percent {
+    width: 50%;
+  }
 }
 
 /* 技能 hashtag 標籤樣式 */
@@ -177,4 +181,8 @@ align-items: flex-end;
 /* 避免 placeholder 被截斷 */
 .form-control::placeholder {
   white-space: normal;     /* 允許換行 */
+}
+
+.dropdown-item:active {
+  background-color: #5B8C30;
 }
