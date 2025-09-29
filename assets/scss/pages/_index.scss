@@ -10,10 +10,10 @@
   --brand-yellow: #F6C549; 
   --title-green: #1F5E2A;  
   background-color: var(--hero-bg);
-  background-image: url("../assets/images/hero-forest.png");
+  background-image: url("../assets/images/hero-forest-bg.png");
   background-repeat: no-repeat;
   background-position: right 8% bottom;
-  background-size: clamp(380px, 48vw, 640px);
+  background-size: cover;
   position: relative;
   overflow: hidden;
 
@@ -227,7 +227,7 @@
       align-items: center;
       justify-content: center;
       height: 44px;
-      padding-inline: 20px;
+      padding-inline: 48px;
       border-radius: 999px;
       flex-shrink: 0;
       background-color: #5B8C30;
@@ -275,7 +275,9 @@
   }
 
   /* 指標數據 */
-  .stats { margin-top: clamp(24px, 6vw, 72px); }
+  .stats { 
+    margin-top: clamp(24px, 6vw, 72px);
+  }
   .stat {
     text-align: center;
 
@@ -287,8 +289,9 @@
       margin-bottom: 6px;
     }
     &__label {
-      color: #4b5b52;
+      color: #5B8C30;
       font-weight: 700;
+      margin-bottom: 120px;
     }
   }
 
