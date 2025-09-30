@@ -4,15 +4,321 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <title>index</title>
   </head>
   <body>
     <%- include('./layout/header'); -%>
 
-    <h1 class="index-title">我是首頁</h1>
+    <!-- Hero -->
+<section class="hero">
+  <div class="container hero__container py-5 py-lg-6">
+    <div class="hero__content">
+      <h1 class="hero__title mb-3">
+        在森林中 共同成長
+      </h1>
+      <p class="hero__desc lead text-secondary mb-4">
+        讓每個人既是學習者，也是分享者。<br>
+        透過技能交換、共學與故事分享，找到夥伴，持續成長的學習社群。
+      </p>
+      <div class="hero__actions d-flex gap-3">
+        <a href="/pages/register.html" class="btn btn-hero btn-hero--green">開始你的學習之旅</a>
+        <a href="/pages/about.html" class="btn btn-hero btn-hero--yellow">了解森森創學</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 底部弧形 -->
+  <svg class="hero__wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,64 C240,96 480,96 720,64 C960,32 1200,32 1440,64 L1440,120 L0,120 Z"></path>
+  </svg>
+</section>
+
+<!-- Section 2：搜尋/標籤/指標 -->
+<section class="search-section">
+  <div class="container">
+    <div class="search-section__card">
+      <div class="search-section__logo is-left">
+        <img src="../assets/images/CoCreate_logo_icon.png" alt="logo" width="72">
+      </div>
+
+      <h2 class="search-section__title">找到你的學習夥伴</h2>
+      <p class="search-section__subtitle">
+        搜尋你想學習的技能，或搜尋熱門的交換項目
+      </p>
+
+      <!-- 搜尋列 -->
+      <form class="searchbar" role="search">
+        <div class="searchbar__input">
+          <span class="searchbar__icon" aria-hidden="true">
+            <i data-feather="search" class="searchbar__icon-svg"></i>
+          </span>
+          <input type="search" class="form-control" placeholder="搜尋你想學習的技能…" aria-label="Search">
+          <button class="btn btn-hero btn-hero--green searchbar__btn" type="submit">搜尋</button>
+        </div>
+      </form>
+
+      <!-- 熱門標籤 -->
+      <div class="tags">
+        <span class="tag"># 手帳設計</span>
+        <span class="tag"># 日語會話</span>
+        <span class="tag"># 攝影技巧</span>
+        <span class="tag"># 烘焙</span>
+        <span class="tag"># 平面設計</span>
+      </div>
+    </div>
+
+    <!-- 指標數據列 -->
+    <div class="stats row g-4 g-lg-5 justify-content-between">
+      <div class="col-6 col-lg-3">
+        <div class="stat">
+          <div class="stat__num">2,500+</div>
+          <div class="stat__label">活躍學習者</div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="stat">
+          <div class="stat__num">1,200+</div>
+          <div class="stat__label">技能項目</div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="stat">
+          <div class="stat__num">850+</div>
+          <div class="stat__label">成功配對</div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="stat">
+          <div class="stat__num">95%</div>
+          <div class="stat__label">滿意度</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 3：為什麼選擇森森創學？ -->
+<section class="why">
+  <div class="container">
+    <div class="why__head text-center">
+      <h2 class="why__title">
+        為什麼選擇森森創學？
+        <img class="why__title-illu" src="../assets/images/boy-3.png" alt="" aria-hidden="true">
+      </h2>
+      <p class="why__subtitle">
+        我們相信每個人都有獨特的技能和知識，透過分享與交換，創造無限的學習可能。
+      </p>
+    </div>
+
+    <!-- 四張卡片 -->
+    <div class="why__grid">
+      <article class="why__card">
+        <div class="why__icon">
+          <i class="fi fi-rr-book-alt"></i>
+        </div>
+        <h3 class="why__card-title">技能交換</h3>
+        <p class="why__desc">用你擅長的技能，換取你想學習的知識，創造雙贏的學習體驗。</p>
+      </article>
+
+      <article class="why__card">
+        <div class="why__icon">
+          <i class="fi fi-rr-resources"></i>
+        </div>
+        <h3 class="why__card-title">共學社群</h3>
+        <p class="why__desc">加入志同道合的學習小組，一起成長、一起進步。</p>
+      </article>
+
+      <article class="why__card">
+        <div class="why__icon">
+          <i class="fi fi-rr-comment-heart" aria-hidden="true"></i>
+        </div>
+        <h3 class="why__card-title">故事分享</h3>
+        <p class="why__desc">分享你的學習歷程與成長故事，激勵更多人踏上學習之路。</p>
+      </article>
+
+      <article class="why__card">
+        <div class="why__icon">
+          <i class="fi fi-rr-rocket" aria-hidden="true"></i>
+        </div>
+        <h3 class="why__card-title">即時媒合</h3>
+        <p class="why__desc">智能配對系統，快速找到最適合的學習夥伴和交換對象。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Section 4：技能交換流程 -->
+<section class="flow">
+  <div class="container">
+    <div class="flow__head text-center">
+      <h2 class="flow__title">
+        技能交換流程
+        <img class="flow__title-illu" src="../assets/images/girl-4.png" alt="" aria-hidden="true">
+      </h2>
+      <p class="flow__subtitle">如何開始你的交換旅程</p>
+    </div>
+
+    <ol class="flow__list">
+      <li class="flow__item">
+        <div class="flow__badge">01</div>
+        <div class="flow__circle">
+          <i data-feather="users"></i>
+          <div class="flow__label">找尋夥伴</div>
+        </div>
+        <p class="flow__desc">找尋你想要的技能，配對你想要交換的夥伴。</p>
+
+        <!-- 箭頭：桌機向右、手機向下；最後一個會被 CSS 隱藏 -->
+        <img class="flow__arrow d-none d-lg-block" src="../assets/images/arrow-right.svg" alt="" aria-hidden="true" loading="lazy">
+        <img class="flow__arrow flow__arrow--down d-lg-none" src="../assets/images/arrow-right.svg" alt="" aria-hidden="true" loading="lazy">
+      </li>
+
+      <li class="flow__item">
+        <div class="flow__badge">02</div>
+        <div class="flow__circle">
+          <i data-feather="edit"></i>
+          <div class="flow__label">填寫申請</div>
+        </div>
+        <p class="flow__desc">向對方發送交換邀請，簡單說明你的技能與想法。</p>
+        <img class="flow__arrow d-none d-lg-block" src="../assets/images/arrow-right.svg" alt="" aria-hidden="true" loading="lazy">
+        <img class="flow__arrow flow__arrow--down d-lg-none" src="../assets/images/arrow-right.svg" alt="" aria-hidden="true" loading="lazy">
+      </li>
+
+      <li class="flow__item">
+        <div class="flow__badge">03</div>
+        <div class="flow__circle">
+          <i class="fi fi-rr-time-past"></i>
+          <div class="flow__label">等待回覆</div>
+        </div>
+        <p class="flow__desc">等待對方確認，若同意即可進入交換階段。</p>
+        <img class="flow__arrow d-none d-lg-block" src="../assets/images/arrow-right.svg" alt="" aria-hidden="true" loading="lazy">
+        <img class="flow__arrow flow__arrow--down d-lg-none" src="../assets/images/arrow-right.svg" alt="" aria-hidden="true" loading="lazy">
+      </li>
+
+      <li class="flow__item">
+        <div class="flow__badge">04</div>
+        <div class="flow__circle">
+          <i class="fi fi-rr-messages"></i>
+          <div class="flow__label">開始交流</div>
+        </div>
+        <p class="flow__desc">配對成功後即可展開技能互換，一起成長！</p>
+        <!-- 最後一個不需要箭頭 -->
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- Section 5：學習者的真實心聲 -->
+<section class="voices">
+  <div class="container">
+    <div class="voices__head text-center">
+      <h2 class="voices__title">學習者的真實心聲</h2>
+      <p class="voices__subtitle">聽聽社群夥伴們的成長故事</p>
+    </div>
+
+    <div class="voices__grid">
+      <!-- Card 1 -->
+      <article class="voices__card">
+        <span class="voices__q" aria-hidden="true">❝</span>
+        <p class="voices__text">
+          透過森森創學，我用設計技能換到日語會話練習機會。不只學到新語言，還認識了很多有趣的朋友！
+        </p>
+        <hr class="voices__divider">
+        <div class="voices__meta">
+          <div class="voices__user">
+            <i class="bi bi-person-circle"></i>
+            <div>
+              <div class="voices__name">Ariel</div>
+              <div class="voices__role">平面設計師</div>
+            </div>
+          </div>
+          <div class="voices__tags">
+            <span class="tag"># 平面設計</span>
+            <span class="tag"># 日語學習</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="voices__card">
+        <span class="voices__q" aria-hidden="true">❝</span>
+        <p class="voices__text">
+          這個平台讓我發現原來學習可以這麼有趣！我分享手作設計技能，同時學習攝影，互相成長的感覺真棒。
+        </p>
+        <hr class="voices__divider">
+        <div class="voices__meta">
+          <div class="voices__user">
+            <i class="bi bi-person-circle"></i>
+            <div>
+              <div class="voices__name">Ming</div>
+              <div class="voices__role">軟體工程師</div>
+            </div>
+          </div>
+          <div class="voices__tags">
+            <span class="tag"># 手作設計</span>
+            <span class="tag"># 攝影</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="voices__card">
+        <span class="voices__q" aria-hidden="true">❝</span>
+        <p class="voices__text">
+          在社群分享輸入技能，換取烘焙技巧。每次交換都像是開啟新世界的大門，充滿驚喜！
+        </p>
+        <hr class="voices__divider">
+        <div class="voices__meta">
+          <div class="voices__user">
+            <i class="bi bi-person-circle"></i>
+            <div>
+              <div class="voices__name">瑜伽小天使</div>
+              <div class="voices__role">瑜伽老師</div>
+            </div>
+          </div>
+          <div class="voices__tags">
+            <span class="tag"># 攝影</span>
+            <span class="tag"># 烘焙</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Section 6：書頁造型 CTA -->
+<section class="cta-book">
+  <div class="container">
+    <div class="cta-book__panel">
+      <div class="cta-book__inner">
+        <h2 class="cta-book__title">準備好開始你的學習之旅了嗎？</h2>
+        <p class="cta-book__subtitle">
+          加入森森創學，與志同道合的夥伴一起成長<br>
+          分享你的技能，學習新的知識
+        </p>
+
+        <div class="cta-book__actions">
+          <a href="/pages/register.html" class="btn btn-cta btn-cta--green">立即註冊</a>
+          <a href="/pages/find-partners.html" class="btn btn-cta btn-cta--yellow">探索技能</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
 
     <%- include('./layout/footer'); -%>
 
+    <!-- 載入 JS -->
     <script type="module" src="../main.js"></script>
+    <!-- 載入 feather 腳本 -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <!-- 轉換 data-feather 標籤為 inline SVG -->
+    <script>
+    feather.replace({ width: 64, height: 64 });
+    </script>
   </body>
 </html>
