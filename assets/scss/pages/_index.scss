@@ -468,15 +468,20 @@
 
 /* 圓形容器（icon + 標題） */
 .flow__circle {
-  width:  clamp(180px, 22vw, 240px);
-  height: clamp(180px, 22vw, 240px);
+  width: clamp(180px, 22vw, 220px);
+  aspect-ratio: 1 / 1;
   border-radius: 999px;
   border: 3px solid var(--brand-green);
   margin: 0 auto clamp(12px, 2vw, 16px);
-  display: grid;
-  place-items: center;
-  row-gap: 10px;
-  background: #fff;                 /* 與頁面白底一致 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: clamp(24px, 3vw, 28px) clamp(16px, 2.5vw, 24px);
+  background: #fff;
+  color: #5B8C30;
+  font-size:64px
 }
 
 .flow__icon {
@@ -519,6 +524,7 @@
   margin: 8px auto 0;
   color: #4b5b52;
 }
+
 
 /* 連接箭頭：桌機向右、手機向下（最後一個隱藏） */
 .flow__arrow {
