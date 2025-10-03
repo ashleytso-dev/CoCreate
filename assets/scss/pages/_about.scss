@@ -7,3 +7,55 @@
 .page-about {
   // TODO: 切版樣式
 }
+
+.aboutCocreate{
+  max-width: 1296px;
+  margin: 0 auto;
+  font-size: $font-size-lg;
+}
+
+.ourMission{
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.ourMission-l{
+  width: 48%;
+  font-size: $font-size-lg;
+}
+
+.ourMission-r{
+  width: 48%;
+  border-radius: $radius-36;
+}
+
+.core{
+  max-width: 1296px;
+  margin: 0 auto;
+  font-size: $font-size-lg;
+  h5{
+    font-weight: $font-weight-bold;
+  }
+}
+
+.ourGroup{
+  max-width: 1296px;
+  margin: 0 auto;
+  font-size: $font-size-lg;
+  img{
+    border-radius: 54px;
+    border: 1px solid $primary-green-500;
+  }
+}
+
+.startUsing{
+  font-size: $font-size-lg;
+}
+
+.registerNow:hover{
+  color: $white;
+}
+
+.skillSearch:hover{
+  background-color: $primary-green-700;
+}
