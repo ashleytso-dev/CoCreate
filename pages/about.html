@@ -1,132 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>about</title>
-  </head>
-  <body>
-    <%- include('./layout/header'); -%>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>CoCreate｜關於我們</title>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+		/>
+	</head>
+	<body>
+		<%- include('./layout/header'); -%>
 
-    <div style="background-color: #FCF0C8;">
-      <div class="aboutCocreate text-center pt-80 pb-80 d-none d-lg-block">
-        <h2 class="mb-16 text-primary-green-700">關於森森創學</h2>
-        <p class="m-0 text-primary-green-700">我們相信每個人都有獨特的技能和知識，透過分享與交換，可以創造無限的學習可能。</p>
-        <p class="m-0 text-primary-green-700">森森創學不只是一個技能交換平台，更是一個讓每個人都能成長的學習社群。</p>
-      </div>
-      <div>
-        <div class="aboutCocreate text-center pt-80 pb-80 d-lg-none">
-          <h2 class="mb-16 text-primary-green-700">關於森森創學</h2>
-          <p class="m-0 text-primary-green-700">我們相信每個人都有獨特的技能和知識，<br>透過分享與交換，可以創造無限的學習可能。</p>
-          <p class="m-0 text-primary-green-700">森森創學不只是一個技能交換平台，<br>更是一個讓每個人都能成長的學習社群。</p>
-        </div>
-      </div>
-    </div>
-    <div style="background-color: #EFF2DC;" class="plpr-16">
-      <div class="ourMission d-lg-flex justify-content-between pt-80 pb-80">
-        <div class="ourMission-l align-content-center d-none d-lg-block">
-          <h2 class="mb-16 text-primary-green-700">我們的使命</h2>
-          <p class="text-primary-green-700">在這個快速變化的時代，學習不應該是孤獨的旅程。我們希望透過技能交換的模式，讓每個人都能找到學習夥伴，分享自己的專長，同時學習新的技能。就像森林中的樹木互相支撐、共同成長一樣，我們希望創造一個互助學習的生態系統，讓知識和技能在社群中自由流動，讓每個人都能在這片森林中茁壯成長。</p>
-        </div>
-        <div class="text-center ourMission-l align-content-center d-lg-none">
-          <h2 class="mb-16 text-primary-green-700">我們的使命</h2>
-          <p class="text-primary-green-700 mb-24">在這個快速變化的時代，<br>學習不應該是孤獨的旅程。<br>我們希望透過技能交換的模式，<br>讓每個人都能找到學習夥伴，<br>分享自己的專長，同時學習新的技能。<br>就像森林中的樹木互相支撐、共同成長一樣，<br>我們希望創造一個互助學習的生態系統，<br>讓知識和技能在社群中自由流動，<br>讓每個人都能在這片森林中茁壯成長。</p>
-        </div>
-        <img class="ourMission-r" src="https://png.pngtree.com/thumb_back/fh260/background/20230611/pngtree-beautiful-cartoon-forest-scene-animated-wallpaper-hd-image_2933141.jpg" alt="">
-      </div>
-    </div>
-    <div>
-      <div class="core text-center pt-80 pb-80">
-        <div class="mb-48">
-          <h2 class="mb-16 text-primary-green-700">我們的核心價值</h2>
-          <p class="text-primary-green-700 d-none d-lg-block">這些價值觀指引著我們的每一個決定，塑造著森森創學的文化</p>
-          <p class="text-primary-green-700 d-lg-none">這些價值觀指引著我們的每一個決定，<br>塑造著森森創學的文化</p>
-        </div>
-        <div class="coreValue d-flex justify-content-center gap-16 plpr-16">
-          <div class="card" style="width: 18em;">
-            <div class="card-body padding-16">
-              <img class="mt-16 mb-16" style="width: 64px;" src="/assets/images/ReadingBook.svg" alt="">
-              <h5 class="text-primary-green-700">共生成長</h5>
-              <p class="card-text text-primary-green-700">相信每個人都有獨特的價值，透過分享與交換，創造共同成長的環境。</p>
-            </div>
-          </div>
-          <div class="card" style="width: 18em;">
-            <div class="card-body">
-              <img class="mt-16 mb-16" style="width: 64px;" src="/assets/images/GroupPeople.svg" alt="">
-              <h5 class="text-primary-green-700">深度體驗</h5>
-              <p class="card-text text-primary-green-700">專注於提供高品質的學習體驗，讓每次技能交換都有實質收穫。</p>
-            </div>
-          </div>
-          <div class="card" style="width: 18em;">
-            <div class="card-body">
-              <img class="mt-16 mb-16" style="width: 64px;" src="/assets/images/Heart.svg" alt="">
-              <h5 class="text-primary-green-700">友善社群</h5>
-              <p class="card-text text-primary-green-700">營造溫暖友善的學習氛圍，讓每個人都能安心分享與學習。</p>
-            </div>
-          </div>
-          <div class="card" style="width: 18em;">
-            <div class="card-body">
-              <img class="mt-16 mb-16" style="width: 64px;" src="/assets/images/Flash.svg" alt="">
-              <h5 class="text-primary-green-700">創新學習</h5>
-              <p class="card-text text-primary-green-700">突破傳統學習模式，用創新的方式讓學習變得更有趣、更有效。</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div style="background-color: #FCF0C8;">
-      <div class="ourGroup text-center pt-80 pb-80 plpr-16">
-        <div class="mb-48">
-          <h2 class="mb-16 text-primary-green-700">認識我們的團隊</h2>
-          <p class="text-primary-green-700">一群熱愛學習、相信分享力量的夥伴</p>
-        </div>
-        <div class="groupMember d-flex justify-content-center gap-16">
-          <div class="card" style="width: 18em;">
-            <div class="card-body padding-16">
-              <img class="mt-16 mb-16" style="width: 108px;" src="/assets/images/Mumu.png" alt="">
-              <h5 class="text-primary-green-700">Mumu</h5>
-              <h5 class="text-primary-green-700">萬能打雜工</h5>
-            </div>
-          </div>
-          <div class="card" style="width: 18em;">
-            <div class="card-body">
-              <img class="mt-16 mb-16" style="width: 108px;" src="/assets/images/Chris.png" alt="">
-              <h5 class="text-primary-green-700">Chris</h5>
-              <h5 class="text-primary-green-700">美術指導</h5>
-            </div>
-          </div>
-          <div class="card" style="width: 18em;">
-            <div class="card-body">
-              <img class="mt-16 mb-16" style="width: 108px;" src="/assets/images/Kururu.png" alt="">
-              <h5 class="text-primary-green-700">Kururu</h5>
-              <h5 class="text-primary-green-700">技術長</h5>
-            </div>
-          </div>
-          <div class="card" style="width: 18em;">
-            <div class="card-body">
-              <img class="mt-16 mb-16" style="width: 108px;" src="/assets/images/Ashley.png" alt="">
-              <h5 class="text-primary-green-700">Ashley</h5>
-              <h5 class="text-primary-green-700">行銷企劃</h5>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div style="background-color: #EFF2DC;">
-      <div class="startUsing text-center pt-80 pb-80">
-        <h2 class="mb-16 text-primary-green-700">一起加入這片成長的森林</h2>
-        <p class="m-0 text-primary-green-700 d-none d-lg-block">無論你想分享什麼技能，或是學習什麼新知識，森森創學都歡迎你的加入</p>
-        <p class="m-0 text-primary-green-700 d-lg-none">無論你想分享什麼技能，或是學習什麼新知識，<br>森森創學都歡迎你的加入</p>
-        <div class="mt-40 d-flex justify-content-center gap-24">
-          <button style="color: white; width: 160px;" class="btn btn-primary-green-500 btn-lg" type="submit">立即註冊</button>
-          <button style="color: white; width: 160px;" class="btn btn-primary-green-500 btn-lg" type="submit">探索技能</button>
-        </div>
-      </div>
-    </div>
-    
-    <%- include('./layout/footer'); -%>
+		<div style="background-color: #fcf0c8">
+			<div class="aboutCocreate text-center pt-80 pb-80 d-none d-lg-block">
+				<h2 class="mb-16 text-primary-green-700">關於森森創學</h2>
+				<p class="m-0 text-primary-green-700">
+					我們相信每個人都有獨特的技能和知識，透過分享與交換，可以創造無限的學習可能。
+				</p>
+				<p class="m-0 text-primary-green-700">
+					森森創學不只是一個技能交換平台，更是一個讓每個人都能成長的學習社群。
+				</p>
+			</div>
+			<div>
+				<div class="aboutCocreate text-center pt-80 pb-80 d-lg-none">
+					<h2 class="mb-16 text-primary-green-700">關於森森創學</h2>
+					<p class="m-0 text-primary-green-700">
+						我們相信每個人都有獨特的技能和知識，<br />透過分享與交換，可以創造無限的學習可能。
+					</p>
+					<p class="m-0 text-primary-green-700">
+						森森創學不只是一個技能交換平台，<br />更是一個讓每個人都能成長的學習社群。
+					</p>
+				</div>
+			</div>
+		</div>
+		<div style="background-color: #eff2dc" class="plpr-16">
+			<div class="ourMission d-lg-flex justify-content-between pt-80 pb-80">
+				<div class="ourMission-l align-content-center d-none d-lg-block">
+					<h2 class="mb-16 text-primary-green-700">我們的使命</h2>
+					<p class="text-primary-green-700">
+						在這個快速變化的時代，學習不應該是孤獨的旅程。我們希望透過技能交換的模式，讓每個人都能找到學習夥伴，分享自己的專長，同時學習新的技能。就像森林中的樹木互相支撐、共同成長一樣，我們希望創造一個互助學習的生態系統，讓知識和技能在社群中自由流動，讓每個人都能在這片森林中茁壯成長。
+					</p>
+				</div>
+				<div class="text-center ourMission-l align-content-center d-lg-none">
+					<h2 class="mb-16 text-primary-green-700">我們的使命</h2>
+					<p class="text-primary-green-700 mb-24">
+						在這個快速變化的時代，<br />學習不應該是孤獨的旅程。<br />我們希望透過技能交換的模式，<br />讓每個人都能找到學習夥伴，<br />分享自己的專長，同時學習新的技能。<br />就像森林中的樹木互相支撐、共同成長一樣，<br />我們希望創造一個互助學習的生態系統，<br />讓知識和技能在社群中自由流動，<br />讓每個人都能在這片森林中茁壯成長。
+					</p>
+				</div>
+				<img
+					class="ourMission-r"
+					src="https://png.pngtree.com/thumb_back/fh260/background/20230611/pngtree-beautiful-cartoon-forest-scene-animated-wallpaper-hd-image_2933141.jpg"
+					alt=""
+				/>
+			</div>
+		</div>
+		<div>
+			<div class="core text-center pt-80 pb-80">
+				<div class="mb-48">
+					<h2 class="mb-16 text-primary-green-700">我們的核心價值</h2>
+					<p class="text-primary-green-700 d-none d-lg-block">
+						這些價值觀指引著我們的每一個決定，塑造著森森創學的文化
+					</p>
+					<p class="text-primary-green-700 d-lg-none">
+						這些價值觀指引著我們的每一個決定，<br />塑造著森森創學的文化
+					</p>
+				</div>
+				<div class="coreValue d-flex justify-content-center gap-16 plpr-16">
+					<div class="card" style="width: 18em">
+						<div class="card-body padding-16">
+							<img
+								class="mt-16 mb-16"
+								style="width: 64px"
+								src="/assets/images/ReadingBook.svg"
+								alt=""
+							/>
+							<h5 class="text-primary-green-700">共生成長</h5>
+							<p class="card-text text-primary-green-700">
+								相信每個人都有獨特的價值，透過分享與交換，創造共同成長的環境。
+							</p>
+						</div>
+					</div>
+					<div class="card" style="width: 18em">
+						<div class="card-body">
+							<img
+								class="mt-16 mb-16"
+								style="width: 64px"
+								src="/assets/images/GroupPeople.svg"
+								alt=""
+							/>
+							<h5 class="text-primary-green-700">深度體驗</h5>
+							<p class="card-text text-primary-green-700">
+								專注於提供高品質的學習體驗，讓每次技能交換都有實質收穫。
+							</p>
+						</div>
+					</div>
+					<div class="card" style="width: 18em">
+						<div class="card-body">
+							<img
+								class="mt-16 mb-16"
+								style="width: 64px"
+								src="/assets/images/Heart.svg"
+								alt=""
+							/>
+							<h5 class="text-primary-green-700">友善社群</h5>
+							<p class="card-text text-primary-green-700">
+								營造溫暖友善的學習氛圍，讓每個人都能安心分享與學習。
+							</p>
+						</div>
+					</div>
+					<div class="card" style="width: 18em">
+						<div class="card-body">
+							<img
+								class="mt-16 mb-16"
+								style="width: 64px"
+								src="/assets/images/Flash.svg"
+								alt=""
+							/>
+							<h5 class="text-primary-green-700">創新學習</h5>
+							<p class="card-text text-primary-green-700">
+								突破傳統學習模式，用創新的方式讓學習變得更有趣、更有效。
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div style="background-color: #fcf0c8">
+			<div class="ourGroup text-center pt-80 pb-80 plpr-16">
+				<div class="mb-48">
+					<h2 class="mb-16 text-primary-green-700">認識我們的團隊</h2>
+					<p class="text-primary-green-700">一群熱愛學習、相信分享力量的夥伴</p>
+				</div>
+				<div class="groupMember d-flex justify-content-center gap-16">
+					<div class="card" style="width: 18em">
+						<div class="card-body padding-16">
+							<img
+								class="mt-16 mb-16"
+								style="width: 108px"
+								src="/assets/images/Mumu.png"
+								alt=""
+							/>
+							<h5 class="text-primary-green-700">Mumu</h5>
+							<h5 class="text-primary-green-700">萬能打雜工</h5>
+						</div>
+					</div>
+					<div class="card" style="width: 18em">
+						<div class="card-body">
+							<img
+								class="mt-16 mb-16"
+								style="width: 108px"
+								src="/assets/images/Chris.png"
+								alt=""
+							/>
+							<h5 class="text-primary-green-700">Chris</h5>
+							<h5 class="text-primary-green-700">美術指導</h5>
+						</div>
+					</div>
+					<div class="card" style="width: 18em">
+						<div class="card-body">
+							<img
+								class="mt-16 mb-16"
+								style="width: 108px"
+								src="/assets/images/Kururu.png"
+								alt=""
+							/>
+							<h5 class="text-primary-green-700">Kururu</h5>
+							<h5 class="text-primary-green-700">技術長</h5>
+						</div>
+					</div>
+					<div class="card" style="width: 18em">
+						<div class="card-body">
+							<img
+								class="mt-16 mb-16"
+								style="width: 108px"
+								src="/assets/images/Ashley.png"
+								alt=""
+							/>
+							<h5 class="text-primary-green-700">Ashley</h5>
+							<h5 class="text-primary-green-700">行銷企劃</h5>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div style="background-color: #eff2dc">
+			<div class="startUsing text-center pt-80 pb-80">
+				<h2 class="mb-16 text-primary-green-700">一起加入這片成長的森林</h2>
+				<p class="m-0 text-primary-green-700 d-none d-lg-block">
+					無論你想分享什麼技能，或是學習什麼新知識，森森創學都歡迎你的加入
+				</p>
+				<p class="m-0 text-primary-green-700 d-lg-none">
+					無論你想分享什麼技能，或是學習什麼新知識，<br />森森創學都歡迎你的加入
+				</p>
+				<div class="mt-40 d-flex justify-content-center gap-24">
+					<button
+						style="color: white; width: 160px"
+						class="btn btn-primary-green-500 btn-lg"
+						type="submit"
+					>
+						立即註冊
+					</button>
+					<button
+						style="color: white; width: 160px"
+						class="btn btn-primary-green-500 btn-lg"
+						type="submit"
+					>
+						探索技能
+					</button>
+				</div>
+			</div>
+		</div>
 
-    <script type="module" src="../main.js"></script>
-  </body>
+		<%- include('./layout/footer'); -%>
+
+		<script type="module" src="../main.js"></script>
+	</body>
 </html>
