@@ -1,0 +1,2789 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>CoCreate｜會員中心</title>
+		<link
+			rel="stylesheet"
+			href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+		/>
+		<script type="module" crossorigin src="/CoCreate/assets/member-center-CfKYioDB.js"></script>
+		<link rel="modulepreload" crossorigin href="/CoCreate/assets/main-7QXXTsD-.js">
+		<link rel="stylesheet" crossorigin href="/CoCreate/assets/main-CNHBkQSh.css">
+	</head>
+	<body>
+		<header class="site-header sticky-top">
+  <nav class="navbar navbar-expand-lg py-24">
+    <div class="container">
+      <!-- Brand -->
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html" aria-label="CoCreate Home">
+        <img src="/CoCreate/assets/logo-C5ECSruS.png" alt="CoCreate 標誌" class="brand-logo" />
+        <span class="visually-hidden">CoCreate 森森創學</span>
+        </span>
+      </a>
+
+      <!-- Toggler -->
+      <button class="navbar-toggler" type="button"
+              data-bs-toggle="collapse" data-bs-target="#cocreateNavbar"
+              aria-controls="cocreateNavbar" aria-expanded="false" aria-label="切換導覽選單">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Links -->
+      <div class="collapse navbar-collapse" id="cocreateNavbar">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-3">
+          <li class="nav-item"><a class="nav-link" href="find-partners.html">找尋夥伴</a></li>
+          <li class="nav-item"><a class="nav-link" href="wall.html">故事牆</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">關於我們</a></li>
+        </ul>
+
+        <div class="d-flex align-items-center justify-content-between gap-3 w-150">
+          <!-- 桌面版搜尋 -->
+          <button class="btn d-none d-lg-inline-flex" type="button" aria-label="搜尋">
+            <i class="bi bi-search fs-5"></i>
+          </button>
+          <a class="btn btn-link login-link" href="member-center.html">登入</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>		<!-- 確認刪除 Modal -->
+		<div
+			class="modal fade"
+			id="deleteModal"
+			tabindex="-1"
+			aria-labelledby="deleteModalLabel"
+			aria-hidden="true"
+		>
+			<div class="modal-dialog">
+				<div class="modal-content align-items-center p-48">
+					<i data-feather="alert-circle" class="modal-icon mb-24"></i>
+					<div class="modal-header border-0 p-0">
+						<h1
+							class="modal-title text-primary-orange fs-5 fw-bold mb-8"
+							id="deleteModalLabel"
+						>
+							確認操作
+						</h1>
+					</div>
+					<div
+						class="modal-body justify-content-center align-items-center text-center p-0 mb-24"
+					>
+						確定要刪除這張技能卡片嗎?
+					</div>
+					<div class="modal-footer border-0 justify-content-center p-0">
+						<button
+							type="button"
+							class="btn btn-outline-secondary py-8 px-24 line-height-base rounded-80 m-0 me-16"
+							data-bs-dismiss="modal"
+						>
+							返回
+						</button>
+						<button
+							type="button"
+							class="btn btn-primary-orange text-white py-8 px-lg-24 line-height-base rounded-80 m-0"
+						>
+							確認刪除
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 修改申請 Modal -->
+		<div
+			class="modal fade"
+			id="modal-edit-request"
+			tabindex="-1"
+			aria-labelledby="modalEditRequestLabel"
+			aria-hidden="true"
+		>
+			<div class="modal-dialog">
+				<div class="modal-content p-48">
+					<div class="modal-header text-start border-0 p-0">
+						<h1
+							class="modal-title text-primary-orange fs-5 fw-bold mb-lg-24"
+							id="modal-edit-request"
+						>
+							修改申請
+						</h1>
+					</div>
+					<div class="modal-body text-start p-0 mb-16">
+						<div class="w-100 mb-16 me-lg-48 mb-lg-16">
+							<p class="mb-8">我提供的技能<span class="warning">*</span></p>
+							<input
+								type="text"
+								class="form-control rounded-8"
+								id="new-skill"
+								placeholder="日本語會話"
+							/>
+						</div>
+						<div class="w-100 mb-16 me-lg-48 mb-lg-16">
+							<p class="mb-8">想學習的技能<span class="warning">*</span></p>
+							<input
+								type="text"
+								class="form-control rounded-8"
+								id="new-skill"
+								placeholder="JavaScript 進階概念"
+							/>
+						</div>
+						<div class="mb-16 mb-lg-16">
+							<p class="mb-8">偏好時間</p>
+							<div class="dropdown">
+								<button
+									class="form-select text-neutral-600 text-start rounded-8 py-3"
+									type="button"
+									data-bs-toggle="dropdown"
+									aria-expanded="false"
+								>
+									平日上午
+								</button>
+								<ul class="dropdown-menu">
+									<li>
+										<a class="dropdown-item" href="#">平日上午</a>
+									</li>
+									<li>
+										<a class="dropdown-item" href="#">平日下午</a>
+									</li>
+									<li>
+										<a class="dropdown-item" href="#">平日晚上</a>
+									</li>
+									<li>
+										<a class="dropdown-item" href="#">週末上午</a>
+									</li>
+									<li>
+										<a class="dropdown-item" href="#">週末下午</a>
+									</li>
+									<li>
+										<a class="dropdown-item" href="#">週末晚上</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="mb-16 mb-lg-16">
+							<p class="mb-8">交換方式</p>
+							<div class="dropdown">
+								<button
+									class="form-select text-neutral-600 text-start rounded-8 py-3"
+									type="button"
+									data-bs-toggle="dropdown"
+									aria-expanded="false"
+								>
+									線上
+								</button>
+								<ul class="dropdown-menu">
+									<li>
+										<a class="dropdown-item" href="#">線上</a>
+									</li>
+									<li>
+										<a class="dropdown-item" href="#">實體</a>
+									</li>
+									<li>
+										<a class="dropdown-item" href="#">混合</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div>
+							<p class="mb-8">申請訊息<span class="warning">*</span></p>
+							<div class="mb-16">
+								<textarea
+									class="form-control rounded-8"
+									placeholder="希望深入了解 JavaScript 的進階特性"
+									id="skill-description"
+									style="height: 164px"
+								></textarea>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer border-0 justify-content-center p-0">
+						<button
+							type="button"
+							class="btn btn-outline-secondary py-8 px-24 line-height-base rounded-80 m-0 me-16"
+							data-bs-dismiss="modal"
+						>
+							返回
+						</button>
+						<button
+							type="button"
+							class="btn btn-primary-orange text-white py-8 px-lg-24 line-height-base rounded-80 m-0"
+						>
+							儲存修改
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 取消申請 Modal -->
+		<div
+			class="modal fade"
+			id="modal-cancel-request"
+			tabindex="-1"
+			aria-labelledby="modalCancelRequestLabel"
+			aria-hidden="true"
+		>
+			<div class="modal-dialog">
+				<div class="modal-content align-items-center p-48">
+					<i data-feather="alert-circle" class="modal-icon mb-24"></i>
+					<div class="modal-header border-0 p-0">
+						<h1
+							class="modal-title text-primary-orange fs-5 fw-bold mb-8"
+							id="modal-cancel-request"
+						>
+							確認操作
+						</h1>
+					</div>
+					<div
+						class="modal-body justify-content-center align-items-center text-center p-0 mb-24"
+					>
+						確定要取消這則申請嗎？取消後將無法復原。
+					</div>
+					<div class="modal-footer border-0 justify-content-center p-0">
+						<button
+							type="button"
+							class="btn btn-outline-secondary py-8 px-24 line-height-base rounded-80 m-0 me-16"
+							data-bs-dismiss="modal"
+						>
+							返回
+						</button>
+						<button
+							type="button"
+							class="btn btn-primary-orange text-white py-8 px-lg-24 line-height-base rounded-80 m-0"
+						>
+							確認取消
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 訊息聊聊 Modal -->
+		<div
+			class="modal fade"
+			id="modal-chat-request"
+			tabindex="-1"
+			aria-labelledby="modalChatRequestLabel"
+			aria-hidden="true"
+		>
+			<div class="modal-dialog">
+				<div class="modal-content p-48">
+					<div class="modal-header align-items-start border-0 p-0">
+						<h1
+							class="modal-title text-primary-orange fs-5 fw-bold mb-12"
+							id="modal-chat-request"
+						>
+							訊息聊聊
+						</h1>
+					</div>
+					<div class="mb-16">
+						<textarea
+							class="form-control rounded-8"
+							placeholder="輸入你想聊聊的內容..."
+							id="chat-message"
+							style="width: 400px; height: 164px"
+						></textarea>
+					</div>
+					<div class="modal-body text-center text-neutral-400 p-0 mb-16">
+						*​送​出後即​可​在​會員​中心​ - ​訊息​聊聊​進行討論與​互動
+					</div>
+					<div class="modal-footer border-0 justify-content-center p-0">
+						<button
+							type="button"
+							class="btn btn-outline-secondary py-8 px-24 line-height-base rounded-80 m-0 me-16"
+							data-bs-dismiss="modal"
+						>
+							返回
+						</button>
+						<button
+							type="button"
+							class="btn btn-primary-orange text-white py-8 px-lg-24 line-height-base rounded-80 m-0"
+						>
+							送出訊息
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 接受申請 Modal -->
+		<div
+			class="modal fade"
+			id="modal-accept-request"
+			tabindex="-1"
+			aria-labelledby="modalAcceptRequestLabel"
+			aria-hidden="true"
+		>
+			<div class="modal-dialog">
+				<div class="modal-content align-items-center p-48">
+					<i data-feather="alert-circle" class="modal-icon mb-24"></i>
+					<div class="modal-header border-0 p-0">
+						<h1
+							class="modal-title text-primary-orange fs-5 fw-bold mb-8"
+							id="modal-accept-request"
+						>
+							確認操作
+						</h1>
+					</div>
+					<div
+						class="modal-body justify-content-center align-items-center text-center p-0 mb-24"
+					>
+						確定要接受這則申請嗎？
+					</div>
+					<div class="modal-footer border-0 justify-content-center p-0">
+						<button
+							type="button"
+							class="btn btn-outline-secondary py-8 px-24 line-height-base rounded-80 m-0 me-16"
+							data-bs-dismiss="modal"
+						>
+							返回
+						</button>
+						<button
+							type="button"
+							class="btn btn-primary-orange text-white py-8 px-lg-24 line-height-base rounded-80 m-0"
+						>
+							確認接受
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 拒絕申請 Modal -->
+		<div
+			class="modal fade"
+			id="modal-reject-request"
+			tabindex="-1"
+			aria-labelledby="modalRejectRequestLabel"
+			aria-hidden="true"
+		>
+			<div class="modal-dialog">
+				<div class="modal-content p-48">
+					<div class="modal-header align-items-start border-0 p-0">
+						<h1
+							class="modal-title text-primary-orange fs-5 fw-bold mb-12"
+							id="modal-reject-request"
+						>
+							拒絕申請
+						</h1>
+					</div>
+					<div class="modal-body text-start p-0 mb-16">拒絕原因（選填）</div>
+					<div class="mb-16 mb-lg-24">
+						<textarea
+							class="form-control rounded-8"
+							placeholder="可以簡單說明拒絕的原因，幫助對方了解..."
+							id="reject-reason"
+							style="width: 400px; height: 164px"
+						></textarea>
+					</div>
+					<div class="modal-footer border-0 justify-content-center p-0">
+						<button
+							type="button"
+							class="btn btn-outline-secondary py-8 px-24 line-height-base rounded-80 m-0 me-16"
+							data-bs-dismiss="modal"
+						>
+							返回
+						</button>
+						<button
+							type="button"
+							class="btn btn-primary-orange text-white py-8 px-lg-24 line-height-base rounded-80 m-0"
+						>
+							確認拒絕
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 會員中心內容 -->
+		<div class="bg-primary-green-200">
+			<div class="container py-24 px-12">
+				<div class="row">
+					<!-- 左邊欄位 -->
+					<div class="col-12 col-lg-3 mb-24">
+						<div class="card border-primary-green-500 bg-white text-center">
+							<!-- 會員資料 -->
+							<div class="card-body py-36 px-24">
+								<img
+									class="rounded-circle mb-16"
+									src="/CoCreate/assets/girl-1-B7-_1p2f.jpg"
+									alt="Image"
+									width="80"
+									height="80"
+								/>
+								<h6 class="card-title text-neutral-800 fs-6 fw-bold mb-8">
+									林小樹
+								</h6>
+								<p class="card-text fs-base text-primary-green-700 mb-24">
+									日語教學老師
+								</p>
+								<p
+									class="badge fs-small text-bg-primary-green-200 rounded-4 text-neutral-600 py-8 px-12 mb-16"
+								>
+									Lv.1 小樹叢
+								</p>
+								<div
+									class="d-flex justify-content-center align-items-start gap-4 text-neutral-800 pb-24 border-bottom mb-24 mb-lg-0"
+								>
+									<div class="text-center width-50-percent me-16">
+										<span class="text-neutral-500 d-block">28</span>
+										<p class="mb-0 small">交換次數</p>
+									</div>
+									<div class="text-center width-50-percent">
+										<span class="text-neutral-500 d-block">4.9</span>
+										<p class="mb-0 small">平均評分</p>
+									</div>
+								</div>
+								<!-- 電腦版：會員中心左側導覽列 -->
+								<div class="d-none d-lg-flex pt-36">
+									<div
+										class="nav nav-pills me-3 mx-16"
+										id="v-pills-tab"
+										role="tablist"
+										aria-orientation="vertical"
+									>
+										<button
+											class="nav-link mb-8 d-flex align-items-center justify-content-start"
+											id="v-pills-overview-tab"
+											data-bs-toggle="pill"
+											data-bs-target="#v-pills-overview"
+											type="button"
+											role="tab"
+											aria-controls="v-pills-overview"
+											aria-selected="false"
+										>
+											<i class="fi fi-rr-home me-8"></i>總覽
+										</button>
+										<button
+											class="nav-link mb-8 d-flex align-items-center justify-content-start"
+											id="v-pills-profile-tab"
+											data-bs-toggle="pill"
+											data-bs-target="#v-pills-profile"
+											type="button"
+											role="tab"
+											aria-controls="v-pills-profile"
+											aria-selected="false"
+										>
+											<i data-feather="user"></i>個人簡介
+										</button>
+										<button
+											class="nav-link active mb-8 d-flex align-items-center justify-content-start"
+											id="v-pills-skills-tab"
+											data-bs-toggle="pill"
+											data-bs-target="#v-pills-skills"
+											type="button"
+											role="tab"
+											aria-controls="v-pills-skills"
+											aria-selected="true"
+										>
+											<i class="fi fi-rr-book-alt me-8"></i>我的技能
+										</button>
+										<button
+											class="nav-link mb-8 d-flex align-items-center justify-content-start"
+											id="v-pills-booking-tab"
+											data-bs-toggle="pill"
+											data-bs-target="#v-pills-booking"
+											type="button"
+											role="tab"
+											aria-controls="v-pills-booking"
+											aria-selected="false"
+										>
+											<i class="fi fi-rr-calendar me-8"></i>預約資訊
+										</button>
+										<button
+											class="nav-link mb-8 d-flex align-items-center justify-content-start"
+											id="v-pills-messages-tab"
+											data-bs-toggle="pill"
+											data-bs-target="#v-pills-messages"
+											type="button"
+											role="tab"
+											aria-controls="v-pills-messages"
+											aria-selected="false"
+										>
+											<i class="fi fi-rr-comment me-8"></i>訊息聊聊
+										</button>
+										<button
+											class="nav-link mb-8 d-flex align-items-center justify-content-start"
+											id="v-pills-history-tab"
+											data-bs-toggle="pill"
+											data-bs-target="#v-pills-history"
+											type="button"
+											role="tab"
+											aria-controls="v-pills-history"
+											aria-selected="false"
+										>
+											<i class="fi fi-rr-address-book me-8"></i>交換歷程
+										</button>
+										<button
+											class="nav-link d-flex align-items-center justify-content-start"
+											id="v-pills-settings-tab"
+											data-bs-toggle="pill"
+											data-bs-target="#v-pills-settings"
+											type="button"
+											role="tab"
+											aria-controls="v-pills-settings"
+											aria-selected="false"
+										>
+											<i class="fi fi-rr-settings me-8"></i>帳號管理
+										</button>
+									</div>
+								</div>
+
+								<!-- 行動版：會員中心導覽列（收合控制按鈕）-->
+								<button
+									id="memberNavToggler"
+									type="button"
+									class="btn btn-primary-green-500 text-neutral-50 w-100 d-flex justify-content-between align-items-center rounded-80 d-lg-none py-8 px-24"
+								>
+									<i data-feather="menu" class="me-8"></i>
+									<!-- <i class="bi bi-chevron-down collapse-caret"></i> -->
+								</button>
+
+								<!-- 清單本體（行動版為 collapse） -->
+								<nav id="memberNav" class="collapse d-lg-none pt-8">
+									<ul class="nav nav-pills flex-column gap-2">
+										<li class="nav-item mb-8">
+											<a
+												class="nav-link d-flex align-items-center rounded-pill"
+												data-bs-toggle="pill"
+												href="#v-pills-overview"
+											>
+												<i class="fi fi-rr-home me-8"></i> 總覽
+											</a>
+										</li>
+										<li class="nav-item mb-8">
+											<a
+												class="nav-link d-flex align-items-center rounded-pill"
+												data-bs-toggle="pill"
+												href="#v-pills-profile"
+											>
+												<i data-feather="user" class="me-8"></i> 個人簡介
+											</a>
+										</li>
+										<li class="nav-item mb-8">
+											<a
+												class="nav-link active d-flex align-items-center rounded-pill"
+												data-bs-toggle="pill"
+												href="#v-pills-skills"
+											>
+												<i class="fi fi-rr-book-alt me-8"></i> 我的技能
+											</a>
+										</li>
+										<li class="nav-item mb-8">
+											<a
+												class="nav-link d-flex align-items-center rounded-pill"
+												data-bs-toggle="pill"
+												href="#v-pills-booking"
+											>
+												<i class="fi fi-rr-calendar me-8"></i> 預約資訊
+											</a>
+										</li>
+										<li class="nav-item mb-8">
+											<a
+												class="nav-link d-flex align-items-center rounded-pill"
+												data-bs-toggle="pill"
+												href="#v-pills-messages"
+											>
+												<i class="fi fi-rr-comment me-8"></i> 訊息聊聊
+											</a>
+										</li>
+										<li class="nav-item mb-8">
+											<a
+												class="nav-link d-flex align-items-center rounded-pill"
+												data-bs-toggle="pill"
+												href="#v-pills-history"
+											>
+												<i class="fi fi-rr-address-book me-8"></i> 交換歷程
+											</a>
+										</li>
+										<li class="nav-item mb-8">
+											<a
+												class="nav-link d-flex align-items-center rounded-pill"
+												data-bs-toggle="pill"
+												href="#v-pills-settings"
+											>
+												<i class="fi fi-rr-settings me-8"></i> 帳號管理
+											</a>
+										</li>
+									</ul>
+								</nav>
+							</div>
+						</div>
+					</div>
+					<!-- 右邊欄位 -->
+					<div class="col-12 col-lg-9">
+						<div class="card bg-white border-0">
+							<div class="card-body p-16 pt-lg-36 pb-lg-48 px-lg-48">
+								<div class="tab-content" id="v-pills-tabContent">
+									<!-- 總覽詳細 -->
+									<div
+										class="tab-pane fade"
+										id="v-pills-overview"
+										role="tabpanel"
+										aria-labelledby="v-pills-overview-tab"
+										tabindex="0"
+									>
+										<div class="mb-36">
+											<h4
+												class="card-title text-primary-green-500 fs-5 fs-lg-4 fw-bold me-24 mb-12"
+											>
+												會員中心
+											</h4>
+											<p class="d-flex ai-end">歡迎回來，林小樹！</p>
+										</div>
+										<div class="row g-24">
+											<div class="col-lg-4">
+												<div
+													class="bg-primary-green-200 border border-primary-green-500 rounded-16 p-36 d-flex flex-column align-items-center"
+												>
+													<i data-feather="user" class="member-icon"></i>
+													<h6 class="text-primary-green-700 fs-6 fw-bold mb-16">
+														個人簡介
+													</h6>
+													<p class="text-neutral-600 fs-small mb-16">
+														編輯你的個人簡介和技能清單
+													</p>
+													<button
+														type="button"
+														class="btn btn-primary-green-500 text-white fs-small py-8 px-48 rounded-80"
+													>
+														編輯簡介
+													</button>
+												</div>
+											</div>
+											<div class="col-lg-4">
+												<div
+													class="bg-primary-green-200 border border-primary-green-500 rounded-16 p-36 d-flex flex-column align-items-center"
+												>
+													<i class="fi fi-rr-book-alt member-icon"></i>
+													<h6 class="text-primary-green-700 fs-6 fw-bold mb-16">
+														我的技能
+													</h6>
+													<p class="text-neutral-600 fs-small mb-16">
+														管理你的技能交換卡片
+													</p>
+													<button
+														type="button"
+														class="btn btn-primary-green-500 text-white fs-small py-8 px-48 rounded-80"
+													>
+														管理技能
+													</button>
+												</div>
+											</div>
+											<div class="col-lg-4">
+												<div
+													class="bg-primary-green-200 border border-primary-green-500 rounded-16 p-36 d-flex flex-column align-items-center"
+												>
+													<i class="fi fi-rr-calendar member-icon"></i>
+													<h6 class="text-primary-green-700 fs-6 fw-bold mb-16">
+														預約資訊
+													</h6>
+													<p class="text-neutral-600 fs-small mb-16">
+														管理你的技能交換預約
+													</p>
+													<button
+														type="button"
+														class="btn btn-primary-green-500 text-white fs-small py-8 px-48 rounded-80"
+													>
+														查看預約
+													</button>
+												</div>
+											</div>
+											<div class="col-lg-4">
+												<div
+													class="bg-primary-green-200 border border-primary-green-500 rounded-16 p-36 d-flex flex-column align-items-center"
+												>
+													<i class="fi fi-rr-comment member-icon"></i>
+													<h6 class="text-primary-green-700 fs-6 fw-bold mb-16">
+														訊息聊聊
+													</h6>
+													<p class="text-neutral-600 fs-small mb-16">
+														與技能交換夥伴聊天討論
+													</p>
+													<button
+														type="button"
+														class="btn btn-primary-green-500 text-white fs-small py-8 px-48 rounded-80"
+													>
+														查看訊息
+													</button>
+												</div>
+											</div>
+											<div class="col-lg-4">
+												<div
+													class="bg-primary-green-200 border border-primary-green-500 rounded-16 p-36 d-flex flex-column align-items-center"
+												>
+													<i class="fi fi-rr-address-book member-icon"></i>
+													<h6 class="text-primary-green-700 fs-6 fw-bold mb-16">
+														交換歷程
+													</h6>
+													<p class="text-neutral-600 fs-small mb-16">
+														查看你的交換歷程與評價
+													</p>
+													<button
+														type="button"
+														class="btn btn-primary-green-500 text-white fs-small py-8 px-48 rounded-80"
+													>
+														查看歷程
+													</button>
+												</div>
+											</div>
+											<div class="col-lg-4">
+												<div
+													class="bg-primary-green-200 border border-primary-green-500 rounded-16 p-36 d-flex flex-column align-items-center"
+												>
+													<i class="fi fi-rr-settings member-icon"></i>
+													<h6 class="text-primary-green-700 fs-6 fw-bold mb-16">
+														帳號管理
+													</h6>
+													<p class="text-neutral-600 fs-small mb-16">
+														管理你的帳號資訊
+													</p>
+													<button
+														type="button"
+														class="btn btn-primary-green-500 text-white fs-small py-8 px-48 rounded-80"
+													>
+														帳號管理
+													</button>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- 個人簡介詳細 -->
+									<div
+										class="tab-pane fade"
+										id="v-pills-profile"
+										role="tabpanel"
+										aria-labelledby="v-pills-profile-tab"
+										tabindex="0"
+									>
+										<div class="">
+											<div
+												class="d-flex justify-content-between align-items-center mb-36"
+											>
+												<h4
+													class="card-title text-primary-green-500 fs-5 fs-lg-4 fw-bold me-24 mb-0"
+												>
+													個人簡介
+												</h4>
+												<!-- 按鈕群組 -->
+												<div
+													class="d-flex justify-content-between align-items-center mb-16 mb-lg-0"
+												>
+													<button
+														type="button"
+														class="btn btn-primary-green-500 text-white fs-base py-8 px-24 rounded-80 me-lg-16 me-lg-24"
+													>
+														<i class="me-4" data-feather="save"></i>儲存
+													</button>
+													<!-- 取消按鈕：點擊時收合 collapse -->
+													<button
+														id="cancelProfileBtn"
+														type="button"
+														class="btn btn-outline-neutral-400 text-neutral-500 fs-base py-8 px-24 rounded-80"
+													>
+														<i class="me-4" data-feather="x"></i>取消
+													</button>
+												</div>
+												<!-- 觸發編輯卡片的按鈕 -->
+												<!-- <div class="d-flex mb-16 mb-lg-36">
+													<button
+														id="editProfileBtn"
+														class="btn btn-primary-green-500 text-white rounded-80 mb-3"
+														type="button"
+													>
+														<i data-feather="edit" class="me-4"></i>編輯
+													</button>
+												</div> -->
+											</div>
+											<!-- 頭像與加入時間 -->
+											<div
+												class="my-box border border-primary-green-500 rounded-16 p-24 mb-16"
+											>
+												<!-- <h6 class="fs-6 fw-bold mb-24">基本資料</h6> -->
+												<div class="d-flex">
+													<div class="col-2 me-16">
+														<div
+															class="avatar-wrapper d-inline-block text-center"
+														>
+															<div
+																class="position-relative d-inline-block mb-12"
+															>
+																<img
+																	src="/CoCreate/assets/girl-1-B7-_1p2f.jpg"
+																	alt="avatar"
+																	class="avatar rounded-circle bg-light"
+																/>
+																<button
+																	class="avatar-btn btn btn-neutral-800 p-1 rounded-circle"
+																>
+																	<i class="bi bi-camera-fill"></i>
+																</button>
+															</div>
+															<p class="fs-small text-neutral-500">
+																加入於2023年3月
+															</p>
+														</div>
+													</div>
+													<!-- 編輯個人簡介卡片 -->
+													<div class="col-10">
+														<div class="" id="profileForm">
+															<div
+																class="my-box border-0 rounded-16 p-lg-24 pt-lg-0"
+															>
+																<div class="justify-content-between">
+																	<div class="mb-16 mb-lg-32">
+																		<p class="mb-8">
+																			姓名/暱稱<span class="warning">*</span>
+																		</p>
+																		<input
+																			type="text"
+																			class="form-control rounded-8"
+																			id="profile-name"
+																			placeholder="林小樹"
+																		/>
+																	</div>
+																</div>
+																<div class="d-lg-flex justify-content-between">
+																	<div class="w-100 mb-16 mb-lg-32">
+																		<p class="mb-8">
+																			職業<span class="warning">*</span>
+																		</p>
+																		<input
+																			type="text"
+																			class="form-control rounded-8"
+																			id="profile-occupation"
+																			placeholder="日語教學老師"
+																		/>
+																	</div>
+																</div>
+																<div class="mb-16 mb-lg-32">
+																	<p class="mb-8">
+																		所在地區<span class="warning">*</span>
+																	</p>
+																	<div class="dropdown">
+																		<button
+																			class="form-select text-neutral-600 text-start rounded-8 py-3"
+																			type="button"
+																			data-bs-toggle="dropdown"
+																			aria-expanded="false"
+																		>
+																			台北
+																		</button>
+																		<ul class="dropdown-menu">
+																			<li>
+																				<a class="dropdown-item" href="#"
+																					>台北</a
+																				>
+																			</li>
+																			<li>
+																				<a class="dropdown-item" href="#"
+																					>新北</a
+																				>
+																			</li>
+																			<li>
+																				<a class="dropdown-item" href="#"
+																					>桃園</a
+																				>
+																			</li>
+																			<li>
+																				<a class="dropdown-item" href="#"
+																					>新竹</a
+																				>
+																			</li>
+																			<li>
+																				<a class="dropdown-item" href="#"
+																					>苗栗</a
+																				>
+																			</li>
+																			<li>
+																				<a class="dropdown-item" href="#"
+																					>台中</a
+																				>
+																			</li>
+																			<li>
+																				<a class="dropdown-item" href="#"
+																					>彰化</a
+																				>
+																			</li>
+																			<li>
+																				<a class="dropdown-item" href="#"
+																					>雲林</a
+																				>
+																			</li>
+																			<li>
+																				<a class="dropdown-item" href="#"
+																					>嘉義</a
+																				>
+																			</li>
+																			<li>
+																				<a class="dropdown-item" href="#"
+																					>台南</a
+																				>
+																			</li>
+																			<li>
+																				<a class="dropdown-item" href="#"
+																					>高雄</a
+																				>
+																			</li>
+																			<li>
+																				<a class="dropdown-item" href="#"
+																					>屏東</a
+																				>
+																			</li>
+																			<li>
+																				<a class="dropdown-item" href="#"
+																					>台東</a
+																				>
+																			</li>
+																			<li>
+																				<a class="dropdown-item" href="#"
+																					>花蓮</a
+																				>
+																			</li>
+																			<li>
+																				<a class="dropdown-item" href="#"
+																					>宜蘭</a
+																				>
+																			</li>
+																			<li>
+																				<a class="dropdown-item" href="#"
+																					>南投</a
+																				>
+																			</li>
+																			<li>
+																				<a class="dropdown-item" href="#"
+																					>基隆</a
+																				>
+																			</li>
+																			<li>
+																				<a class="dropdown-item" href="#"
+																					>線上</a
+																				>
+																			</li>
+																		</ul>
+																	</div>
+																</div>
+																<div class="d-lg-flex justify-content-between">
+																	<div class="w-100 mb-16 mb-lg-32">
+																		<p class="mb-8">個人網站</p>
+																		<input
+																			type="text"
+																			class="form-control rounded-8"
+																			id="profile-website"
+																			placeholder="https://portfolio.example.com"
+																		/>
+																	</div>
+																</div>
+																<div>
+																	<p class="mb-8">
+																		個人簡介<span class="warning">*</span>
+																	</p>
+																	<div class="mb-16">
+																		<textarea
+																			class="form-control rounded-8"
+																			placeholder="來自日本的語言教學專家，在台灣生活了8年。專門教授商業日語和日常會話，希望能透過技能交換學習更多台灣的在地文化和技能。"
+																			id="profile-bio"
+																			style="height: 164px"
+																		></textarea>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="d-flex row g-16">
+												<div class="col-6">
+													<div
+														class="my-box border-primary-green-500 rounded-16 p-lg-24"
+													>
+														<h6 class="fs-6 fw-bold text-neutral-800 mb-12">
+															興趣愛好
+														</h6>
+														<button
+															type="button"
+															class="btn btn-primary-green-200 fs-small py-4 px-8 rounded-8 me-lg-12"
+														>
+															攝影
+														</button>
+														<button
+															type="button"
+															class="btn btn-primary-green-200 fs-small py-4 px-8 rounded-8 me-lg-12"
+														>
+															茶道
+														</button>
+														<button
+															type="button"
+															class="btn btn-primary-green-200 fs-small py-4 px-8 rounded-8 me-lg-12"
+														>
+															烘焙
+														</button>
+														<button
+															type="button"
+															class="btn btn-primary-green-200 fs-small py-4 px-8 rounded-8 me-lg-12"
+														>
+															瑜珈
+														</button>
+														<button
+															type="button"
+															class="btn border border-2-dashed fs-small py-4 px-8 rounded-8"
+														>
+															<i data-feather="plus-circle" class="me-4"></i
+															>新增興趣
+														</button>
+													</div>
+												</div>
+												<div class="col-6">
+													<div
+														class="my-box border-primary-green-500 rounded-16 p-lg-24"
+													>
+														<h6 class="fs-6 fw-bold text-neutral-800 mb-12">
+															語言能力
+														</h6>
+														<button
+															type="button"
+															class="btn btn-primary-green-200 fs-small py-4 px-8 rounded-8 me-lg-12"
+														>
+															中文
+														</button>
+														<button
+															type="button"
+															class="btn btn-primary-green-200 fs-small py-4 px-8 rounded-8 me-lg-12"
+														>
+															英文
+														</button>
+														<button
+															type="button"
+															class="btn btn-primary-green-200 fs-small py-4 px-8 rounded-8 me-lg-12"
+														>
+															日文
+														</button>
+														<button
+															type="button"
+															class="btn border border-2-dashed fs-small py-4 px-8 rounded-8"
+														>
+															<i data-feather="plus-circle" class="me-4"></i
+															>新增語言
+														</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- 我的技能詳細 -->
+									<div
+										class="tab-pane fade show active"
+										id="v-pills-skills"
+										role="tabpanel"
+										aria-labelledby="v-pills-skills-tab"
+										tabindex="0"
+									>
+										<div class="d-flex mb-16 mb-lg-36">
+											<div class="d-flex align-items-end me-auto">
+												<h4
+													class="card-title text-primary-green-500 fs-5 fs-lg-4 fw-bold me-24 mb-0"
+												>
+													我的技能
+												</h4>
+												<span class="d-flex fs-small ai-end"
+													>技能卡片(4/5)</span
+												>
+											</div>
+											<!-- 觸發新增卡片的按鈕（預設顯示，點了展開表單） -->
+											<button
+												id="addSkillBtn"
+												class="btn btn-primary-green-500 text-white rounded-80 mb-3"
+												type="button"
+											>
+												<i class="me-2" data-feather="plus"></i>
+											</button>
+										</div>
+										<!-- 建立新技能卡片 -->
+										<div class="collapse" id="newSkillForm">
+											<div
+												class="my-box border-primary-green-500 rounded-16 p-lg-24 mb-lg-36"
+											>
+												<h6 class="text-neutral-800 fw-bold mb-16 mb-lg-32">
+													建立新技能卡片
+												</h6>
+												<div class="d-lg-flex justify-content-between">
+													<div class="w-100 mb-16 me-lg-48 mb-lg-32">
+														<p class="mb-8">
+															技能標題<span class="warning">*</span>
+														</p>
+														<input
+															type="text"
+															class="form-control rounded-8"
+															id="new-skill"
+															placeholder="新技能"
+														/>
+													</div>
+													<div class="w-100 mb-16">
+														<p class="mb-8">
+															技能分類<span class="warning">*</span>
+														</p>
+														<div class="dropdown">
+															<button
+																class="form-select text-neutral-600 text-start rounded-8 py-3"
+																type="button"
+																data-bs-toggle="dropdown"
+																aria-expanded="false"
+															>
+																選擇分類
+															</button>
+															<ul class="dropdown-menu">
+																<li>
+																	<a class="dropdown-item" href="#">程式語言</a>
+																</li>
+																<li>
+																	<a class="dropdown-item" href="#">語言學習</a>
+																</li>
+																<li>
+																	<a class="dropdown-item" href="#">設計創意</a>
+																</li>
+																<li>
+																	<a class="dropdown-item" href="#">命理占卜</a>
+																</li>
+																<li>
+																	<a class="dropdown-item" href="#">考試檢定</a>
+																</li>
+																<li>
+																	<a class="dropdown-item" href="#">舞蹈藝術</a>
+																</li>
+																<li>
+																	<a class="dropdown-item" href="#">攝影紀錄</a>
+																</li>
+																<li>
+																	<a class="dropdown-item" href="#">社群行銷</a>
+																</li>
+																<li>
+																	<a class="dropdown-item" href="#">運動健身</a>
+																</li>
+																<li>
+																	<a class="dropdown-item" href="#">烹飪美食</a>
+																</li>
+																<li>
+																	<a class="dropdown-item" href="#">商業技能</a>
+																</li>
+																<li>
+																	<a class="dropdown-item" href="#">歌唱音樂</a>
+																</li>
+																<li>
+																	<a class="dropdown-item" href="#">手工藝</a>
+																</li>
+																<li>
+																	<a class="dropdown-item" href="#">花草園藝</a>
+																</li>
+																<li>
+																	<a class="dropdown-item" href="#">其它</a>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+												<div>
+													<p class="mb-8">
+														技能描述<span class="warning">*</span>
+													</p>
+													<div class="mb-16 mb-lg-32">
+														<textarea
+															class="form-control rounded-8"
+															placeholder="請詳細描述你的技能內容、教學方式、適合對象等..."
+															id="skill-description"
+															style="height: 164px"
+														></textarea>
+													</div>
+												</div>
+												<div class="mb-16 mb-lg-32">
+													<p class="mb-8">
+														希望交換技能<span class="warning">*</span>
+													</p>
+													<textarea
+														type="text"
+														class="form-control rounded-8"
+														id="exchange-skill"
+														placeholder="你希望學習什麼技能？ 例如：UI/UX設計、數位行銷等"
+														style="height: 64px"
+													></textarea>
+												</div>
+												<div class="mb-16 mb-lg-32">
+													<p class="mb-8">
+														交換方式<span class="warning">*</span>
+													</p>
+													<div class="dropdown">
+														<button
+															class="form-select text-neutral-600 text-start rounded-8 py-3"
+															type="button"
+															data-bs-toggle="dropdown"
+															aria-expanded="false"
+														>
+															選擇方式
+														</button>
+														<ul class="dropdown-menu">
+															<li>
+																<a class="dropdown-item" href="#">線上</a>
+															</li>
+															<li>
+																<a class="dropdown-item" href="#">實體</a>
+															</li>
+															<li>
+																<a class="dropdown-item" href="#">混合</a>
+															</li>
+														</ul>
+													</div>
+												</div>
+												<div class="mb-16 mb-lg-32">
+													<p class="mb-8">技能標籤</p>
+													<input
+														type="text"
+														class="form-control rounded-8"
+														id="skill-tags"
+														placeholder="輸入標籤"
+													/>
+												</div>
+												<div
+													class="d-flex d-lg-block justify-content-between mb-16 mb-lg-0 px-14"
+												>
+													<button
+														type="button"
+														class="btn btn-primary-green-500 text-white fs-base py-8 px-24 rounded-80 me-lg-16 me-lg-24"
+													>
+														<i class="me-4" data-feather="plus"></i>建立技能卡片
+													</button>
+													<!-- 取消按鈕：點擊時收合 collapse -->
+													<button
+														id="cancelSkillBtn"
+														type="button"
+														class="btn btn-outline-neutral-400 text-neutral-500 fs-base py-8 px-24 rounded-80"
+													>
+														<i class="me-4" data-feather="x"></i>取消
+													</button>
+												</div>
+											</div>
+										</div>
+										<!-- 技能卡片範例 -->
+										<!-- 生活日本語會話 -->
+										<div
+											class="bg-primary-green-200 border border-primary-green-500 rounded-16 p-16 pt-lg-36 px-lg-36 pb-lg-28 skill-bg mb-16 mb-lg-36"
+										>
+											<div
+												class="d-flex justify-content-between align-items-center mb-0 mb-lg-8"
+											>
+												<h6 class="fs-6 fw-bold text-neutral-800 mb-12 mb-lg-0">
+													生活日本語會話
+												</h6>
+												<div class="d-lg-flex align-items-center d-none">
+													<button
+														type="button"
+														class="btn text-neutral-500 d-flex align-items-center justify-content-start p-8 me-16"
+													>
+														<i data-feather="edit" class="me-4"></i>編輯
+													</button>
+													<button
+														type="button"
+														class="btn text-neutral-500 d-flex align-items-center justify-content-start p-8"
+														data-bs-toggle="modal"
+														data-bs-target="#deleteModal"
+													>
+														<i data-feather="trash-2" class="me-4"></i>刪除
+													</button>
+												</div>
+											</div>
+											<span
+												class="badge text-bg-primary-green-500 text-white fs-small fw-normal py-4 px-16 mb-16 mb-lg-32"
+												>語言學習</span
+											>
+											<p class="text-neutral-800 fw-bold mb-4">技能簡介：</p>
+											<p class="text-neutral-600 mb-16 mb-lg-24">
+												從打招呼、購物、點餐到日常寒暄，學習最實用的日語表達方式！透過生活化情境練習，幫助你自然開口、靈活應對日本日常生活中常見的對話情境，無論是旅遊還是與日籍朋友交流，都能更自在地使用日語。
+											</p>
+											<p class="text-neutral-800 fw-bold mb-4">交換需求：</p>
+											<p class="mb-16 mb-lg-28 g-4">網頁設計優先，其他可討論</p>
+											<div
+												class="mb-16 mb-lg-0 g-4 border-bottom border-neutral-400 pb-16 pb-lg-0 lg-border-bottom-0"
+											>
+												<span
+													class="badge text-bg-neutral-50 border border-primary-green-500 text-primary-green-500 fs-small fw-normal tag me-lg-16"
+													>#日語</span
+												>
+												<span
+													class="badge text-bg-neutral-50 border border-primary-green-500 text-primary-green-500 fs-small fw-normal tag me-lg-16"
+													>#日常對話</span
+												>
+												<span
+													class="badge text-bg-neutral-50 border border-primary-green-500 text-primary-green-500 fs-small fw-normal tag me-lg-16 mb-4 mb-lg-0"
+													>#日常用語</span
+												>
+												<span
+													class="badge text-bg-neutral-50 border border-primary-green-500 text-primary-green-500 fs-small fw-normal tag"
+													>#零基礎</span
+												>
+											</div>
+											<!-- 行動版編輯刪除 -->
+											<div
+												class="d-flex align-items-center justify-content-center d-lg-none"
+											>
+												<button
+													type="button"
+													class="btn text-neutral-500 d-flex align-items-center justify-content-start py-8 px-40 me-4"
+												>
+													<i data-feather="edit" class="me-4"></i>編輯
+												</button>
+												<button
+													type="button"
+													class="btn text-neutral-500 d-flex align-items-center justify-content-start py-8 px-40"
+													data-bs-toggle="modal"
+													data-bs-target="#deleteModal"
+												>
+													<i data-feather="trash-2" class="me-4"></i>刪除
+												</button>
+											</div>
+										</div>
+
+										<!-- 日文寫作技巧 -->
+										<div
+											class="bg-primary-green-200 border border-primary-green-500 rounded-16 p-16 pt-lg-36 px-lg-36 pb-lg-28 skill-bg mb-16 mb-lg-36"
+										>
+											<div
+												class="d-flex justify-content-between align-items-center mb-0 mb-lg-8"
+											>
+												<h6 class="fs-6 fw-bold text-neutral-800 mb-12 mb-lg-0">
+													日文寫作技巧
+												</h6>
+												<div class="d-lg-flex align-items-center d-none">
+													<button
+														type="button"
+														class="btn text-neutral-500 d-flex align-items-center justify-content-start p-8 me-16"
+													>
+														<i data-feather="edit" class="me-4"></i>編輯
+													</button>
+													<button
+														type="button"
+														class="btn text-neutral-500 d-flex align-items-center justify-content-start p-8"
+														data-bs-toggle="modal"
+														data-bs-target="#deleteModal"
+													>
+														<i data-feather="trash-2" class="me-4"></i>刪除
+													</button>
+												</div>
+											</div>
+											<span
+												class="badge text-bg-primary-green-500 text-white fs-small fw-normal py-4 px-16 mb-16 mb-lg-32"
+												>語言學習</span
+											>
+											<p class="text-neutral-800 fw-bold mb-4">技能簡介：</p>
+											<p class="text-neutral-600 mb-16 mb-lg-24">
+												日文寫作技巧注重語法結構、敬語運用與假名漢字搭配，強調簡潔表達與清晰邏輯，使文章易懂且具表達力。
+											</p>
+											<p class="text-neutral-800 fw-bold mb-4">交換需求：</p>
+											<p class="mb-16 mb-lg-28 g-4">網頁設計優先，其他可討論</p>
+											<div
+												class="mb-16 mb-lg-0 g-4 border-bottom border-neutral-400 pb-16 pb-lg-0 lg-border-bottom-0"
+											>
+												<span
+													class="badge text-bg-neutral-50 border border-primary-green-500 text-primary-green-500 fs-small fw-normal tag me-lg-16"
+													>#日語</span
+												>
+												<span
+													class="badge text-bg-neutral-50 border border-primary-green-500 text-primary-green-500 fs-small fw-normal tag me-lg-16"
+													>#日文語法</span
+												>
+												<span
+													class="badge text-bg-neutral-50 border border-primary-green-500 text-primary-green-500 fs-small fw-normal tag me-lg-16 mb-4 mb-lg-0"
+													>#日語寫作</span
+												>
+												<span
+													class="badge text-bg-neutral-50 border border-primary-green-500 text-primary-green-500 fs-small fw-normal tag"
+													>#日文作文</span
+												>
+											</div>
+											<!-- 行動版編輯刪除 -->
+											<div
+												class="d-flex align-items-center justify-content-center d-lg-none"
+											>
+												<button
+													type="button"
+													class="btn text-neutral-500 d-flex align-items-center justify-content-start py-8 px-40 me-4"
+												>
+													<i data-feather="edit" class="me-4"></i>編輯
+												</button>
+												<button
+													type="button"
+													class="btn text-neutral-500 d-flex align-items-center justify-content-start py-8 px-40"
+													data-bs-toggle="modal"
+													data-bs-target="#deleteModal"
+												>
+													<i data-feather="trash-2" class="me-4"></i>刪除
+												</button>
+											</div>
+										</div>
+										<!-- 日本旅遊與文化 -->
+										<div
+											class="bg-primary-green-200 border border-primary-green-500 rounded-16 p-16 pt-lg-36 px-lg-36 pb-lg-28 skill-bg mb-16 mb-lg-36"
+										>
+											<div
+												class="d-flex justify-content-between align-items-center mb-0 mb-lg-8"
+											>
+												<h6 class="fs-6 fw-bold text-neutral-800 mb-12 mb-lg-0">
+													日本旅遊與文化
+												</h6>
+												<div class="d-lg-flex align-items-center d-none">
+													<button
+														type="button"
+														class="btn text-neutral-500 d-flex align-items-center justify-content-start p-8 me-16"
+													>
+														<i data-feather="edit" class="me-4"></i>編輯
+													</button>
+													<button
+														type="button"
+														class="btn text-neutral-500 d-flex align-items-center justify-content-start p-8"
+														data-bs-toggle="modal"
+														data-bs-target="#deleteModal"
+													>
+														<i data-feather="trash-2" class="me-4"></i>刪除
+													</button>
+												</div>
+											</div>
+											<span
+												class="badge text-bg-primary-green-500 text-white fs-small fw-normal py-4 px-16 mb-16 mb-lg-32"
+												>旅行文化</span
+											>
+											<p class="text-neutral-800 fw-bold mb-4">技能簡介：</p>
+											<p class="text-neutral-600 mb-16 mb-lg-24">
+												帶你探索日本多元的旅遊景點與文化魅力！透過旅遊行程規劃、景點介紹、美食推薦與文化禮儀分享，帶你理解日本的風土人情與生活習慣。不論是初次造訪還是多次重遊，都能更深入地感受日本的獨特氛圍，讓每一次旅行都充滿驚喜與收穫。
+											</p>
+											<p class="text-neutral-800 fw-bold mb-4">交換需求：</p>
+											<p class="mb-16 mb-lg-28 g-4">網頁設計優先，其他可討論</p>
+											<div
+												class="mb-16 mb-lg-0 g-4 border-bottom border-neutral-400 pb-16 pb-lg-0 lg-border-bottom-0"
+											>
+												<span
+													class="badge text-bg-neutral-50 border border-primary-green-500 text-primary-green-500 fs-small fw-normal tag me-lg-16"
+													>#日本旅遊</span
+												>
+												<span
+													class="badge text-bg-neutral-50 border border-primary-green-500 text-primary-green-500 fs-small fw-normal tag me-lg-16"
+													>#日本文化</span
+												>
+												<span
+													class="badge text-bg-neutral-50 border border-primary-green-500 text-primary-green-500 fs-small fw-normal tag me-lg-16 mb-4 mb-lg-0"
+													>#文化體驗</span
+												>
+												<span
+													class="badge text-bg-neutral-50 border border-primary-green-500 text-primary-green-500 fs-small fw-normal tag"
+													>#文化交流</span
+												>
+											</div>
+											<!-- 行動版編輯刪除 -->
+											<div
+												class="d-flex align-items-center justify-content-center d-lg-none"
+											>
+												<button
+													type="button"
+													class="btn text-neutral-500 d-flex align-items-center justify-content-start py-8 px-40 me-4"
+												>
+													<i data-feather="edit" class="me-4"></i>編輯
+												</button>
+												<button
+													type="button"
+													class="btn text-neutral-500 d-flex align-items-center justify-content-start py-8 px-40"
+													data-bs-toggle="modal"
+													data-bs-target="#deleteModal"
+												>
+													<i data-feather="trash-2" class="me-4"></i>刪除
+												</button>
+											</div>
+										</div>
+										<!-- JLPT考試準備 -->
+										<div
+											class="bg-primary-green-200 border border-primary-green-500 rounded-16 p-16 pt-lg-36 px-lg-36 pb-lg-28 skill-bg"
+										>
+											<div
+												class="d-flex justify-content-between align-items-center mb-0 mb-lg-8"
+											>
+												<h6 class="fs-6 fw-bold text-neutral-800 mb-12 mb-lg-0">
+													JLPT考試準備
+												</h6>
+												<div class="d-lg-flex align-items-center d-none">
+													<button
+														type="button"
+														class="btn text-neutral-500 d-flex align-items-center justify-content-start p-8 me-16"
+													>
+														<i data-feather="edit" class="me-4"></i>編輯
+													</button>
+													<button
+														type="button"
+														class="btn text-neutral-500 d-flex align-items-center justify-content-start p-8"
+														data-bs-toggle="modal"
+														data-bs-target="#deleteModal"
+													>
+														<i data-feather="trash-2" class="me-4"></i>刪除
+													</button>
+												</div>
+											</div>
+											<span
+												class="badge text-bg-primary-green-500 text-white fs-small fw-normal py-4 px-16 mb-16 mb-lg-32"
+												>語言學習</span
+											>
+											<p class="text-neutral-800 fw-bold mb-4">技能簡介：</p>
+											<p class="text-neutral-600 mb-16 mb-lg-24">
+												針對日本語能力試驗(JLPT)各等級需求，提供系統化的學習與應試策略!從單字、文法、聽力到閱讀理解，結合模擬測驗與重點解析，幫助你掌握核心知識與應試技巧。
+											</p>
+											<p class="text-neutral-800 fw-bold mb-4">交換需求：</p>
+											<p class="mb-16 mb-lg-28 g-4">網頁設計優先，其他可討論</p>
+											<div
+												class="mb-16 mb-lg-0 g-4 border-bottom border-neutral-400 pb-16 pb-lg-0 lg-border-bottom-0"
+											>
+												<span
+													class="badge text-bg-neutral-50 border border-primary-green-500 text-primary-green-500 fs-small fw-normal tag me-lg-16"
+													>#日語</span
+												>
+												<span
+													class="badge text-bg-neutral-50 border border-primary-green-500 text-primary-green-500 fs-small fw-normal tag me-lg-16"
+													>#JLPT</span
+												>
+												<span
+													class="badge text-bg-neutral-50 border border-primary-green-500 text-primary-green-500 fs-small fw-normal tag me-lg-16 mb-4 mb-lg-0"
+													>#檢定</span
+												>
+												<span
+													class="badge text-bg-neutral-50 border border-primary-green-500 text-primary-green-500 fs-small fw-normal tag"
+													>#考試技巧</span
+												>
+											</div>
+											<!-- 行動版編輯刪除 -->
+											<div
+												class="d-flex align-items-center justify-content-center d-lg-none"
+											>
+												<button
+													type="button"
+													class="btn text-neutral-500 d-flex align-items-center justify-content-start py-8 px-40 me-4"
+												>
+													<i data-feather="edit" class="me-4"></i>編輯
+												</button>
+												<button
+													type="button"
+													class="btn text-neutral-500 d-flex align-items-center justify-content-start py-8 px-40"
+													data-bs-toggle="modal"
+													data-bs-target="#deleteModal"
+												>
+													<i data-feather="trash-2" class="me-4"></i>刪除
+												</button>
+											</div>
+										</div>
+									</div>
+									<!-- 預約資訊詳細 -->
+									<div
+										class="tab-pane fade"
+										id="v-pills-booking"
+										role="tabpanel"
+										aria-labelledby="v-pills-booking-tab"
+										tabindex="0"
+									>
+										<div class="mb-24">
+											<h4
+												class="card-title text-primary-green-500 fs-5 fs-lg-4 fw-bold me-24 mb-12"
+											>
+												預約資訊
+											</h4>
+											<p class="d-flex ai-end">管理你的技能交換申請與預約</p>
+										</div>
+										<!-- 預約資訊分頁 -->
+										<ul
+											class="nav nav-pills mb-24 justify-content-between"
+											id="pills-tab"
+											role="tablist"
+										>
+											<li class="nav-item" role="presentation">
+												<button
+													class="nav-link active border border-primary-green-500 rounded-16"
+													id="status-upcoming-tab"
+													data-bs-toggle="pill"
+													data-bs-target="#status-upcoming"
+													type="button"
+													role="tab"
+													aria-controls="status-upcoming"
+													aria-selected="true"
+												>
+													<div
+														class="d-flex flex-column align-items-center width-150"
+													>
+														<p class="fs-4 fw-bold mb-0">0</p>
+														<p class="">即將到來</p>
+													</div>
+												</button>
+											</li>
+											<li class="nav-item" role="presentation">
+												<button
+													class="nav-link border border-primary-green-500 rounded-16"
+													id="status-pending-tab"
+													data-bs-toggle="pill"
+													data-bs-target="#status-pending"
+													type="button"
+													role="tab"
+													aria-controls="status-pending"
+													aria-selected="true"
+												>
+													<div
+														class="d-flex flex-column align-items-center width-150"
+													>
+														<p class="fs-4 fw-bold mb-0">1</p>
+														<p class="">申請中</p>
+													</div>
+												</button>
+											</li>
+											<li class="nav-item" role="presentation">
+												<button
+													class="nav-link border border-primary-green-500 rounded-16"
+													id="status-review-tab"
+													data-bs-toggle="pill"
+													data-bs-target="#status-review"
+													type="button"
+													role="tab"
+													aria-controls="status-review"
+													aria-selected="true"
+												>
+													<div
+														class="d-flex flex-column align-items-center width-150"
+													>
+														<p class="fs-4 fw-bold mb-0">1</p>
+														<p class="">待確認</p>
+													</div>
+												</button>
+											</li>
+											<li class="nav-item" role="presentation">
+												<button
+													class="nav-link border border-primary-green-500 rounded-16"
+													id="status-completed-tab"
+													data-bs-toggle="pill"
+													data-bs-target="#status-completed"
+													type="button"
+													role="tab"
+													aria-controls="status-completed"
+													aria-selected="true"
+												>
+													<div
+														class="d-flex flex-column align-items-center width-150"
+													>
+														<p class="fs-4 fw-bold mb-0">1</p>
+														<p class="">已完成</p>
+													</div>
+												</button>
+											</li>
+										</ul>
+										<!-- 預約資訊 tab 內容 -->
+										<div
+											class="tab-content border border-primary-green-500 bg-primary-green-200 rounded-16 rounded-end-16 p-24"
+											id="pills-tabContent"
+										>
+											<!-- 即將到來 -->
+											<div
+												class="tab-pane fade show active"
+												id="status-upcoming"
+												role="tabpanel"
+												aria-labelledby="status-upcoming-tab"
+												tabindex="0"
+											>
+												目前無即將到來的預約
+											</div>
+											<!-- 申請中 -->
+											<div
+												class="tab-pane fade"
+												id="status-pending"
+												role="tabpanel"
+												aria-labelledby="status-pending-tab"
+												tabindex="0"
+											>
+												<div class="container d-flex">
+													<div>
+														<div
+															class="card border-0 rounded-4 bg-primary-green-200"
+														>
+															<div class="me-24">
+																<!-- 上排：標題 / 申請日 / 右側操作 -->
+																<div
+																	class="d-flex align-items-start justify-content-between"
+																>
+																	<!-- 左側：頭像 + 標題 + 對象 -->
+																	<div
+																		class="d-flex align-items-start flex-grow-1 mb-12"
+																	>
+																		<div
+																			class="d-flex align-items-center justify-content-between flex-grow-1"
+																		>
+																			<h5
+																				class="fs-6 fw-bold mb-0 text-neutral-800"
+																			>
+																				JavaScript 進階概念
+																			</h5>
+																			<div>
+																				<span
+																					class="badge rounded-pill text-bg-primary-green-500 text-neutral-50 fw-normal"
+																					>申請日 2025/1/19</span
+																				>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																<!-- 頭像與對象名稱 -->
+																<div
+																	class="flex-shrink-0 d-flex align-items-center mb-24"
+																>
+																	<img
+																		class="border border-primary-green-500 rounded-80 me-8"
+																		src="/CoCreate/assets/girl-2-CQudQ1kD.jpg"
+																		alt="image"
+																		width="44"
+																		height="44"
+																	/>
+																	<div class="text-neutral-600 mt-1">
+																		向
+																		<span class="fw-medium">張小美</span>
+																		學習
+																	</div>
+																</div>
+																<!-- 預約內容 -->
+																<div class="row gy-8">
+																	<div
+																		class="col-12 col-lg-6 d-flex align-items-center gap-2"
+																	>
+																		<i data-feather="user" class="me-8"></i>
+
+																		<div>
+																			<span class="fw-semibold">提供技能：</span
+																			>日語會話
+																		</div>
+																	</div>
+
+																	<div
+																		class="col-12 col-lg-6 d-flex align-items-center gap-2"
+																	>
+																		<i class="fi fi-rr-book-alt me-8"></i>
+																		<div>
+																			<span class="fw-semibold">想學習：</span
+																			>JavaScript 進階概念
+																		</div>
+																	</div>
+
+																	<div
+																		class="col-12 col-lg-6 d-flex align-items-center gap-2"
+																	>
+																		<i data-feather="clock" class="me-8"></i>
+																		<div>
+																			<span class="fw-semibold">偏好時間：</span
+																			>平日早上
+																		</div>
+																	</div>
+
+																	<div
+																		class="col-12 col-lg-6 d-flex align-items-center gap-2"
+																	>
+																		<i class="fi fi-rr-users me-8"></i>
+																		<div>
+																			<span class="fw-semibold">交換方式：</span
+																			>線上
+																		</div>
+																	</div>
+																</div>
+																<hr class="my-24" />
+																<!-- 申請訊息 -->
+																<div class="mt-4">
+																	<div class="text-muted small mb-1">
+																		申請訊息：
+																	</div>
+																	<p class="mb-0">
+																		希望深入了解 JavaScript 的進階特性
+																	</p>
+																</div>
+															</div>
+															<!-- 按鈕：行動版（下方橫向） -->
+															<div class="d-grid gap-2 d-md-none mt-4">
+																<button
+																	type="button"
+																	class="btn btn-outline-secondary rounded-3"
+																>
+																	修改申請
+																</button>
+																<button
+																	type="button"
+																	class="btn btn-outline-secondary rounded-3"
+																>
+																	取消申請
+																</button>
+																<button
+																	type="button"
+																	class="btn btn-outline-secondary rounded-3"
+																>
+																	訊息聊聊
+																</button>
+															</div>
+														</div>
+													</div>
+													<!-- 右側：操作按鈕（垂直） -->
+													<div
+														class="d-none d-md-flex flex-column justify-content-between gap-3 ms-3"
+													>
+														<button
+															type="button"
+															class="btn btn-outline-primary-green-500 fw-bold rounded-8 py-24 width-150"
+															data-bs-toggle="modal"
+															data-bs-target="#modal-edit-request"
+														>
+															修改申請
+														</button>
+														<button
+															type="button"
+															class="btn btn-outline-primary-green-500 fw-bold rounded-8 py-24 width-150"
+															data-bs-toggle="modal"
+															data-bs-target="#modal-cancel-request"
+														>
+															取消申請
+														</button>
+														<button
+															type="button"
+															class="btn btn-outline-primary-green-500 fw-bold rounded-8 py-24 width-150"
+															data-bs-toggle="modal"
+															data-bs-target="#modal-chat-request"
+														>
+															訊息聊聊
+														</button>
+													</div>
+												</div>
+											</div>
+											<!-- 待確認 -->
+											<div
+												class="tab-pane fade"
+												id="status-review"
+												role="tabpanel"
+												aria-labelledby="status-review-tab"
+												tabindex="0"
+											>
+												<div class="container d-flex">
+													<div>
+														<div
+															class="card border-0 rounded-4 bg-primary-green-200"
+														>
+															<div class="me-24">
+																<!-- 上排：標題 / 申請日 / 右側操作 -->
+																<div
+																	class="d-flex align-items-start justify-content-between"
+																>
+																	<!-- 左側：頭像 + 標題 + 對象 -->
+																	<div
+																		class="d-flex align-items-start flex-grow-1 mb-12"
+																	>
+																		<div
+																			class="d-flex align-items-center justify-content-between flex-grow-1"
+																		>
+																			<h5
+																				class="fs-6 fw-bold mb-0 text-neutral-800"
+																			>
+																				日本語會話教學
+																			</h5>
+																			<div>
+																				<span
+																					class="badge rounded-pill text-bg-primary-green-500 text-neutral-50 fw-normal"
+																					>申請日 2025/1/26</span
+																				>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																<!-- 頭像與對象名稱 -->
+																<div
+																	class="flex-shrink-0 d-flex align-items-center mb-24"
+																>
+																	<img
+																		class="border border-primary-green-500 rounded-80 me-8"
+																		src="/CoCreate/assets/boy-2-N24C3nXS.jpg"
+																		alt="image"
+																		width="44"
+																		height="44"
+																	/>
+																	<div class="text-neutral-600 mt-1">
+																		教
+																		<span class="fw-medium">王小白</span>
+																	</div>
+																</div>
+																<!-- 預約內容 -->
+																<div class="row gy-8">
+																	<div
+																		class="col-12 col-lg-6 d-flex align-items-center gap-2"
+																	>
+																		<i data-feather="user" class="me-8"></i>
+
+																		<div>
+																			<span class="fw-semibold">提供技能：</span
+																			>程式設計
+																		</div>
+																	</div>
+
+																	<div
+																		class="col-12 col-lg-6 d-flex align-items-center gap-2"
+																	>
+																		<i class="fi fi-rr-book-alt me-8"></i>
+																		<div>
+																			<span class="fw-semibold">想學習：</span
+																			>日本語會話
+																		</div>
+																	</div>
+
+																	<div
+																		class="col-12 col-lg-6 d-flex align-items-center gap-2"
+																	>
+																		<i data-feather="clock" class="me-8"></i>
+																		<div>
+																			<span class="fw-semibold">偏好時間：</span
+																			>週末早上
+																		</div>
+																	</div>
+
+																	<div
+																		class="col-12 col-lg-6 d-flex align-items-center gap-2"
+																	>
+																		<i class="fi fi-rr-users me-8"></i>
+																		<div>
+																			<span class="fw-semibold">交換方式：</span
+																			>線上
+																		</div>
+																	</div>
+																</div>
+																<hr class="my-24" />
+																<!-- 申請訊息 -->
+																<div class="mt-4">
+																	<div class="text-muted small mb-1">
+																		申請訊息：
+																	</div>
+																	<p class="mb-0">
+																		完全沒有日文經驗，希望從基礎開始學習
+																	</p>
+																</div>
+															</div>
+															<!-- 按鈕：行動版（下方橫向） -->
+															<div class="d-grid gap-2 d-md-none mt-4">
+																<button
+																	type="button"
+																	class="btn btn-outline-secondary rounded-3"
+																>
+																	接受申請
+																</button>
+																<button
+																	type="button"
+																	class="btn btn-outline-secondary rounded-3"
+																>
+																	拒絕申請
+																</button>
+																<button
+																	type="button"
+																	class="btn btn-outline-secondary rounded-3"
+																>
+																	訊息聊聊
+																</button>
+															</div>
+														</div>
+													</div>
+													<!-- 右側：操作按鈕（垂直） -->
+													<div
+														class="d-none d-md-flex flex-column justify-content-between gap-3 ms-3"
+													>
+														<button
+															type="button"
+															class="btn btn-outline-primary-green-500 fw-bold rounded-8 py-24 width-150"
+															data-bs-toggle="modal"
+															data-bs-target="#modal-accept-request"
+														>
+															接受申請
+														</button>
+														<button
+															type="button"
+															class="btn btn-outline-primary-green-500 fw-bold rounded-8 py-24 width-150"
+															data-bs-toggle="modal"
+															data-bs-target="#modal-reject-request"
+														>
+															拒絕申請
+														</button>
+														<button
+															type="button"
+															class="btn btn-outline-primary-green-500 fw-bold rounded-8 py-24 width-150"
+															data-bs-toggle="modal"
+															data-bs-target="#modal-chat-request"
+														>
+															訊息聊聊
+														</button>
+													</div>
+												</div>
+											</div>
+											<!-- 已完成 -->
+											<div
+												class="tab-pane fade"
+												id="status-completed"
+												role="tabpanel"
+												aria-labelledby="status-completed-tab"
+												tabindex="0"
+											>
+												<div class="container d-flex">
+													<div>
+														<div
+															class="card border-0 rounded-4 bg-primary-green-200"
+														>
+															<div class="me-24">
+																<!-- 上排：標題 / 申請日 / 右側操作 -->
+																<div
+																	class="d-flex align-items-start justify-content-between"
+																>
+																	<!-- 左側：頭像 + 標題 + 對象 -->
+																	<div
+																		class="d-flex align-items-start flex-grow-1 mb-12"
+																	>
+																		<div
+																			class="d-flex align-items-center justify-content-between flex-grow-1"
+																		>
+																			<h5
+																				class="fs-6 fw-bold mb-0 text-neutral-800"
+																			>
+																				網頁開發指導
+																			</h5>
+																		</div>
+																	</div>
+																</div>
+																<!-- 頭像與對象名稱 -->
+																<div
+																	class="flex-shrink-0 d-flex align-items-center mb-24"
+																>
+																	<img
+																		class="border border-primary-green-500 rounded-80 me-8"
+																		src="/CoCreate/assets/girl-2-CQudQ1kD.jpg"
+																		alt="image"
+																		width="44"
+																		height="44"
+																	/>
+																	<div class="text-neutral-600 mt-1">
+																		向
+																		<span class="fw-medium">林小英</span>
+																		學習
+																	</div>
+																</div>
+																<!-- 預約內容 -->
+																<div class="row gy-8">
+																	<div
+																		class="col-12 col-lg-6 d-flex align-items-center gap-2"
+																	>
+																		<i data-feather="user" class="me-8"></i>
+
+																		<div>
+																			<span class="fw-semibold">提供技能：</span
+																			>日本文化
+																		</div>
+																	</div>
+
+																	<div
+																		class="col-12 col-lg-6 d-flex align-items-center gap-2"
+																	>
+																		<i class="fi fi-rr-book-alt me-8"></i>
+																		<div>
+																			<span class="fw-semibold">想學習：</span
+																			>網頁開發
+																		</div>
+																	</div>
+
+																	<div
+																		class="col-12 col-lg-6 d-flex align-items-center gap-2"
+																	>
+																		<i data-feather="clock" class="me-8"></i>
+																		<div>
+																			<span class="fw-semibold">偏好時間：</span
+																			>週末下午
+																		</div>
+																	</div>
+
+																	<div
+																		class="col-12 col-lg-6 d-flex align-items-center gap-2"
+																	>
+																		<i class="fi fi-rr-users me-8"></i>
+																		<div>
+																			<span class="fw-semibold">交換方式：</span
+																			>線上
+																		</div>
+																	</div>
+																</div>
+																<hr class="my-24" />
+																<!-- 申請訊息 -->
+																<div class="mt-4">
+																	<div class="text-muted small mb-1">
+																		申請訊息：
+																	</div>
+																	<p class="mb-0">希望學習響應式網頁設計</p>
+																</div>
+															</div>
+															<!-- 按鈕：行動版（下方橫向） -->
+															<div class="d-grid gap-2 d-md-none mt-4">
+																<button
+																	type="button"
+																	class="btn btn-outline-secondary rounded-3"
+																>
+																	訊息聊聊
+																</button>
+															</div>
+														</div>
+													</div>
+													<!-- 右側：操作按鈕（垂直） -->
+													<div
+														class="d-none d-md-flex flex-column justify-content-end gap-3 ms-3"
+													>
+														<button
+															type="button"
+															class="btn btn-outline-primary-green-500 fw-bold rounded-8 py-24 width-150"
+															data-bs-toggle="modal"
+															data-bs-target="#modal-chat-request"
+														>
+															訊息聊聊
+														</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- 訊息聊聊詳細 -->
+									<div
+										class="tab-pane fade"
+										id="v-pills-messages"
+										role="tabpanel"
+										aria-labelledby="v-pills-messages-tab"
+										tabindex="0"
+									>
+										<div class="mb-24">
+											<h4
+												class="card-title text-primary-green-500 fs-5 fs-lg-4 fw-bold me-24 mb-12"
+											>
+												訊息聊聊
+											</h4>
+											<p class="d-flex ai-end">與你的技能交換夥伴留言討論</p>
+										</div>
+										<div
+											class="border-0 border-lg-1 border-primary-green-500 rounded-16 p-0 p-lg-0"
+										>
+											<div class="container py-3">
+												<div
+													class="row d-flex border border-primary-green-500 rounded-16 g-3"
+												>
+													<!-- 左：聊天清單 -->
+													<div
+														class="col-12 col-lg-4 p-0 ps-lg-0 mb-24 mb-lg-0 border-end border-1"
+													>
+														<div class="card border-0 border-primary-green-500">
+															<div class="card-body border-bottom">
+																<div class="input-group">
+																	<span class="input-group-text"
+																		><i class="bi bi-search"></i
+																	></span>
+																	<input
+																		id="chat-search"
+																		class="form-control"
+																		placeholder="搜尋對話…"
+																	/>
+																</div>
+															</div>
+															<ul
+																class="list-group list-group-flush overflow-auto"
+																style="max-height: 70vh"
+															>
+																<!-- 聊天室對象側欄 -->
+																<li
+																	class="list-group-item d-flex align-items-center gap-3 border-bottom"
+																>
+																	<img
+																		class="rounded-80 me-8"
+																		src="/CoCreate/assets/boy-2-N24C3nXS.jpg"
+																		alt="image"
+																		width="44"
+																		height="44"
+																	/>
+																	<div class="flex-grow-1">
+																		<div class="d-flex">
+																			<strong>Alex Chen</strong>
+																			<small class="text-muted ms-auto"
+																				>1月28日</small
+																			>
+																		</div>
+																		<p class="fs-tiny text-neutral-500 mb-0">
+																			React 前端開發
+																		</p>
+																		<div class="text-muted small text-truncate">
+																			太好了！那我們明天...
+																		</div>
+																	</div>
+																</li>
+																<li
+																	class="list-group-item d-flex align-items-center gap-3 border-bottom"
+																>
+																	<img
+																		class="rounded-80 me-8"
+																		src="/CoCreate/assets/girl-2-CQudQ1kD.jpg"
+																		alt=""
+																		width="44"
+																		height="44"
+																	/>
+																	<div class="flex-grow-1">
+																		<div class="d-flex">
+																			<strong>みどり</strong>
+																			<small class="text-muted ms-auto"
+																				>1月27日</small
+																			>
+																		</div>
+																		<p class="fs-tiny text-neutral-500 mb-0">
+																			網頁設計基礎
+																		</p>
+																		<div class="text-muted small text-truncate">
+																			ありがとうございます
+																		</div>
+																	</div>
+																</li>
+																<li
+																	class="list-group-item d-flex align-items-center gap-3 border-bottom"
+																>
+																	<img
+																		class="rounded-80 me-8"
+																		src="/CoCreate/assets/girl-2-CQudQ1kD.jpg"
+																		alt=""
+																		width="44"
+																		height="44"
+																	/>
+																	<div class="flex-grow-1">
+																		<div class="d-flex">
+																			<strong>瑜伽小天使</strong>
+																			<small class="text-muted ms-auto"
+																				>1月25日</small
+																			>
+																		</div>
+																		<p class="fs-tiny text-neutral-500 mb-0">
+																			瑜伽基礎教學
+																		</p>
+																		<div class="d-flex align-items-center">
+																			<div
+																				class="text-muted small text-truncate flex-grow-1"
+																			>
+																				瑜伽墊記得帶哦～
+																			</div>
+																			<span
+																				class="badge bg-danger rounded-pill d-inline-flex justify-content-center align-items-center ms-2 ms-auto"
+																				style="width: 1.25rem; height: 1.25rem"
+																				>2</span
+																			>
+																		</div>
+																	</div>
+																</li>
+																<li
+																	class="list-group-item d-flex align-items-center gap-3 border-bottom"
+																>
+																	<img
+																		class="rounded-80 me-8"
+																		src="/CoCreate/assets/boy-2-N24C3nXS.jpg"
+																		alt=""
+																		width="44"
+																		height="44"
+																	/>
+																	<div class="flex-grow-1">
+																		<div class="d-flex">
+																			<strong>小光攝影師</strong>
+																			<small class="text-muted ms-auto"
+																				>1月22日</small
+																			>
+																		</div>
+																		<p class="fs-tiny text-neutral-500 mb-0">
+																			人像攝影技巧
+																		</p>
+																		<div class="text-muted small text-truncate">
+																			這次的設計作品真....
+																		</div>
+																	</div>
+																</li>
+																<li
+																	class="list-group-item d-flex align-items-center gap-3 border-bottom"
+																>
+																	<img
+																		class="rounded-80 me-8"
+																		src="/CoCreate/assets/girl-2-CQudQ1kD.jpg"
+																		alt=""
+																		width="44"
+																		height="44"
+																	/>
+																	<div class="flex-grow-1">
+																		<div class="d-flex">
+																			<strong>烘焙小廚娘</strong>
+																			<small class="text-muted ms-auto"
+																				>1月20日</small
+																			>
+																		</div>
+																		<p class="fs-tiny text-neutral-500 mb-0">
+																			法式烘焙技巧
+																		</p>
+																		<div class="d-flex align-items-center">
+																			<div
+																				class="text-muted small text-truncate flex-grow-1"
+																			>
+																				下次教你做馬卡龍！
+																			</div>
+																			<span
+																				class="badge bg-danger rounded-pill d-inline-flex justify-content-center align-items-center ms-2 ms-auto"
+																				style="width: 1.25rem; height: 1.25rem"
+																				>1</span
+																			>
+																		</div>
+																	</div>
+																</li>
+															</ul>
+														</div>
+													</div>
+													<!-- 右：聊天區 -->
+													<div
+														class="col-12 col-lg-8 d-flex flex-column p-0 ps-lg-0 pe-lg-4 mb-lg-0"
+													>
+														<!-- 標頭 -->
+														<div class="card m-4 bg-primary-green-200 border-0">
+															<div
+																class="card-body d-flex align-items-center gap-3"
+															>
+																<img
+																	class="rounded-circle me-8"
+																	src="/CoCreate/assets/boy-2-N24C3nXS.jpg"
+																	alt="image"
+																	width="44"
+																	height="44"
+																/>
+																<div class="flex-grow-1">
+																	<div class="fw-semibold">Alex Chen</div>
+																	<div class="text-muted small">
+																		React 前端開發
+																	</div>
+																</div>
+																<button
+																	class="btn btn-outline-primary-green-500 btn-sm me-8"
+																>
+																	標記未讀
+																</button>
+																<div class="dropdown">
+																	<button
+																		class="btn btn-light btn-sm"
+																		data-bs-toggle="dropdown"
+																	>
+																		<i class="bi bi-three-dots-vertical"></i>
+																	</button>
+																	<ul
+																		class="dropdown-menu dropdown-menu-end my-dropdown"
+																	>
+																		<li>
+																			<button class="dropdown-item">
+																				查看
+																			</button>
+																		</li>
+																		<li>
+																			<button class="dropdown-item">
+																				封鎖
+																			</button>
+																		</li>
+																	</ul>
+																</div>
+															</div>
+														</div>
+														<!-- 訊息串 -->
+														<div
+															class="flex-grow-1 overflow-auto px-12"
+															style="max-height: 60vh"
+														>
+															<div class="text-center text-muted small my-16">
+																1月28日
+															</div>
+															<!-- 對方訊息 -->
+															<div class="d-flex align-items-start gap-2 mb-16">
+																<img
+																	class="rounded-circle me-8"
+																	src="/CoCreate/assets/boy-2-N24C3nXS.jpg"
+																	width="36"
+																	height="36"
+																	alt="image"
+																/>
+																<div
+																	class="card bg-light border-0 max-width-60-percent p-12"
+																>
+																	<small class="text-muted">13:40</small>
+																	<div class="fs-small text-neutral-800">
+																		嗨！看到你想學React，我可以幫你規劃一個學習計畫
+																	</div>
+																</div>
+															</div>
+															<!-- 我方訊息 -->
+															<div class="d-flex align-items-start gap-2 mb-16">
+																<div
+																	class="card bg-light border-0 max-width-60-percent p-12 ms-auto text-end"
+																>
+																	<small class="text-muted">13:42</small>
+																	<div class="fs-small text-neutral-800">
+																		太好了！我對 React Hooks 特別有興趣
+																	</div>
+																</div>
+																<img
+																	class="rounded-circle ms-8"
+																	src="/CoCreate/assets/girl-1-B7-_1p2f.jpg"
+																	width="36"
+																	height="36"
+																	alt="image"
+																/>
+															</div>
+															<!-- 對方訊息 -->
+															<div class="d-flex align-items-start gap-2 mb-16">
+																<img
+																	class="rounded-circle me-8"
+																	src="/CoCreate/assets/boy-2-N24C3nXS.jpg"
+																	width="36"
+																	height="36"
+																	alt="image"
+																/>
+																<div
+																	class="card bg-light border-0 max-width-60-percent p-12"
+																>
+																	<small class="text-muted">14:03</small>
+																	<div class="fs-small text-neutral-800">
+																		沒問題！我們可以從 useState 和 useEffect
+																		開始。我建議先從基礎概念開始，然後透過實際練習來加深理解。
+																	</div>
+																</div>
+															</div>
+															<!-- 我方訊息 -->
+															<div class="d-flex align-items-start gap-2 mb-16">
+																<div
+																	class="card bg-light border-0 max-width-60-percent p-12 ms-auto text-end"
+																>
+																	<small class="text-muted">14:28</small>
+																	<div class="fs-small text-neutral-800">
+																		太好了！那我們明天晚上7點開始吧
+																	</div>
+																</div>
+																<img
+																	class="rounded-circle ms-8"
+																	src="/CoCreate/assets/girl-1-B7-_1p2f.jpg"
+																	width="36"
+																	height="36"
+																	alt="image"
+																/>
+															</div>
+														</div>
+														<!-- 訊息輸入區 -->
+														<div class="m-4">
+															<div
+																class="d-flex align-items-center justify-content-between mb-1"
+															></div>
+															<div class="input-group">
+																<button class="btn btn-outline-secondary">
+																	<i class="bi bi-paperclip"></i>
+																</button>
+																<textarea
+																	class="form-control"
+																	rows="2"
+																	placeholder="輸入你的留言…"
+																></textarea>
+																<button
+																	class="btn btn-primary-green-500 text-neutral-50"
+																>
+																	<i class="bi bi-send me-4"></i> 留言
+																</button>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- 交換歷程詳細 -->
+									<div
+										class="tab-pane fade"
+										id="v-pills-history"
+										role="tabpanel"
+										aria-labelledby="v-pills-history-tab"
+										tabindex="0"
+									>
+										<div class="mb-24">
+											<h4
+												class="card-title text-primary-green-500 fs-5 fs-lg-4 fw-bold me-24 mb-12"
+											>
+												交換歷程
+											</h4>
+											<p class="d-flex ai-end">查看你的交換歷程與評價</p>
+										</div>
+										<div class="mb-4"></div>
+									</div>
+									<!-- 帳號管理詳細 -->
+									<div
+										class="tab-pane fade"
+										id="v-pills-settings"
+										role="tabpanel"
+										aria-labelledby="v-pills-settings-tab"
+										tabindex="0"
+									>
+										<div class="mb-24">
+											<h4
+												class="card-title text-primary-green-500 fs-5 fs-lg-4 fw-bold me-24 mb-12"
+											>
+												帳號管理
+											</h4>
+											<p class="d-flex ai-end">
+												管理你的帳號設定、隱私和安全選項
+											</p>
+										</div>
+										<!-- 帳號管理選項 tab -->
+										<nav>
+											<div
+												class="nav nav-tabs fs-small"
+												id="nav-tab"
+												role="tablist"
+											>
+												<button
+													class="nav-link active px-8 px-lg-24"
+													id="nav-basic-tab"
+													data-bs-toggle="tab"
+													data-bs-target="#nav-basic"
+													type="button"
+													role="tab"
+													aria-controls="nav-basic"
+													aria-selected="true"
+												>
+													基本設定
+												</button>
+												<button
+													class="nav-link px-8 px-lg-24"
+													id="nav-privacy-tab"
+													data-bs-toggle="tab"
+													data-bs-target="#nav-privacy"
+													type="button"
+													role="tab"
+													aria-controls="nav-privacy"
+													aria-selected="false"
+												>
+													隱私設定
+												</button>
+												<button
+													class="nav-link px-8 px-lg-24"
+													id="nav-notification-tab"
+													data-bs-toggle="tab"
+													data-bs-target="#nav-notification"
+													type="button"
+													role="tab"
+													aria-controls="nav-notification"
+													aria-selected="false"
+												>
+													通知設定
+												</button>
+												<button
+													class="nav-link px-8 px-lg-24"
+													id="nav-account-security-tab"
+													data-bs-toggle="tab"
+													data-bs-target="#nav-account-security"
+													type="button"
+													role="tab"
+													aria-controls="nav-account-security"
+													aria-selected="false"
+												>
+													帳號安全
+												</button>
+											</div>
+										</nav>
+										<!-- 帳號管理-基本設定 -->
+										<div class="tab-content" id="nav-tabContent">
+											<div
+												class="tab-pane fade show active"
+												id="nav-basic"
+												role="tabpanel"
+												aria-labelledby="nav-basic-tab"
+												tabindex="0"
+											>
+												<div
+													class="border border-primary-green-500 rounded-16 rounded-top-0 rounded-end-16 p-24"
+												>
+													<div class="border-bottom mb-24">
+														<h6 class="text-neutral-800 fs-6 fw-bold mb-32">
+															基本設定
+														</h6>
+														<div class="input-width-50-percent mb-16">
+															<div class="">
+																<p class="mb-8">
+																	電子信箱<span class="warning">*</span>
+																</p>
+																<input
+																	type="text"
+																	class="form-control rounded-8 test"
+																	id="new-skill"
+																	placeholder="user@example.com"
+																	disabled
+																/>
+															</div>
+														</div>
+														<p class="fs-tiny text-neutral-500">
+															變更信箱需要重新驗證
+														</p>
+														<button
+															type="button"
+															class="btn btn-primary-green-500 text-white fs-base py-8 px-24 rounded-80 mb-24"
+														>
+															編輯信箱
+														</button>
+													</div>
+													<h6 class="text-neutral-800 fs-6 fw-bold mb-32">
+														變更密碼
+													</h6>
+													<div class="input-width-50-percent mb-24">
+														<p class="mb-8">
+															目前密碼<span class="warning">*</span>
+														</p>
+														<div class="input-group mb-3">
+															<input
+																type="password"
+																id="password"
+																class="form-control rounded-8 rounded-end-0"
+																placeholder="輸入密碼"
+															/>
+															<button
+																class="btn btn-outline-secondary"
+																type="button"
+																id="togglePassword"
+															>
+																<i data-feather="eye"></i>
+															</button>
+														</div>
+													</div>
+													<div class="input-width-50-percent mb-24">
+														<p class="mb-8">
+															新密碼<span class="warning">*</span>
+														</p>
+														<div class="input-group mb-3">
+															<input
+																type="password"
+																id="password"
+																class="form-control rounded-8 rounded-end-0"
+																placeholder="輸入密碼"
+															/>
+															<button
+																class="btn btn-outline-secondary"
+																type="button"
+																id="togglePassword"
+															>
+																<i data-feather="eye"></i>
+															</button>
+														</div>
+													</div>
+													<div class="input-width-50-percent mb-24">
+														<p class="mb-8">
+															確認密碼<span class="warning">*</span>
+														</p>
+														<div class="input-group mb-3">
+															<input
+																type="password"
+																id="password"
+																class="form-control rounded-8 rounded-end-0"
+																placeholder="輸入密碼"
+															/>
+															<button
+																class="btn btn-outline-secondary"
+																type="button"
+																id="togglePassword"
+															>
+																<i data-feather="eye"></i>
+															</button>
+														</div>
+													</div>
+													<div>
+														<p class="fs-tiny text-neutral-500 mb-0">
+															密碼要求：
+														</p>
+														<ul class="fs-tiny text-neutral-500 mb-24">
+															<li>至少8個字元</li>
+															<li>包含大小寫字母</li>
+															<li>包含數字</li>
+															<li>建議包含特殊符號</li>
+														</ul>
+														<button
+															type="button"
+															class="btn btn-primary-green-500 text-white fs-base py-8 px-24 rounded-80 me-24"
+														>
+															確認變更
+														</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="site-footer border-top pt-40 bg-neutral-50">
+	<div class="container py-24">
+		<div class="row gy-24 pt-40">
+			<!-- 左側：Logo 在上、再標題、再描述、再社群 -->
+			<div class="col-12 col-md-7">
+				<div class="footer-brand">
+					<img
+						src="/CoCreate/assets/logo-C5ECSruS.png"
+						alt="CoCreate 標誌"
+						class="footer-logo mb-12"
+					/>
+					<p class="mb-0 text-neutral-600 fs-small">
+						不只是技能交換平台，而是讓每個人既是學習者，也是分享者，透過交換、共學與故事分享，創造彼此陪伴，共同成長的學習社群。
+					</p>
+				</div>
+
+				<!-- 社群連結 -->
+				<div class="d-flex align-items-center gap-16 mt-16">
+					<a class="social-link" href="#" aria-label="Facebook"
+						><i class="bi bi-facebook"></i
+					></a>
+					<a class="social-link" href="#" aria-label="Instagram"
+						><i class="bi bi-instagram"></i
+					></a>
+					<a class="social-link" href="#" aria-label="X (Twitter)"
+						><i class="bi bi-twitter-x"></i
+					></a>
+					<a
+						class="social-link"
+						href="mailto:hello@cocreate.example"
+						aria-label="Email"
+						><i class="bi bi-envelope"></i
+					></a>
+				</div>
+			</div>
+
+			<!-- 右側：連結群組（直向） -->
+			<div class="col-12 col-md-5 text-center">
+				<ul class="footer-links list-unstyled mb-0 d-grid gap-8">
+					<li><a class="footer-link" href="find-partners.html">找尋夥伴</a></li>
+					<li><a class="footer-link" href="about.html">關於我們</a></li>
+					<li><a class="footer-link" href="wall.html">故事牆</a></li>
+					<li><a class="footer-link" href="login.html">聯絡我們</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<hr class="my-24" />
+
+		<div class="text-center">
+			<small class="text-neutral-600">
+				© 2025 森森創學 CoCreate. All rights reserved.
+			</small>
+		</div>
+	</div>
+</footer>
+		<!-- 載入 JS -->
+
+		<!-- 載入 feather 腳本 -->
+		<script src="https://unpkg.com/feather-icons"></script>
+
+		<!-- 轉換 data-feather 標籤為 inline SVG -->
+		<script>
+			feather.replace({ width: 18, height: 18 });
+		</script>
+
+		<!-- 技能卡片收合 Collapse -->
+	</body>
+</html>
