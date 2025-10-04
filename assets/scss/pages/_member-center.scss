@@ -72,6 +72,11 @@
 	max-width: 60%;
 }
 
+// 100% 寬度
+.width-100-percent {
+	max-width: 100%;
+}
+
 // 技能卡片背景圖
 .skill-bg {
 	background-image: url("../assets/images/skill-info-book.png");
@@ -190,4 +195,51 @@
 /* 預約資訊 */
 .width-150 {
 	width: 150px;
+}
+
+/* 會員大頭照 */
+.avatar-wrapper {
+  text-align: center;
+
+  .avatar {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border: 1px solid $primary-green-500;
+  }
+
+  .avatar-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translate(25%, 25%);
+    width: 28px;
+    height: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    // 背景色根據系統色彩
+    background-color: $neutral-800; 
+    color: $white;
+
+    &:hover {
+      background-color: $neutral-600;
+    }
+  }
+}
+
+@media (min-width: 992px) { /* lg 以上 */
+  .fs-lg-4 {
+		font-size: 28px !important; 
+	} /* 等同 Bootstrap 的 fs-4 */
+}
+
+.border-2-dashed {
+	color: #525252;
+	border: dashed 2px !important;
+
+	&:hover {
+		color: #5b8c30;
+	}
 }
