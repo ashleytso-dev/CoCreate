@@ -7,3 +7,75 @@
 .page-about {
   // TODO: 切版樣式
 }
+
+.plpr-16{
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.aboutCocreate{
+  max-width: 1296px;
+  margin: 0 auto;
+  font-size: $font-size-lg;
+}
+
+.ourMission{
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.ourMission-l{
+  width: 48%;
+  font-size: $font-size-lg;
+}
+
+.ourMission-r{
+  width: 48%;
+  border-radius: $radius-36;
+}
+
+@media(max-width: 992px){
+  .ourMission-l, .ourMission-r{
+    width: 100%;
+  }
+}
+
+.core{
+  max-width: 1296px;
+  margin: 0 auto;
+  font-size: $font-size-lg;
+  h5{
+    font-weight: $font-weight-bold;
+  }
+}
+
+@media(max-width: 992px){
+  .coreValue{
+    flex-wrap: wrap;
+  }
+}
+
+.ourGroup{
+  max-width: 1296px;
+  margin: 0 auto;
+  font-size: $font-size-lg;
+  img{
+    border-radius: 54px;
+    border: 1px solid $primary-green-500;
+  }
+}
+
+@media(max-width: 992px){
+  .groupMember{
+    flex-wrap: wrap;
+  }
+}
+
+.startUsing{
+  font-size: $font-size-lg;
+}
+
+.registerNow:hover{
+  color: $white;
+  background-color: $primary-green-500;
+}
