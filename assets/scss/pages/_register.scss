@@ -5,5 +5,131 @@
 // 專屬樣式寫這裡，避免污染其他頁
 
 .page-register {
-  // TODO: 切版樣式
+  .register-card {
+    border-radius: 40px;
+    overflow: hidden;
+
+    @media (min-width: 768px) {
+      min-height: clamp(540px, 72vh, 680px);
+    }
+  }
+
+  .register-card .card-body {
+    padding: clamp(20px, 8vw, 50px);
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(18px, 3vw, 28px);
+  }
+}
+
+/* 輸入欄位與切換密碼按鈕樣式 */
+.page-register .input-group .form-control { border-radius: 999px; }
+.page-register .input-group-text { border-top-left-radius: 999px; border-bottom-left-radius: 999px; }
+
+#toggleRegisterPwd,
+#toggleRegisterPwdConfirm {
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  color: #5B8C30;
+  border-color: #5B8C30;
+  transition: color .2s ease, background-color .2s ease, border-color .2s ease;
+
+  &:hover,
+  &:focus-visible {
+    color: #fff;
+    background-color: #5B8C30;
+    border-color: #5B8C30;
+  }
+}
+
+#toggleRegisterPwd .bi,
+#toggleRegisterPwdConfirm .bi {
+  pointer-events: none;
+}
+
+.page-register .back-link__icon {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.page-register .register-card__head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.page-register .register-card__title,
+.page-register .register-card__subtitle {
+  margin: 0;
+  line-height: 1.35;
+}
+
+.page-register .register-card__title {
+  color: #1B4912;
+}
+
+.page-register .register-card__body p:not(.register-card__subtitle),
+.page-register .register-card__body label {
+  line-height: 1.6;
+}
+
+.page-register .register-card__body .form-check-label a {
+  color: #5B8C30;
+  text-decoration: none;
+
+  &:hover,
+  &:focus-visible {
+    text-decoration: underline;
+  }
+}
+
+.page-register .register-card__body .register-agreement {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.page-register .register-card__body .register-agreement .form-check-input {
+  float: none;
+  margin-left: 0;
+  margin-top: 0;
+}
+
+.page-register .register-card__body .vstack {
+  gap: clamp(16px, 3vw, 24px);
+}
+
+.page-register .register-card__body .btn-white {
+  transition: background-color .2s ease;
+
+  &:hover,
+  &:focus-visible {
+    background-color: #1B4912;
+
+    img {
+      filter: brightness(0) invert(1);
+    }
+  }
+}
+
+.page-register .btn-register {
+  background-color: #5B8C30;
+  border-color: #5B8C30;
+  color: #fff;
+  transition: background-color .2s ease, border-color .2s ease, box-shadow .2s ease;
+  padding-block: 15px;
+  font-size: 1.05rem;
+  min-width: 180px;
+  align-self: center;
+
+  &:hover,
+  &:focus-visible {
+    background-color: #4f7929;
+    border-color: #4f7929;
+    color: #fff;
+    box-shadow: 0 0 0 .2rem rgba(91,140,48,.25);
+  }
 }

@@ -6,21 +6,106 @@
 
 .page-login {
   .login-card {
+    border-radius: 40px;
+    overflow: hidden;
+
     @media (min-width: 768px) {
       min-height: clamp(540px, 72vh, 680px);
     }
   }
 
   .login-card .card-body {
-    padding: clamp(32px, 7vw, 80px);
-    border-radius: 28px;
+    padding: clamp(20px, 8vw, 50px);
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(18px, 3vw, 28px);
   }
 }
 
 /* 更圓的輸入框與 icon 尺寸微調 */
 .input-group .form-control { border-radius: 999px; }
 .input-group-text { border-top-left-radius: 999px; border-bottom-left-radius: 999px; }
-#togglePwd { border-top-left-radius: 0 !important; border-bottom-left-radius: 0 !important; }
+#togglePwd {
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  color: #5B8C30;
+  border-color: #5B8C30;
+  transition: color .2s ease, background-color .2s ease, border-color .2s ease;
+
+  &:hover,
+  &:focus-visible {
+    color: #fff;
+    background-color: #5B8C30;
+    border-color: #5B8C30;
+  }
+}
+
+#togglePwd .bi {
+  pointer-events: none;
+}
 
 .feather-sm { width: 18px; height: 18px; }
-.input-group .feather { width: 18px; height: 18px; stroke: #1F5E2A; }
+.input-group .feather { width: 18px; height: 18px; stroke: #5B8C30; }
+.page-login .back-link__icon {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.page-login .login-card__head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.page-login .login-card__title,
+.page-login .login-card__subtitle {
+  margin: 0;
+  line-height: 1.35;
+}
+
+.page-login .login-card__title {
+  color: #1B4912;
+}
+
+.page-login .login-card__body p:not(.login-card__subtitle),
+.page-login .login-card__body label {
+  line-height: 1.6;
+}
+
+.page-login .login-card__body .vstack {
+  gap: clamp(16px, 3vw, 24px);
+}
+
+.page-login .login-card__body .btn-white {
+  transition: background-color .2s ease;
+
+  &:hover,
+  &:focus-visible {
+    background-color: #1B4912;
+
+    img {
+      filter: brightness(0) invert(1);
+    }
+  }
+}
+
+.page-login .btn-login {
+  background-color: #5B8C30;
+  border-color: #5B8C30;
+  color: #fff;
+  transition: background-color .2s ease, border-color .2s ease, box-shadow .2s ease;
+  padding-block: 15px;
+  font-size: 1.05rem;
+  min-width: 180px;
+  align-self: center;
+
+  &:hover,
+  &:focus-visible {
+    background-color: #4f7929;
+    border-color: #4f7929;
+    color: #fff;
+    box-shadow: 0 0 0 .2rem rgba(91,140,48,.25);
+  }
+}

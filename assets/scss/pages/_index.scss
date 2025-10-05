@@ -260,18 +260,23 @@
     flex-wrap: wrap;
     gap: 10px;
     justify-content: center;
+    align-items: center;
     margin-top: 8px;
   }
   .tag {
-    display: inline-block;
-    padding: 8px 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 30px;
     border-radius: 999px;
     border: 2px solid rgba(31,94,42,.35);
     color: var(--brand-green);
     background: #fff;
     font-weight: 600;
     font-size: 14px;
-    line-height: 1;
+    line-height: 1.3;
+    min-width: 98px;
+    white-space: nowrap;
   }
 
   /* 指標數據 */
@@ -614,11 +619,19 @@
 .voices__q{
   position: absolute;
   top: -18px; left: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-size: clamp(40px, 5vw, 56px);
   line-height: 1;
   color: var(--accent-yellow, #F6C549);
   text-shadow: 0 3px 10px rgba(0,0,0,.12);
   user-select: none;
+}
+.voices__q .fi {
+  font-size: inherit;
+  line-height: 1;
+  color: inherit;
 }
 
 .voices__text {
@@ -640,6 +653,12 @@
   gap: 12px;
   flex-wrap: wrap;
 }
+.voices__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
 .voices__user {
   display: flex; align-items: center; gap: 10px;
   i { font-size: 28px; color: var(--brand-green, #1F5E2A); }
@@ -649,15 +668,18 @@
 
 /* 標籤樣式（沿用第二區塊視覺） */
 .voices .tag{
-  display: inline-block;
-  padding: 6px 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
   border-radius: 999px;
   border: 2px solid rgba(31,94,42,.35);
   color: var(--brand-green, #1F5E2A);
   background: #fff;
   font-weight: 600;
   font-size: 13px;
-  line-height: 1;
+  line-height: 1.3;
+  white-space: nowrap;
 }
 
 /* === Section 6：書頁造型 CTA === */
