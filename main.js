@@ -27,4 +27,21 @@ btnEl.addEventListener('click', () => collapse.toggle());
 navEl.dataset.bound = '1';
 }
 
+// 密碼保護
+const togglePassword = document.querySelector('#togglePassword');
+const password = document.querySelector('#password');
+
+togglePassword.addEventListener('click', function () {
+  // 切換 input type
+  const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+  password.setAttribute('type', type);
+
+  // 切換 icon（眼睛 ↔ 眼睛刪除線）
+  this.innerHTML = type === 'password' 
+    ? '<i data-feather="eye"></i>' 
+    : '<i data-feather="eye-off"></i>';
+
+  feather.replace(); // 更新 feather icon
+});
+
 console.log('Hello world');

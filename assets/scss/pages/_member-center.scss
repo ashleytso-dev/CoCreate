@@ -4,177 +4,242 @@
 // Namespace: .page-member-center
 // 專屬樣式寫這裡，避免污染其他頁
 
-
 /* 交換次數與平均分數 */
 .width-121 {
-  width: 121px;
-  margin-bottom: 0;
+	width: 121px;
+	margin-bottom: 0;
 }
 
 /* tab 導覽列一般狀態 */
 .nav-pills .nav-link {
-  color: #525252;            /* 未選中時的文字顏色 */
-  display: inline-block;       /* 讓 icon+文字橫向排列 */
-  align-items: center;         /* 垂直置中 */
-  width: 100%;                 /* 撐滿整行 */
-  padding: 8px 24px;           /* 調整內距 */
-  border-radius: 40px;         /* 視需求，去掉圓角 */
+	color: #525252; /* 未選中時的文字顏色 */
+	display: inline-block; /* 讓 icon+文字橫向排列 */
+	align-items: center; /* 垂直置中 */
+	width: 100%; /* 撐滿整行 */
+	padding: 8px 24px; /* 調整內距 */
+	border-radius: 40px; /* 視需求，去掉圓角 */
 }
 
 /* active 選中的 tab */
 .nav-pills .nav-link.active {
-  background-color: #5B8C30;  /* 改成綠色 */
-  color: #fff;                /* 文字顏色 */
+	background-color: #5b8c30; /* 改成綠色 */
+	color: #fff; /* 文字顏色 */
 }
 
 /* 讓 icon 不受 baseline 影響 */
 .nav-pills .nav-link i.fi {
-  font-size: 16px;   /* 視覺大小自行調整 */
-  line-height: 1;    /* 關鍵：避免上下空隙 */
-  vertical-align: bottom; /* 避免與文字基線對齊 */
+	font-size: 16px; /* 視覺大小自行調整 */
+	line-height: 1; /* 關鍵：避免上下空隙 */
+	vertical-align: bottom; /* 避免與文字基線對齊 */
 }
 
-.nav-pills .nav-link span { 
-  line-height: 1; 
+.nav-pills .nav-link span {
+	line-height: 1;
 }
 
 /* 統一 icon 容器 */
 .nav-link i,
 .nav-link svg {
-  width: 16px;       /* Feather SVG */
-  height: 16px;
-  font-size: 16px;   /* Flaticon icon font */
-  line-height: 1;
-  flex-shrink: 0;    /* 防止被壓縮 */
+	width: 16px; /* Feather SVG */
+	height: 16px;
+	font-size: 16px; /* Flaticon icon font */
+	line-height: 1;
+	flex-shrink: 0; /* 防止被壓縮 */
 }
 
 /* 調整與文字的間距 */
 .nav-link .me-8,
 .nav-link svg {
-  margin-right: 8px;
+	margin-right: 8px;
 }
 
 .ai-end {
-align-items: flex-end;
+	align-items: flex-end;
 }
 
 // 表單必填文字顏色
 .warning {
-  color: #FF5252;
+	color: #ff5252;
 }
 
 // 50% 寬度
 .width-50-percent {
-  width: 50%;
+	width: 50%;
 }
 
 // 70% 寬度
 .max-width-60-percent {
-  max-width: 60%;
+	max-width: 60%;
+}
+
+// 100% 寬度
+.width-100-percent {
+	max-width: 100%;
 }
 
 // 技能卡片背景圖
 .skill-bg {
-  background-image: url('../assets/images/skill-info-book.png');
-  background-repeat: no-repeat;
-  background-position: right;
+	background-image: url("../assets/images/skill-info-book.png");
+	background-repeat: no-repeat;
+	background-position: right;
 }
 
 // Modal icon
 .modal-icon {
-  color: #F2A61C;
-  width: 48px;
-  height: 48px;
-  line-height: 1;
-  flex-shrink: 0;    /* 防止被壓縮 */
+	color: #f2a61c;
+	width: 48px;
+	height: 48px;
+	line-height: 1;
+	flex-shrink: 0; /* 防止被壓縮 */
 }
 
 // Member center icon
 .member-icon {
-  color: #5B8C30;
-  width: 48px;
-  height: 48px;
-  font-size: 48px;
-  margin-bottom: 16px;
-  line-height: 1;
-  flex-shrink: 0;    /* 防止被壓縮 */
+	color: #5b8c30;
+	width: 48px;
+	height: 48px;
+	font-size: 48px;
+	margin-bottom: 16px;
+	line-height: 1;
+	flex-shrink: 0; /* 防止被壓縮 */
 }
 
 // 帳號管理 tab 樣式
 .nav-tabs {
-  border-bottom: none;
+	border-bottom: none;
 
-  .nav-link {
-    color: $neutral-600;
-    border: $primary-green-500 1px solid;
-    border-radius: 8px 8px 0 0;
-    padding: 8px 16px;
-    transition: all 0.2s ease;
+	.nav-link {
+		color: $neutral-600;
+		border: $primary-green-500 1px solid;
+		border-radius: 8px 8px 0 0;
+		padding: 8px 16px;
+		transition: all 0.2s ease;
 
-    &:hover {
-      background-color: $neutral-100;
-      color: $neutral-800;
-    }
+		&:hover {
+			background-color: $neutral-100;
+			color: $neutral-800;
+		}
 
-    &.active {
-      background-color: $primary-green-500;
-      border: $primary-green-500 1px solid;
-      color: $neutral-50;
-      font-weight: 500;
-    }
+		&.active {
+			background-color: $primary-green-500;
+			border: $primary-green-500 1px solid;
+			color: $neutral-50;
+			font-weight: 500;
+		}
 
-    &.disabled {
-      color: $neutral-400;
-      cursor: not-allowed;
-      background: transparent;
-    }
-  }
+		&.disabled {
+			color: $neutral-400;
+			cursor: not-allowed;
+			background: transparent;
+		}
+	}
 }
 
 // 調整帳號管理右側圓角
 .rounded-end-16 {
-  border-top-right-radius: 16px !important;
+	border-top-right-radius: 16px !important;
 }
 
 // 訊息聊聊 dropdown active 狀態
-.my-dropdown{
-  --bs-dropdown-link-active-bg: #F4D35E;
-  --bs-dropdown-link-active-color: #212529;
-  --bs-dropdown-link-hover-bg: rgba(244,211,94,.15);
+.my-dropdown {
+	--bs-dropdown-link-active-bg: #f4d35e;
+	--bs-dropdown-link-active-color: #212529;
+	--bs-dropdown-link-hover-bg: rgba(244, 211, 94, 0.15);
 }
 
 .my-box {
-  border: 1px solid; /* 預設有邊框 */
+	border: 1px solid; /* 預設有邊框 */
 }
 
 @media (max-width: 767px) {
-  .my-box {
-    border: none; /* 小於 md 時拿掉 */
-  }
-  .display-md-none {
-    display: none !important; /* 小於 md 時隱藏 */
-  }
+	.my-box {
+		border: none; /* 小於 md 時拿掉 */
+	}
+	.display-md-none {
+		display: none !important; /* 小於 md 時隱藏 */
+	}
 }
 
 /* lg 以上移除下邊框 */
 @media (min-width: 992px) {
-  .lg-border-bottom-0 { border-bottom: 0 !important; }
+	.lg-border-bottom-0 {
+		border-bottom: 0 !important;
+	}
+	.input-width-50-percent {
+		width: 50%;
+	}
 }
 
 /* 技能 hashtag 標籤樣式 */
 .tag {
-  background-color: #FFFFFF;
-  color: #5B8C30;
-  border-radius: 40px;
-  width: 89px;
-  height: 21px;
-  font-size: 14px;
-  display: inline-flex;
-  align-items: center;        /* 垂直置中 */
-  justify-content: center;    /* 水平置中 */
+	background-color: #ffffff;
+	color: #5b8c30;
+	border-radius: 40px;
+	width: 89px;
+	height: 21px;
+	font-size: 14px;
+	display: inline-flex;
+	align-items: center; /* 垂直置中 */
+	justify-content: center; /* 水平置中 */
 }
 
 /* 避免 placeholder 被截斷 */
 .form-control::placeholder {
-  white-space: normal;     /* 允許換行 */
+	white-space: normal; /* 允許換行 */
+}
+
+.dropdown-item:active {
+	background-color: #5b8c30;
+}
+
+/* 預約資訊 */
+.width-150 {
+	width: 150px;
+}
+
+/* 會員大頭照 */
+.avatar-wrapper {
+  text-align: center;
+
+  .avatar {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border: 1px solid $primary-green-500;
+  }
+
+  .avatar-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translate(25%, 25%);
+    width: 28px;
+    height: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    // 背景色根據系統色彩
+    background-color: $neutral-800; 
+    color: $white;
+
+    &:hover {
+      background-color: $neutral-600;
+    }
+  }
+}
+
+@media (min-width: 992px) { /* lg 以上 */
+  .fs-lg-4 {
+		font-size: 28px !important; 
+	} /* 等同 Bootstrap 的 fs-4 */
+}
+
+.border-2-dashed {
+	color: #525252;
+	border: dashed 2px !important;
+
+	&:hover {
+		color: #5b8c30;
+	}
 }

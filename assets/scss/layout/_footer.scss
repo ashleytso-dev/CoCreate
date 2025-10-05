@@ -3,7 +3,7 @@
 }
 
 .footer-logo {
-  width: 40px;       
+  width: 120px;       
   height: auto;
   object-fit: contain;
 }
@@ -45,5 +45,5 @@
 @import "bootstrap/scss/mixins/breakpoints";
 
 @include media-breakpoint-down(md) {
-  .footer-logo { width: 36px; }
+  .footer-logo { width: 120px; }
 }
