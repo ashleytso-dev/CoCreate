@@ -1,57 +1,121 @@
 /* assets/scss/layout/_header.scss */
 
-$header-bg: $primary-green-200;
+$header-bg: $primary-green-200; // 你原本的底色
+$header-text-color: $neutral-950;
 
-.site-header {
-  background-color: $header-bg;
+// .site-header {
+//   background-color: $header-bg;
 
-  /* 左側品牌區 */
-  .brand-logo {
-    width: 154px;
-    height: auto;
-    object-fit: contain;
-    display: block;
-  }
+//   /* 左側品牌區 */
+//   .brand-logo {
+//     width: 154px;
+//     height: auto;
+//     object-fit: contain;
+//     display: block;
+//   }
 
-  .navbar-brand { gap: 1rem; }
+//   .navbar-brand { gap: 1rem; }
 
-  /* 導覽列 */
-  .navbar { background-color: transparent; }
+//   /* 導覽列 */
+//   .navbar { background-color: transparent; }
 
-  .nav-link {
-    color: $neutral-950;
-    &:hover,
-    &:focus {
-      color: $neutral-950;
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-    &.active {
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-  }
+//   .nav-link {
+//     color: $neutral-950;
+//     &:hover,
+//     &:focus {
+//       color: $neutral-950;
+//       text-decoration: underline;
+//       text-underline-offset: 3px;
+//     }
+//     &.active {
+//       text-decoration: underline;
+//       text-underline-offset: 3px;
+//     }
+//   }
 
   .login-link {
     color: $neutral-950;
     &:hover { color: $neutral-800; }
   }
 
-  /* 搜尋按鈕（保留你原本的行為） */
-  .btn.btn-outline-dark { --bs-btn-hover-bg: transparent; }
+//   /* 搜尋按鈕（保留你原本的行為） */
+//   .btn.btn-outline-dark { --bs-btn-hover-bg: transparent; }
 
-  /* 漢堡按鈕樣式 */
-  .navbar-toggler {
-    border-color: rgba(0,0,0,.15);
-    &:focus { box-shadow: none; }
-  }
-  .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0,0,0,0.7)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-  }
-}
+//   /* 漢堡按鈕樣式 */
+//   .navbar-toggler {
+//     border-color: rgba(0,0,0,.15);
+//     &:focus { box-shadow: none; }
+//   }
+//   .navbar-toggler-icon {
+//     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0,0,0,0.7)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+//   }
+// }
 
-.w-150 {
-  width: 150px;
+// .w-150 {
+//   width: 150px;
+// }
+
+.site-header {
+  // ... (保留你原有的 sticky, z-index, transition 樣式)
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+  background-color: $header-bg; 
+  box-shadow: none;
+
+  .navbar {
+    background-color: transparent;
+    // 加入 transition，讓高度變化平滑
+    transition: padding 0.3s ease; 
+    
+    // 初始 padding-top: 16px, padding-bottom: 16px (來自 header.ejs 的 py-16)
+    // 讓你在滾動時改變 padding 達到收合效果
+  }
+
+  // 滾動後的樣式
+  &.scrolled {
+    background-color: $header-bg; 
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08); 
+
+    // **新增：收合 Header 的樣式**
+    .navbar {
+      // 將 padding 縮小，例如從 py-16 (16px) 變成 py-8 (8px)，達到收合效果
+      padding-top: 0px !important; 
+      padding-bottom: 0px !important;
+      
+      // // 你可能也想縮小 logo 尺寸，讓它更緊湊
+      // .brand-logo {
+      //   width: 64px; // 滾動後 logo 變小
+      // }
+    }
+  }
+
+  .brand-logo {
+    width: 86px;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    transition: width 0.3s ease; 
+  }
+
+  .nav-link {
+    color: $header-text-color;
+    transition: color 0.2s ease;
+
+    &:hover,
+    &:focus {
+      color: $header-text-color;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    &.active {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+  }
 }
 
 /* 斷點：縮小 logo，避免 header 過高 */

@@ -44,4 +44,15 @@ togglePassword.addEventListener('click', function () {
   feather.replace(); // 更新 feather icon
 });
 
+const headerEl = document.querySelector('.site-header');
+if (headerEl) {
+  const onScroll = () => {
+    if (window.scrollY > 0) headerEl.classList.add('is-scrolled');
+    else headerEl.classList.remove('is-scrolled');
+  };
+  onScroll(); // 進頁先判斷一次
+  window.addEventListener('scroll', onScroll, { passive: true });
+}
+
+
 console.log('Hello world');
