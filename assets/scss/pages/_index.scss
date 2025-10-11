@@ -10,7 +10,7 @@
   --brand-yellow: #F6C549; 
   --title-green: #1F5E2A;  
   background-color: var(--hero-bg);
-  background-image: url("../assets/images/hero-forest-bg.png");
+  background-image: url("/assets/images/hero-forest-bg.png");
   background-repeat: no-repeat;
   background-position: right 8% bottom;
   background-size: cover;
@@ -793,7 +793,7 @@
   margin: 0 auto;
 
   /* 用背景圖畫出書頁形狀（白色紙張 + 外圍透明） */
-  background-image: url("../assets/images/cta-book-bg.png");
+  background-image: url("/assets/images/cta-book-bg.png");
   background-repeat: no-repeat;
   background-position: center;
   /* 兩種縮放模式擇一： */
