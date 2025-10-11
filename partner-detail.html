@@ -9,46 +9,82 @@
 			rel="stylesheet"
 			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
 		/>
-		<script type="module" crossorigin src="/CoCreate/assets/main-7QXXTsD-.js"></script>
-		<link rel="stylesheet" crossorigin href="/CoCreate/assets/main-CNHBkQSh.css">
+		<script type="module" crossorigin src="/CoCreate/assets/main-C7I62w6f.js"></script>
+		<link rel="stylesheet" crossorigin href="/CoCreate/assets/main-xDezEWby.css">
 	</head>
 	<body class="bg-primary-green-200">
 		<header class="site-header sticky-top">
-  <nav class="navbar navbar-expand-lg py-24">
-    <div class="container">
-      <!-- Brand -->
-      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html" aria-label="CoCreate Home">
-        <img src="/CoCreate/assets/logo-C5ECSruS.png" alt="CoCreate 標誌" class="brand-logo" />
-        <span class="visually-hidden">CoCreate 森森創學</span>
-        </span>
-      </a>
+	<nav class="navbar navbar-expand-lg py-16">
+		<div class="container">
+			<!-- Brand -->
+			<a
+				class="navbar-brand d-flex align-items-center gap-2"
+				href="index.html"
+				aria-label="CoCreate Home"
+			>
+				<img
+					src="/CoCreate/assets/logo-C5ECSruS.png"
+					alt="CoCreate 標誌"
+					class="brand-logo"
+				/>
+				<span class="visually-hidden">CoCreate 森森創學</span>
+			</a>
 
-      <!-- Toggler -->
-      <button class="navbar-toggler" type="button"
-              data-bs-toggle="collapse" data-bs-target="#cocreateNavbar"
-              aria-controls="cocreateNavbar" aria-expanded="false" aria-label="切換導覽選單">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+			<!-- Toggler -->
+			<button
+				class="navbar-toggler"
+				type="button"
+				data-bs-toggle="collapse"
+				data-bs-target="#cocreateNavbar"
+				aria-controls="cocreateNavbar"
+				aria-expanded="false"
+				aria-label="切換導覽選單"
+			>
+				<span class="navbar-toggler-icon"></span>
+			</button>
 
-      <!-- Links -->
-      <div class="collapse navbar-collapse" id="cocreateNavbar">
-        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-3">
-          <li class="nav-item"><a class="nav-link" href="find-partners.html">找尋夥伴</a></li>
-          <li class="nav-item"><a class="nav-link" href="wall.html">故事牆</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">關於我們</a></li>
-        </ul>
+			<!-- Links -->
+			<div class="collapse navbar-collapse" id="cocreateNavbar">
+				<ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-3">
+					<li class="nav-item">
+						<a class="nav-link" href="find-partners.html">找尋夥伴</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">故事牆</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="about.html">關於我們</a>
+					</li>
+				</ul>
 
-        <div class="d-flex align-items-center justify-content-between gap-3 w-150">
-          <!-- 桌面版搜尋 -->
-          <button class="btn d-none d-lg-inline-flex" type="button" aria-label="搜尋">
-            <i class="bi bi-search fs-5"></i>
-          </button>
-          <a class="btn btn-link login-link" href="member-center.html">登入</a>
-        </div>
-      </div>
-    </div>
-  </nav>
+				<div class="d-flex align-items-center gap-3">
+					<!-- 桌面版搜尋 -->
+					<button
+						class="btn d-none d-lg-inline-flex"
+						type="button"
+						aria-label="搜尋"
+					>
+						<i class="bi bi-search fs-5"></i>
+					</button>
+					<a class="btn btn-link login-link" href="login.html">登入</a>
+				</div>
+			</div>
+		</div>
+	</nav>
 </header>
+
+<!-- ✅ JS：滾動時切換 class -->
+<script>
+	window.addEventListener("scroll", () => {
+		const header = document.querySelector(".site-header");
+		if (window.scrollY > 50) {
+			header.classList.add("scrolled");
+		} else {
+			header.classList.remove("scrolled");
+		}
+	});
+</script>
+
 		<main class="page-partner-detail py-24 py-lg-40">
 			<div class="container">
 				<div class="row g-24">
@@ -88,8 +124,7 @@
 
 								<h6 class="fw-bold text-neutral-800 mb-8 text-start">關於我</h6>
 								<p class="text-neutral-700 small text-start mb-16">
-									來自日本的語言教學專家，在台灣生活 7
-									年。專門教授商業日語與日常會話，希望能透過技能交換學習更多台灣的在地文化和技能。
+									來自日本的語言教學專家，在台灣生活了8年。専門教授商業日語和日常會話，希望能透過技能交換學習更多台灣的在地文化和技能。
 								</p>
 
 								<h6 class="fw-bold text-neutral-800 mb-8 text-start">
@@ -98,19 +133,19 @@
 								<div class="d-flex flex-wrap gap-8">
 									<span
 										class="badge text-bg-neutral-50 border border-primary-green-500 text-primary-green-500 fs-small fw-normal tag"
-										>#料理</span
+										>料理</span
 									>
 									<span
 										class="badge text-bg-neutral-50 border border-primary-green-500 text-primary-green-500 fs-small fw-normal tag"
-										>#茶道</span
+										>茶道</span
 									>
 									<span
 										class="badge text-bg-neutral-50 border border-primary-green-500 text-primary-green-500 fs-small fw-normal tag"
-										>#書法</span
+										>書法</span
 									>
 									<span
 										class="badge text-bg-neutral-50 border border-primary-green-500 text-primary-green-500 fs-small fw-normal tag"
-										>#旅遊</span
+										>旅遊</span
 									>
 								</div>
 							</div>
@@ -140,7 +175,7 @@
 
 								<!-- 類別標籤 -->
 								<div
-									class="mb-16 mb-lg-0 g-4 border-bottom border-neutral-400 pb-16 pb-lg-0 lg-border-bottom-0 d-flex flex-wrap gap-8"
+									class="mb-16 mb-lg-32 g-4 border-bottom border-neutral-400 pb-16 pb-lg-0 lg-border-bottom-0 d-flex flex-wrap gap-8"
 								>
 									<span
 										class="badge text-bg-neutral-50 border border-primary-green-500 text-primary-green-500 fs-small fw-normal tag"
@@ -148,11 +183,15 @@
 									>
 									<span
 										class="badge text-bg-neutral-50 border border-primary-green-500 text-primary-green-500 fs-small fw-normal tag"
-										>#生活會話</span
+										>#會話</span
 									>
 									<span
 										class="badge text-bg-neutral-50 border border-primary-green-500 text-primary-green-500 fs-small fw-normal tag"
-										>#文化交流</span
+										>#日常用語</span
+									>
+									<span
+										class="badge text-bg-neutral-50 border border-primary-green-500 text-primary-green-500 fs-small fw-normal tag"
+										>#零基礎</span
 									>
 								</div>
 
@@ -161,12 +200,14 @@
 									<div class="col-12 col-lg-8">
 										<h6 class="fw-bold text-neutral-800 mb-8">技能介紹</h6>
 										<p class="text-neutral-700 mb-0">
-											可協助生活會話、點餐購物、旅遊問路等日常交流方式，帶你認識在地文化與交流禮儀，也可分享日本生活資訊、學習資源與自學方法。
+											從打招呼、購物、點餐到日常寒暄，學習最實用的日語表達方式！透過生活化情境練習，幫助你自然開口、靈活應對日本日常生活中常見的對話情境，無論是旅遊還是與日籍朋友交流，都能更自在地使用日語。
 										</p>
 									</div>
 									<div class="col-12 col-lg-4">
-										<div class="p-12 p-lg-16 rounded-12 border bg-neutral-50">
-											<h6 class="fw-bold text-neutral-800 mb-8">交換條件</h6>
+										<div
+											class="p-12 p-lg-16 bg-primary-green-200 rounded-12 border-0"
+										>
+											<h6 class="fw-bold text-neutral-800 mb-8">交換需求</h6>
 											<ul class="mb-0 small text-neutral-700">
 												<li>尋求：網頁設計優先，其他可討論</li>
 											</ul>
@@ -185,7 +226,7 @@
 										<input
 											type="text"
 											class="form-control"
-											placeholder="例如：前端協作、平面設計、英文會話…"
+											placeholder="例如：網頁設計、手沖咖啡、英語會話..."
 										/>
 									</div>
 
@@ -243,8 +284,8 @@
 										<div
 											class="bg-primary-green-200 border border-primary-green-500 rounded-12 p-16 h-100"
 										>
-											<div class="small text-neutral-600 mb-4">共 3 次交換</div>
-											<div class="fw-bold">日文寫作技巧</div>
+											<div class="fw-bold mb-4">日文寫作技巧</div>
+											<div class="small text-neutral-600">共 3 次交換</div>
 										</div>
 									</div>
 									<!-- 小卡片 2 -->
@@ -252,8 +293,8 @@
 										<div
 											class="bg-primary-green-200 border border-primary-green-500 rounded-12 p-16 h-100"
 										>
-											<div class="small text-neutral-600 mb-4">共 3 次交換</div>
-											<div class="fw-bold">日文發音矯正</div>
+											<div class="fw-bold mb-4">日本旅遊與文化</div>
+											<div class="small text-neutral-600">共 3 次交換</div>
 										</div>
 									</div>
 									<!-- 小卡片 3 -->
@@ -261,8 +302,8 @@
 										<div
 											class="bg-primary-green-200 border border-primary-green-500 rounded-12 p-16 h-100"
 										>
-											<div class="small text-neutral-600 mb-4">共 3 次交換</div>
-											<div class="fw-bold">旅遊會話速成</div>
+											<div class="fw-bold mb-4">JLPT考試準備</div>
+											<div class="small text-neutral-600">共 3 次交換</div>
 										</div>
 									</div>
 								</div>
@@ -418,8 +459,8 @@
 				<ul class="footer-links list-unstyled mb-0 d-grid gap-8">
 					<li><a class="footer-link" href="find-partners.html">找尋夥伴</a></li>
 					<li><a class="footer-link" href="about.html">關於我們</a></li>
-					<li><a class="footer-link" href="wall.html">故事牆</a></li>
-					<li><a class="footer-link" href="login.html">聯絡我們</a></li>
+					<li><a class="footer-link" href="#">故事牆</a></li>
+					<li><a class="footer-link" href="#">聯絡我們</a></li>
 				</ul>
 			</div>
 		</div>

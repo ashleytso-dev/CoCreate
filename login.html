@@ -1,50 +1,237 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>login</title>
-		<script type="module" crossorigin src="/CoCreate/assets/main-7QXXTsD-.js"></script>
-		<link rel="stylesheet" crossorigin href="/CoCreate/assets/main-CNHBkQSh.css">
+		<link
+			rel="stylesheet"
+			href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+		/>
+		<title>CoCreate｜登入</title>
+		<script type="module" crossorigin src="/CoCreate/assets/main-C7I62w6f.js"></script>
+		<link rel="stylesheet" crossorigin href="/CoCreate/assets/main-xDezEWby.css">
 	</head>
-	<body>
+	<body class="page-login">
 		<header class="site-header sticky-top">
-  <nav class="navbar navbar-expand-lg py-24">
-    <div class="container">
-      <!-- Brand -->
-      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html" aria-label="CoCreate Home">
-        <img src="/CoCreate/assets/logo-C5ECSruS.png" alt="CoCreate 標誌" class="brand-logo" />
-        <span class="visually-hidden">CoCreate 森森創學</span>
-        </span>
-      </a>
+	<nav class="navbar navbar-expand-lg py-16">
+		<div class="container">
+			<!-- Brand -->
+			<a
+				class="navbar-brand d-flex align-items-center gap-2"
+				href="index.html"
+				aria-label="CoCreate Home"
+			>
+				<img
+					src="/CoCreate/assets/logo-C5ECSruS.png"
+					alt="CoCreate 標誌"
+					class="brand-logo"
+				/>
+				<span class="visually-hidden">CoCreate 森森創學</span>
+			</a>
 
-      <!-- Toggler -->
-      <button class="navbar-toggler" type="button"
-              data-bs-toggle="collapse" data-bs-target="#cocreateNavbar"
-              aria-controls="cocreateNavbar" aria-expanded="false" aria-label="切換導覽選單">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+			<!-- Toggler -->
+			<button
+				class="navbar-toggler"
+				type="button"
+				data-bs-toggle="collapse"
+				data-bs-target="#cocreateNavbar"
+				aria-controls="cocreateNavbar"
+				aria-expanded="false"
+				aria-label="切換導覽選單"
+			>
+				<span class="navbar-toggler-icon"></span>
+			</button>
 
-      <!-- Links -->
-      <div class="collapse navbar-collapse" id="cocreateNavbar">
-        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-3">
-          <li class="nav-item"><a class="nav-link" href="find-partners.html">找尋夥伴</a></li>
-          <li class="nav-item"><a class="nav-link" href="wall.html">故事牆</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">關於我們</a></li>
-        </ul>
+			<!-- Links -->
+			<div class="collapse navbar-collapse" id="cocreateNavbar">
+				<ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-3">
+					<li class="nav-item">
+						<a class="nav-link" href="find-partners.html">找尋夥伴</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">故事牆</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="about.html">關於我們</a>
+					</li>
+				</ul>
 
-        <div class="d-flex align-items-center justify-content-between gap-3 w-150">
-          <!-- 桌面版搜尋 -->
-          <button class="btn d-none d-lg-inline-flex" type="button" aria-label="搜尋">
-            <i class="bi bi-search fs-5"></i>
-          </button>
-          <a class="btn btn-link login-link" href="member-center.html">登入</a>
-        </div>
-      </div>
-    </div>
-  </nav>
-</header>		<h1>登入</h1>
+				<div class="d-flex align-items-center gap-3">
+					<!-- 桌面版搜尋 -->
+					<button
+						class="btn d-none d-lg-inline-flex"
+						type="button"
+						aria-label="搜尋"
+					>
+						<i class="bi bi-search fs-5"></i>
+					</button>
+					<a class="btn btn-link login-link" href="login.html">登入</a>
+				</div>
+			</div>
+		</div>
+	</nav>
+</header>
+
+<!-- ✅ JS：滾動時切換 class -->
+<script>
+	window.addEventListener("scroll", () => {
+		const header = document.querySelector(".site-header");
+		if (window.scrollY > 50) {
+			header.classList.add("scrolled");
+		} else {
+			header.classList.remove("scrolled");
+		}
+	});
+</script>
+
+		<!-- 置中卡片 -->
+		<section
+			class="min-vh-100 d-flex align-items-center justify-content-center bg-light py-24"
+		>
+			<div
+				class="card shadow rounded-4 login-card"
+				style="width: min(520px, 92vw)"
+			>
+				<div class="card-body login-card__body">
+					<!-- 返回 -->
+					<a
+						href="index.html"
+						class="text-decoration-none fw-semibold text-secondary d-flex align-items-center justify-content-center gap-1 mb-3 mx-auto"
+					>
+						<i
+							class="bi bi-chevron-left back-link__icon"
+							aria-hidden="true"
+						></i>
+						返回
+					</a>
+
+					<div class="login-card__head text-center">
+						<h1 class="login-card__title h3 fw-extrabold text-success">
+							歡迎回來
+						</h1>
+						<p class="login-card__subtitle text-secondary">
+							登入您的帳號開始技能交換
+						</p>
+					</div>
+
+					<form action="#" method="post" class="vstack gap-3">
+						<!-- 電子信箱 -->
+						<div>
+							<label class="form-label fw-semibold" for="loginEmail"
+								>電子信箱</label
+							>
+							<div class="input-group">
+								<span class="input-group-text bg-transparent"
+									><i class="bi bi-envelope"></i
+								></span>
+								<input
+									id="loginEmail"
+									type="email"
+									class="form-control rounded-end-pill"
+									placeholder="請輸入您的電子信箱"
+									required
+								/>
+							</div>
+						</div>
+
+						<!-- 密碼 -->
+						<div>
+							<label class="form-label fw-semibold" for="loginPassword"
+								>密碼</label
+							>
+							<div class="input-group">
+								<span class="input-group-text bg-transparent"
+									><i class="bi bi-lock"></i
+								></span>
+								<input
+									id="loginPassword"
+									type="password"
+									class="form-control"
+									placeholder="請輸入您的密碼"
+									required
+								/>
+								<button
+									class="btn btn-outline-secondary rounded-end-pill"
+									type="button"
+									id="togglePwd"
+									aria-label="顯示密碼"
+								>
+									<i class="bi bi-eye" aria-hidden="true"></i>
+								</button>
+							</div>
+						</div>
+
+						<div class="d-flex justify-content-end">
+							<a href="#" class="link-secondary fw-semibold small">忘記密碼</a>
+						</div>
+
+						<a href="member-center.html" class="text-center">
+							<button
+								type="button"
+								class="btn btn-login fw-bold rounded-pill py-2"
+							>
+								登入
+							</button>
+						</a>
+					</form>
+
+					<!-- 分隔線 -->
+					<div
+						class="d-grid align-items-center my-4"
+						style="grid-template-columns: 1fr auto 1fr; gap: 12px"
+					>
+						<hr class="m-0 text-secondary opacity-50" />
+						<span class="small text-secondary">或使用以下方式登入</span>
+						<hr class="m-0 text-secondary opacity-50" />
+					</div>
+
+					<!-- SSO -->
+					<div class="row g-2">
+						<div class="col-12 col-sm-6">
+							<button
+								class="btn btn-white w-100 border rounded-3 py-2 fw-semibold d-flex align-items-center justify-content-center gap-2"
+								aria-label="使用 Google 登入"
+							>
+								<img
+									src="data:image/svg+xml,%3csvg%20width='294'%20height='300'%20viewBox='0%200%20294%20300'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M150%20122.729V180.82H230.727C227.183%20199.502%20216.545%20215.321%20200.59%20225.957L249.272%20263.731C277.636%20237.55%20294%20199.094%20294%20153.412C294%20142.776%20293.046%20132.548%20291.273%20122.73L150%20122.729Z'%20fill='%234285F4'/%3e%3cpath%20d='M65.9342%20178.553L54.9546%20186.958L16.0898%20217.23C40.7719%20266.185%2091.3596%20300.004%20149.996%20300.004C190.496%20300.004%20224.45%20286.64%20249.269%20263.731L200.587%20225.958C187.223%20234.958%20170.177%20240.413%20149.996%20240.413C110.996%20240.413%2077.8602%20214.095%2065.9955%20178.639L65.9342%20178.553Z'%20fill='%2334A853'/%3e%3cpath%20d='M16.0899%2082.7734C5.86309%20102.955%200%20125.728%200%20150.001C0%20174.273%205.86309%20197.047%2016.0899%20217.228C16.0899%20217.363%2066.0004%20178.5%2066.0004%20178.5C63.0004%20169.5%2061.2272%20159.955%2061.2272%20149.999C61.2272%20140.043%2063.0004%20130.498%2066.0004%20121.498L16.0899%2082.7734Z'%20fill='%23FBBC05'/%3e%3cpath%20d='M149.999%2059.7279C172.091%2059.7279%20191.727%2067.3642%20207.409%2082.0918L250.364%2039.1373C224.318%2014.8647%20190.5%200%20149.999%200C91.3627%200%2040.7719%2033.6821%2016.0898%2082.7738L65.9988%20121.502C77.8619%2086.0462%20110.999%2059.7279%20149.999%2059.7279Z'%20fill='%23EA4335'/%3e%3c/svg%3e"
+									alt="Google"
+									width="18"
+									height="18"
+								/>
+							</button>
+						</div>
+						<div class="col-12 col-sm-6">
+							<button
+								class="btn btn-white w-100 border rounded-3 py-2 fw-semibold d-flex align-items-center justify-content-center gap-2"
+								aria-label="使用 Facebook 登入"
+							>
+								<img
+									src="data:image/svg+xml,%3csvg%20width='164'%20height='163'%20viewBox='0%200%20164%20163'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M164%2081.7994C164%2036.6232%20127.287%200%2082%200C36.713%200%200%2036.6232%200%2081.7994C0%20120.16%2026.4762%20152.35%2062.1921%20161.191V106.797H45.2837V81.7994H62.1921V71.028C62.1921%2043.1868%2074.8234%2030.2821%20102.224%2030.2821C107.42%2030.2821%20116.384%2031.2997%20120.051%2032.314V54.9725C118.116%2054.7696%20114.754%2054.6682%20110.579%2054.6682C97.1339%2054.6682%2091.9384%2059.7495%2091.9384%2072.9585V81.7994H118.723L114.121%20106.797H91.9384V163C132.535%20158.108%20164%20123.622%20164%2081.7994Z'%20fill='%230966FF'/%3e%3c/svg%3e"
+									alt="Facebook"
+									width="18"
+									height="18"
+								/>
+							</button>
+						</div>
+					</div>
+
+					<p class="text-center mt-3 mb-0">
+						<span class="text-secondary">還沒有帳號？</span>
+						<a
+							href="register.html"
+							class="fw-bold text-success text-decoration-none"
+							>立即註冊</a
+						>
+					</p>
+				</div>
+			</div>
+		</section>
+
 		<footer class="site-footer border-top pt-40 bg-neutral-50">
 	<div class="container py-24">
 		<div class="row gy-24 pt-40">
@@ -86,8 +273,8 @@
 				<ul class="footer-links list-unstyled mb-0 d-grid gap-8">
 					<li><a class="footer-link" href="find-partners.html">找尋夥伴</a></li>
 					<li><a class="footer-link" href="about.html">關於我們</a></li>
-					<li><a class="footer-link" href="wall.html">故事牆</a></li>
-					<li><a class="footer-link" href="login.html">聯絡我們</a></li>
+					<li><a class="footer-link" href="#">故事牆</a></li>
+					<li><a class="footer-link" href="#">聯絡我們</a></li>
 				</ul>
 			</div>
 		</div>
@@ -100,7 +287,25 @@
 			</small>
 		</div>
 	</div>
-</footer>
-
+</footer>
+		<script>
+			document.addEventListener("DOMContentLoaded", () => {
+				const passwordInput = document.getElementById("loginPassword");
+				const toggleBtn = document.getElementById("togglePwd");
+				if (!passwordInput || !toggleBtn) return;
+
+				toggleBtn.addEventListener("click", () => {
+					const icon = toggleBtn.querySelector("i");
+					const showing = passwordInput.type === "text";
+					passwordInput.type = showing ? "password" : "text";
+					toggleBtn.setAttribute(
+						"aria-label",
+						showing ? "顯示密碼" : "隱藏密碼"
+					);
+					icon.classList.toggle("bi-eye", showing);
+					icon.classList.toggle("bi-eye-slash", !showing);
+				});
+			});
+		</script>
 	</body>
-	</html>
+</html>

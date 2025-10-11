@@ -9,49 +9,85 @@
 			rel="stylesheet"
 			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
 		/>
-		<script type="module" crossorigin src="/CoCreate/assets/main-7QXXTsD-.js"></script>
-		<link rel="stylesheet" crossorigin href="/CoCreate/assets/main-CNHBkQSh.css">
+		<script type="module" crossorigin src="/CoCreate/assets/main-C7I62w6f.js"></script>
+		<link rel="stylesheet" crossorigin href="/CoCreate/assets/main-xDezEWby.css">
 	</head>
 	<body>
 		<header class="site-header sticky-top">
-  <nav class="navbar navbar-expand-lg py-24">
-    <div class="container">
-      <!-- Brand -->
-      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html" aria-label="CoCreate Home">
-        <img src="/CoCreate/assets/logo-C5ECSruS.png" alt="CoCreate 標誌" class="brand-logo" />
-        <span class="visually-hidden">CoCreate 森森創學</span>
-        </span>
-      </a>
+	<nav class="navbar navbar-expand-lg py-16">
+		<div class="container">
+			<!-- Brand -->
+			<a
+				class="navbar-brand d-flex align-items-center gap-2"
+				href="index.html"
+				aria-label="CoCreate Home"
+			>
+				<img
+					src="/CoCreate/assets/logo-C5ECSruS.png"
+					alt="CoCreate 標誌"
+					class="brand-logo"
+				/>
+				<span class="visually-hidden">CoCreate 森森創學</span>
+			</a>
 
-      <!-- Toggler -->
-      <button class="navbar-toggler" type="button"
-              data-bs-toggle="collapse" data-bs-target="#cocreateNavbar"
-              aria-controls="cocreateNavbar" aria-expanded="false" aria-label="切換導覽選單">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+			<!-- Toggler -->
+			<button
+				class="navbar-toggler"
+				type="button"
+				data-bs-toggle="collapse"
+				data-bs-target="#cocreateNavbar"
+				aria-controls="cocreateNavbar"
+				aria-expanded="false"
+				aria-label="切換導覽選單"
+			>
+				<span class="navbar-toggler-icon"></span>
+			</button>
 
-      <!-- Links -->
-      <div class="collapse navbar-collapse" id="cocreateNavbar">
-        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-3">
-          <li class="nav-item"><a class="nav-link" href="find-partners.html">找尋夥伴</a></li>
-          <li class="nav-item"><a class="nav-link" href="wall.html">故事牆</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">關於我們</a></li>
-        </ul>
+			<!-- Links -->
+			<div class="collapse navbar-collapse" id="cocreateNavbar">
+				<ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-3">
+					<li class="nav-item">
+						<a class="nav-link" href="find-partners.html">找尋夥伴</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">故事牆</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="about.html">關於我們</a>
+					</li>
+				</ul>
 
-        <div class="d-flex align-items-center justify-content-between gap-3 w-150">
-          <!-- 桌面版搜尋 -->
-          <button class="btn d-none d-lg-inline-flex" type="button" aria-label="搜尋">
-            <i class="bi bi-search fs-5"></i>
-          </button>
-          <a class="btn btn-link login-link" href="member-center.html">登入</a>
-        </div>
-      </div>
-    </div>
-  </nav>
+				<div class="d-flex align-items-center gap-3">
+					<!-- 桌面版搜尋 -->
+					<button
+						class="btn d-none d-lg-inline-flex"
+						type="button"
+						aria-label="搜尋"
+					>
+						<i class="bi bi-search fs-5"></i>
+					</button>
+					<a class="btn btn-link login-link" href="login.html">登入</a>
+				</div>
+			</div>
+		</div>
+	</nav>
 </header>
+
+<!-- ✅ JS：滾動時切換 class -->
+<script>
+	window.addEventListener("scroll", () => {
+		const header = document.querySelector(".site-header");
+		if (window.scrollY > 50) {
+			header.classList.add("scrolled");
+		} else {
+			header.classList.remove("scrolled");
+		}
+	});
+</script>
+
 		<div style="background-color: #fcf0c8">
 			<div class="aboutCocreate text-center pt-80 pb-80 d-none d-lg-block">
-				<h2 class="mb-16 text-primary-green-700">關於森森創學</h2>
+				<h2 class="mb-16 fw-bold text-primary-green-700">關於森森創學</h2>
 				<p class="m-0 text-primary-green-700">
 					我們相信每個人都有獨特的技能和知識，透過分享與交換，可以創造無限的學習可能。
 				</p>
@@ -61,7 +97,7 @@
 			</div>
 			<div>
 				<div class="aboutCocreate text-center pt-80 pb-80 d-lg-none">
-					<h2 class="mb-16 text-primary-green-700">關於森森創學</h2>
+					<h2 class="mb-16 fw-bold text-primary-green-700">關於森森創學</h2>
 					<p class="m-0 text-primary-green-700">
 						我們相信每個人都有獨特的技能和知識，<br />透過分享與交換，可以創造無限的學習可能。
 					</p>
@@ -74,13 +110,13 @@
 		<div style="background-color: #eff2dc" class="plpr-16">
 			<div class="ourMission d-lg-flex justify-content-between pt-80 pb-80">
 				<div class="ourMission-l align-content-center d-none d-lg-block">
-					<h2 class="mb-16 text-primary-green-700">我們的使命</h2>
+					<h2 class="mb-16 fw-bold text-primary-green-700">我們的使命</h2>
 					<p class="text-primary-green-700">
 						在這個快速變化的時代，學習不應該是孤獨的旅程。我們希望透過技能交換的模式，讓每個人都能找到學習夥伴，分享自己的專長，同時學習新的技能。就像森林中的樹木互相支撐、共同成長一樣，我們希望創造一個互助學習的生態系統，讓知識和技能在社群中自由流動，讓每個人都能在這片森林中茁壯成長。
 					</p>
 				</div>
 				<div class="text-center ourMission-l align-content-center d-lg-none">
-					<h2 class="mb-16 text-primary-green-700">我們的使命</h2>
+					<h2 class="mb-16 fw-bold text-primary-green-700">我們的使命</h2>
 					<p class="text-primary-green-700 mb-24">
 						在這個快速變化的時代，<br />學習不應該是孤獨的旅程。<br />我們希望透過技能交換的模式，<br />讓每個人都能找到學習夥伴，<br />分享自己的專長，同時學習新的技能。<br />就像森林中的樹木互相支撐、共同成長一樣，<br />我們希望創造一個互助學習的生態系統，<br />讓知識和技能在社群中自由流動，<br />讓每個人都能在這片森林中茁壯成長。
 					</p>
@@ -95,7 +131,7 @@
 		<div>
 			<div class="core text-center pt-80 pb-80">
 				<div class="mb-48">
-					<h2 class="mb-16 text-primary-green-700">我們的核心價值</h2>
+					<h2 class="mb-16 fw-bold text-primary-green-700">我們的核心價值</h2>
 					<p class="text-primary-green-700 d-none d-lg-block">
 						這些價值觀指引著我們的每一個決定，塑造著森森創學的文化
 					</p>
@@ -166,7 +202,7 @@
 		<div style="background-color: #fcf0c8">
 			<div class="ourGroup text-center pt-80 pb-80 plpr-16">
 				<div class="mb-48">
-					<h2 class="mb-16 text-primary-green-700">認識我們的團隊</h2>
+					<h2 class="mb-16 fw-bold text-primary-green-700">認識我們的團隊</h2>
 					<p class="text-primary-green-700">一群熱愛學習、相信分享力量的夥伴</p>
 				</div>
 				<div class="groupMember d-flex justify-content-center gap-16">
@@ -223,7 +259,9 @@
 		</div>
 		<div style="background-color: #eff2dc">
 			<div class="startUsing text-center pt-80 pb-80">
-				<h2 class="mb-16 text-primary-green-700">一起加入這片成長的森林</h2>
+				<h2 class="mb-16 fw-bold text-primary-green-700">
+					一起加入這片成長的森林
+				</h2>
 				<p class="m-0 text-primary-green-700 d-none d-lg-block">
 					無論你想分享什麼技能，或是學習什麼新知識，森森創學都歡迎你的加入
 				</p>
@@ -290,8 +328,8 @@
 				<ul class="footer-links list-unstyled mb-0 d-grid gap-8">
 					<li><a class="footer-link" href="find-partners.html">找尋夥伴</a></li>
 					<li><a class="footer-link" href="about.html">關於我們</a></li>
-					<li><a class="footer-link" href="wall.html">故事牆</a></li>
-					<li><a class="footer-link" href="login.html">聯絡我們</a></li>
+					<li><a class="footer-link" href="#">故事牆</a></li>
+					<li><a class="footer-link" href="#">聯絡我們</a></li>
 				</ul>
 			</div>
 		</div>
